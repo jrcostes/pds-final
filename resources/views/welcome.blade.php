@@ -25,7 +25,6 @@
             .full-height {
                 height: 100vh;
             }
-
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -66,6 +65,11 @@
 
             /* Index CSS */
 
+            .formbody{
+                margin: 5px 50px 5px 50px;
+            }
+
+
             h1 {
                 text-align: justify;
                 padding-left: 10px;
@@ -100,6 +104,16 @@
                 text-align: center;
                 border-radius: 25px;
                 width: 50%;
+            }
+
+            .buttons{
+
+            }
+
+            .center {
+                margin:  5px 5px 5px 5px;
+                text-align: center;
+
             }
             /* #row1 {
                 padding-left: 20px;

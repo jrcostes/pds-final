@@ -208,7 +208,11 @@
             {{Form::close()}}
 
     </div>
-    <a href="/temp" class="btn btn-primary">TEMP</a>
-    <a href="exporter" class="btn btn-primary">Export</a>
+    <div class="buttons">
+        <div class="center">
+            <a href="/temp" class="btn btn-primary">View in PDF</a>
+            <a href="exporter" class="btn btn-primary">Export</a>
+        </div>
+    </div>
 </html>
 

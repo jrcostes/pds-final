@@ -190,6 +190,8 @@ class PostController extends Controller
             return view('c3data.index')
             ->with('success', 'Entry Saved');
         }
+
+
         //
        // $pdf = App::make('snappy.pdf.wrapper');
        //$pdf = PDF::loadView('c3forms.c3form',
