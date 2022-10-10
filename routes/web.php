@@ -16,9 +16,13 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PdfController;
 use App\Exports\UsersExport;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
+Auth::routes();
+
 Route::resource('post','PostController');
+
 Route::get('/', function () {
     return view('c3data.index');
 });
@@ -37,3 +41,4 @@ Route::get('/temp', function() {
 Route::get('/export', [PostController::class, 'export']);
 Route::get('/wkhtmltopdf', [PostController::class, 'print_form'])->name('print_data');
 Route::get('exporter', 'PostController@export');
+Route::get('excel', 'PostController@excel');
