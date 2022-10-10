@@ -23,10 +23,10 @@ class PostController extends Controller
         return view('c3data.index',compact($sheets));
     }
 
-    public function export()
+    /*public function export()
     {
         return Excel::download(new SheetExport, 'users.xlsx');
-    }
+    }*/
 
     public function store(Request $request)
     {

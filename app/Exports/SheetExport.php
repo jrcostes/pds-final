@@ -2,25 +2,30 @@
 
 namespace App\Exports;
 use App\Sheet;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
 
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class SheetExport implements FromCollection, WithHeadings
-{
-    /**
-    * @return \Illuminate\Support\Collection
-    */
 
-    public function collection()
+class SheetExport implements FromView
+{
+
+    public function view(): View
     {
-        return Sheet::all();
+        {
+            return view('c3file.xlsx', [
+                'information'=> Sheet::all()
+            ]);
+        }
     }
-    public function headings(): array{
+
+    /*public function headings(): array{
 
         return [
              "No.", "NameAdd", "DateFrom", "DateTo", "No.ofHours", "Position"
         ];
 
-    }
+    }*/
 }

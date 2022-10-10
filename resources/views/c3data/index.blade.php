@@ -190,18 +190,25 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="c1form"
+                        <input type="radio" id="c3form"
                             name="form_radio" class="custom-control-input" value="c3form">
                         <label class="custom-control-label"
                             for="PDF Print">PDF</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="c2form"
+                        <input type="radio" id="c3form"
                             name="form_radio" class="custom-control-input" value="Sheet">
                         <label class="custom-control-label"
                             for="Save to Database">Save</label>
                     </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="c3form"
+                            name="form_radio" class="custom-control-input" value="excelform">
+                        <label class="custom-control-label"
+                            for="Excel">Export as Excel File</label>
+                    </div>
                     <button type="submit" class="btn btn-dark ">Submit</button>
+                    {{-- <a href="exporter" class="btn btn-primary">Export</a> --}}
                 </div>
             </div>
 
@@ -211,7 +218,7 @@
     <div class="buttons">
         <div class="center">
             <a href="/temp" class="btn btn-primary">View in PDF</a>
-            <a href="exporter" class="btn btn-primary">Export</a>
+
         </div>
     </div>
 </html>
