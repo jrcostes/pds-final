@@ -69,10 +69,13 @@
                 margin: 5px 50px 5px 50px;
             }
 
-
+            .form-horizontal{
+                padding: 5px 5px 5px 5px;
+            }
             h1 {
                 text-align: justify;
                 padding-left: 10px;
+                font-weight: bold;
             }
             .table {
                 width: 100%;

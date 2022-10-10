@@ -184,12 +184,31 @@ class PostController extends Controller
 
             return $pdf->download('c3form.pdf');
         }
+
+        elseif($form_radio == 'excelform'){
+
+            Excel::load('C:\xampp\htdocs\personaldatasheet2\resources\views\exportform\c3file.xlsx', function($excel){
+                $excel->sheet('C3', function($sheet) {
+
+                    $sheet->cell('A6', function($cell) {
+                        $cell->setValue($_GET['orgnameAddress1']);
+                    });
+
+
+
+                });
+            })->download('xlsx');
+        }
+
         else{
             Sheet::create($datacompact);
 
             return view('c3data.index')
             ->with('success', 'Entry Saved');
         }
+
+
+
 
 
         //
