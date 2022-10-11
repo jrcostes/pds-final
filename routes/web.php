@@ -27,12 +27,12 @@ Route::get('/', function () {
     return view('c3data.index');
 });
 
-Route::get('/sender', function() {
+/*Route::get('/sender', function() {
     $pdf = App::make('snappy.pdf.wrapper');
     $pdf->loadview('c3data.index');
     //return $pdf->inline();
     return $pdf->download('c3data.index.pdf');
-});
+});*/
 
 Route::get('/temp', function() {
     return view('c3forms.c3formtemp');

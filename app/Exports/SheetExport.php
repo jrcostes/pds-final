@@ -15,7 +15,7 @@ class SheetExport implements FromView
     public function view(): View
     {
         {
-            return view('c3file.xlsx', [
+            return view('print_forms.c3file', [
                 'information'=> Sheet::all()
             ]);
         }
