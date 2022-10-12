@@ -12,15 +12,15 @@ use Illuminate\Http\Request;
 use App\Exports\SheetExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Sheet;
+use Maatwebsite\Excel\Concerns\FromView;
 
 
 class PostController extends Controller
 {
     public function index()
     {
-        $sheets = Sheet::latest();
-
-        return view('c3data.index',compact($sheets));
+        $sheets = Sheet::latest()->paginate(5);
+        return view('c3data.homepage', compact('sheets'));
     }
 
     /*public function export()
@@ -36,6 +36,16 @@ class PostController extends Controller
 
         return redirect('/')
             ->with('success','Entry Saved');
+    }
+
+
+    public function show($id){
+        $sheets = Sheet::find($id);
+        $datacompact = $sheets;
+        $pdf = App::make('snappy.pdf.wrapper');
+            $pdf = PDF::loadView('print_forms.c3forms', $datacompact)->setOption('page-width', '215.9')->setOption('page-height','355.6');
+
+            return $pdf->download('c3form.pdf');
     }
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -185,7 +195,7 @@ class PostController extends Controller
             return $pdf->download('c3form.pdf');
         }
 
-        elseif($form_radio == 'excelform'){
+        elseif($form_radio == 'exportform'){
 
             Excel::load('C:\xampp\htdocs\personaldatasheet2\resources\views\exportform\c3file.xlsx', function($excel){
                 $excel->sheet('C3', function($sheet) {
@@ -206,6 +216,7 @@ class PostController extends Controller
             return view('c3data.index')
             ->with('success', 'Entry Saved');
         }
+
 
 
 

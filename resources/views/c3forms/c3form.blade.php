@@ -483,12 +483,11 @@ activeSheetIndex = iSh;
 
 </div>
 </div>
-<div id='footer'>
+{{-- <div id='footer'>
 <body topmargin='0' leftmargin='0' bgcolor="#808080">
-<table border='0' cellspacing='1'>
- <tr> <td bgcolor="#FFFFFF" nowrap="nowrap"><b><small><small>&nbsp;<a style='cursor:pointer' onclick="fnSetActiveSheet(0);"><font face="Arial" color="#000000">C3</font></a>&nbsp;</small></small></b></td> <td bgcolor="#FFFFFF" nowrap="nowrap"><b><small><small>&nbsp;<a style='cursor:pointer' onclick="fnSetActiveSheet(1);"><font face="Arial" color="#000000">Lookup</font></a>&nbsp;</small></small></b></td>
-    //print button
-    <button class="button", href='/sender'>PRINT PAGE</button>
+<table border='0' cellspacing='1'> --}}
+
+
     {{Form::close()}}
 
  </tr>

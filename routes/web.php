@@ -21,7 +21,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 Auth::routes();
 
-Route::resource('post','PostController');
+//Route::resource('post','PostController');
 
 Route::get('/', function () {
     return view('c3data.index');
@@ -38,7 +38,11 @@ Route::get('/temp', function() {
     return view('c3forms.c3formtemp');
 });
 
+Route::get('test', function() {
+    return view('c3data.homepage');
+});
+
 Route::get('/export', [PostController::class, 'export']);
 Route::get('/wkhtmltopdf', [PostController::class, 'print_form'])->name('print_data');
-Route::get('exporter', 'PostController@export');
-Route::get('excel', 'PostController@excel');
+//Route::get('exporter', 'PostController@export');
+//Route::get('excel', 'PostController@excel');
