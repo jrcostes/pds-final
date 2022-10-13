@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Sheet;
 
 use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 use Illuminate\Support\Facades\App;
@@ -11,7 +12,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use App\Exports\SheetExport;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Sheet;
+
 use Maatwebsite\Excel\Concerns\FromView;
 
 
@@ -19,8 +20,9 @@ class PostController extends Controller
 {
     public function index()
     {
-        $sheets = Sheet::latest()->paginate(5);
-        return view('c3data.homepage', compact('sheets'));
+        $products = Sheet::all();
+
+        return view('c3data.homepage', compact('products'));
     }
 
     /*public function export()
@@ -43,7 +45,7 @@ class PostController extends Controller
         $sheets = Sheet::find($id);
         $datacompact = $sheets;
         $pdf = App::make('snappy.pdf.wrapper');
-            $pdf = PDF::loadView('print_forms.c3forms', $datacompact)->setOption('page-width', '215.9')->setOption('page-height','355.6');
+            $pdf = PDF::loadView('c3forms.c3form', $datacompact)->setOption('page-width', '215.9')->setOption('page-height','355.6');
 
             return $pdf->download('c3form.pdf');
     }

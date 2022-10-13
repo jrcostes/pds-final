@@ -217,8 +217,7 @@
     </div>
     <div class="buttons">
         <div class="center">
-            <a href="/temp" class="btn btn-primary">View in PDF</a>
-            <a href="/test" class="btn btn-primary">test</a>
+            <a href="/temp" class="btn btn-primary">Lists</a>
         </div>
     </div>
 </html>

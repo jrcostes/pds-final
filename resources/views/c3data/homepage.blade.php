@@ -1,31 +1,24 @@
 @extends('welcome')
 
-@section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-            </div>
-            <div class="pull-right">
-            </div>
+@section('idk')
+    <table class="table">
+        <div>
+            <thead>
+                <tr>
+                    <th scope="col">User No.</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach ($products as $sheet)
+                <tr>
+                    <td>{{ $sheet->id }}</td>
+                    <td>
+                        <a href="/sheet/{{ $sheet->id }}">PDF</a>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
         </div>
-    </div>
-
-    <table class="table table-bordered">
-        <tr>
-            <th>No</th>
-            <th width="280px">Action</th>
-        </tr>
-        @foreach ($sheets as $sheet)
-        <tr>
-            <td>{{ $sheet->id }}</td>
-            <td>
-                <a href="/sheet/{{$sheet->id}}">PDF</a>
-                {{-- <a href="/excel/{{$sheet->id}}">EXCEL</a> --}}
-            </td>
-        </tr>
-        @endforeach
     </table>
 
-    {!! $sheets->links() !!}
 
-@endsection

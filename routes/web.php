@@ -34,13 +34,10 @@ Route::get('/', function () {
     return $pdf->download('c3data.index.pdf');
 });*/
 
-Route::get('/temp', function() {
-    return view('c3forms.c3formtemp');
-});
+Route::get('/temp', 'PostController@index');
+Route::resource('sheet', 'PostController');
 
-Route::get('test', function() {
-    return view('c3data.homepage');
-});
+
 
 Route::get('/export', [PostController::class, 'export']);
 Route::get('/wkhtmltopdf', [PostController::class, 'print_form'])->name('print_data');

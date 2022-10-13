@@ -26,7 +26,7 @@ activeSheetIndex = iSh;
 <div id='table_0' sheetName='C3'>
 <body link='blue' vlink='purple' class='x22'>
 
-    <form action="/sender">
+
 
 <table border='0' cellpadding='0' cellspacing='0' width='995' style='border-collapse:
  collapse;table-layout:fixed;width:746pt'>
@@ -488,7 +488,7 @@ activeSheetIndex = iSh;
 <table border='0' cellspacing='1'> --}}
 
 
-    {{Form::close()}}
+
 
  </tr>
 </table>
