@@ -13,7 +13,7 @@
                 <tr>
                     <td>{{ $sheet->id }}</td>
                     <td>
-                        <a href="/sheet/{{ $sheet->id }}">PDF</a>
+                        <a href="/sheet/{{ $sheet->id }}">Download PDF of User {{ $sheet->id }}</a>
                     </td>
                 </tr>
             @endforeach
@@ -21,4 +21,9 @@
         </div>
     </table>
 
+    <style>
+     .homepage{
+       text-align: justify;
+    }
+    </style>
 
