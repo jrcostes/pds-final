@@ -23,7 +23,7 @@ Auth::routes();
 
 //Route::resource('post','PostController');
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('c3data.index');
 });
 
@@ -43,3 +43,11 @@ Route::get('/export', [PostController::class, 'export']);
 Route::get('/wkhtmltopdf', [PostController::class, 'print_form'])->name('print_data');
 //Route::get('exporter', 'PostController@export');
 //Route::get('excel', 'PostController@excel');
+
+Auth::routes();
+
+Route::get('/home', 'postController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'PostController@index')->name('home');
