@@ -23,7 +23,7 @@ Auth::routes();
 
 //Route::resource('post','PostController');
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('c3data.index');
 });
 
