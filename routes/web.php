@@ -13,6 +13,7 @@
 use Knp\Snappy\Pdf;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PdfController;
 use App\Exports\UsersExport;
@@ -46,8 +47,10 @@ Route::get('/wkhtmltopdf', [PostController::class, 'print_form'])->name('print_d
 
 Auth::routes();
 
-Route::get('/home', 'postController@index')->name('home');
+Route::get('/home', 'PostController@index')->name('home');
+Route::get('/excelprint', [ExcelController::class, 'excel_form'])->name('print_data');
 
 Auth::routes();
+
 
 Route::get('/home', 'PostController@index')->name('home');

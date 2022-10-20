@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 use App\Exports\SheetExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-use Maatwebsite\Excel\Concerns\FromView;
+
 
 
 class PostController extends Controller
@@ -49,6 +49,8 @@ class PostController extends Controller
 
             return $pdf->download('c3form.pdf');
     }
+
+
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
@@ -197,20 +199,6 @@ class PostController extends Controller
             return $pdf->download('c3form.pdf');
         }
 
-        elseif($form_radio == 'exportform'){
-
-            Excel::load('C:\xampp\htdocs\personaldatasheet2\resources\views\exportform\c3file.xlsx', function($excel){
-                $excel->sheet('C3', function($sheet) {
-
-                    $sheet->cell('A6', function($cell) {
-                        $cell->setValue($_GET['orgnameAddress1']);
-                    });
-
-
-
-                });
-            })->download('xlsx');
-        }
 
         else{
             Sheet::create($datacompact);
@@ -231,7 +219,18 @@ class PostController extends Controller
 
     }
 
+    public function excel_form() {
 
+        Excel::load(env('EXCEL_PATH'), function($excel){
+            $excel->sheet('C3', function($sheet) {
+
+                $sheet->cell('A6', function($cell) {
+                    $cell->setValue($_GET['orgnameAddress1']);
+                });
+
+            });
+        })->download('xlsx');
+    }
 
 }
 
