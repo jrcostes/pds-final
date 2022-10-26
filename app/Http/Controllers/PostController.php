@@ -219,18 +219,18 @@ class PostController extends Controller
 
     }
 
-    public function excel_form() {
+    //public function excel_form() {
 
-        Excel::load(env('EXCEL_PATH'), function($excel){
-            $excel->sheet('C3', function($sheet) {
+    //    Excel::load(env('EXCEL_PATH'), function($excel){
+    //        $excel->sheet('C3', function($sheet) {
 
-                $sheet->cell('A6', function($cell) {
-                    $cell->setValue($_GET['orgnameAddress1']);
-                });
+    //            $sheet->cell('A6', function($cell) {
+    //                $cell->setValue($_GET['orgnameAddress1']);
+    //            });
 
-            });
-        })->download('xlsx');
-    }
+    //        });
+     //   })->download('xlsx');
+   // }
 
 }
 

@@ -40,12 +40,12 @@ Route::resource('sheet', 'PostController');
 
 
 
-Route::get('/export', [PostController::class, 'export']);
+//Route::get('/export', [PostController::class, 'export']);
 Route::get('/wkhtmltopdf', [PostController::class, 'print_form'])->name('print_data');
 //Route::get('exporter', 'PostController@export');
 //Route::get('excel', 'PostController@excel');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'PostController@index')->name('home');
 Route::get('/excelprint', [ExcelController::class, 'excel_form'])->name('print_data');
