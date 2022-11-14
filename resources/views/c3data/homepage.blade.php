@@ -1,8 +1,8 @@
-@extends('welcome')
+ {{-- @extends('welcome') --}}
 
 @section('idk')
     <table class="table">
-        <div>
+        <div class="navigation">
             <thead>
                 <tr>
                     <th scope="col">User No.</th>
