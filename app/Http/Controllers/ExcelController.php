@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 use App\Exports\SheetExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-use Maatwebsite\Excel\Concerns\FromView;
 
 
 class ExcelController extends Controller
