@@ -76,8 +76,9 @@
             }
             h1 {
                 text-align: justify;
-                padding-left: 10px;
+                padding: 0px 10px 0px 10px;
                 font-weight: bold;
+                font-size: 30px;
             }
             .table {
                 width: 100%;
@@ -85,25 +86,36 @@
             input {
                 width: 100%;
                 border: none;
+                font-size: 13px;
             }
             #row1, #row3 {
-                padding: 50px 10px 10px 10px;
+                padding: 35px 10px 10px 10px;
                 text-align: center;
-                font-size: 23px;
+                font-size: 15px;
+            }
+
+            #row3-1{
+                padding: 37px 10px 10px 10px;
+                text-align: center;
+                font-size: 15px;
+            }
+            #row-dates{
+                padding: 10px 10px 10px 10px;
+                text-align: center;
             }
             #rowid{
                 padding: 20px 10px 10px 10px;
                 text-align: center;
-                font-size: 23px;
+                font-size: 15px;
             }
             #row2, #row4 {
-                padding: 15px 10px 10px 10px;
+                padding: 10px 10px 10px 10px;
                 text-align: center;
             }
             #row5 {
                 padding: 20px 10px 10px 10px;
                 text-align: center;
-                font-size: 23px;
+                font-size: 15px;
             }
 
             tr, th{
@@ -130,9 +142,6 @@
                 font-size: 30px;
             } */
 
-            .table table-bordered-ii {
-
-            }
         </style>
     </head>
 

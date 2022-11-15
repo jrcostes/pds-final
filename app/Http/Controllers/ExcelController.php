@@ -19,7 +19,7 @@ class ExcelController extends Controller
 {
     public function excel_form() {
 
-        Excel::load('C:\xampp\htdocs\personaldatasheet2\resources\views\exportform\c3form.xlsx', function($excel){
+        Excel::load('C:\xampp\htdocs\personaldatasheet2\resources\views\exportform\c3form-excel.xlsx', function($excel){
             $excel->sheet('C3', function($sheet) {
 
                 //VI. Voluntary Work or Involvement Section
