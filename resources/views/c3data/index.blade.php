@@ -12,19 +12,16 @@
 
 
 <html>
-    <div class="formbody">
+    <div class="container">
         <form method="get" action="/wkhtmltopdf" autocomplete="off" class="form-horizontal">
            {{--  <form method="post" action="{{ route('post.store') }}" autocomplete="off" class="form-horizontal"> --}}
             @csrf
-            <div class ="VI">
                 <h1>VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC/NON-GOVERNMENT/PEOPLE/VOLUNTARY ORGANIZATION</h1><br>
-
-
-                    <table class ="table table-bordered">
+                    <table class="table table-bordered">
 
                             <tr>
                                 <th id="row1", rowspan='2'><b>{{Form::label('form1', 'NAME & ADDRESS OF ORGANIZATION')}}</b></th>
-                                <th id="row1", colspan='2'><b>{{Form::label('form2', 'INCLUSIVE DATES')}}</b></th>
+                                <th id="row-dates", colspan='2'><b>{{Form:: label('form2', 'INCLUSIVE DATES')}}</b></th>
                                 <th id="row1", rowspan='2'><b>{{Form::label('form3', 'NUMBER OF HOURS')}}</b></th>
                                 <th id="row1", rowspan='2'><b>{{Form::label('form2','POSITION / NATURE OF WORK')}}</b></th>
                             </tr>
@@ -82,13 +79,13 @@
                             <th>{{Form::text('orgPosition7')}}</th>
                         </tr>
                     </table>
-            </div>
+
                 <h1>VII. LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS ATTENDED</h1>
                     <h3 style="font-style: italic;">(Start from the most recent L&D/training program and include only the relevant L&D/training taken for the last five (5) years for Division Chief/Executive/Managerial positions)</h3><br>
-                    <table class="table table-bordered-ii">
+                    <table class="table table-bordered">
                         <tr>
-                            <th id="row3", rowspan='2'><b>{{Form::label('form1', 'TITLE OF LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS')}}</b></th>
-                            <th id="row3", colspan='2'><b>{{Form::label('form2', 'INCLUSIVE DATES OF ATTENDANCE')}}</b></th>
+                            <th id="row3-1", rowspan='2'><b>{{Form::label('form1', 'TITLE OF LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS')}}</b></th>
+                            <th id="row-dates", colspan='2'><b>{{Form::label('form2', 'INCLUSIVE DATES OF ATTENDANCE')}}</b></th>
                             <th id="row3", rowspan='2'><b>{{Form::label('form3', 'NUMBER OF HOURS')}}</b></th>
                             <th id="row3", rowspan='2'><b>{{Form::label('form3', 'Type of LD')}}</b></th>
                             <th id="row3", rowspan='2'><b>{{Form::label('form2','CONDUCTED/SPONSORED BY')}}</b></th>
@@ -155,77 +152,76 @@
                         </tr>
                     </table>
                 <h1>VIII. OTHER INFORMATION</h1>
-                <table class="table table-bordered">
-                    <tr>
-                        <th id="row5"><b>{{Form::label('form1', 'SPECIAL SKILLS and HOBBIES')}}</b></th>
-                        <th id="row5"><b>{{Form::label('form2', 'NON-ACADEMIC DISTINCTIONS/RECOGNITION')}}</b></th>
-                        <th id="row5"><b>{{Form::label('form3', 'MEMBERSHIP IN ASSOCIATION/ORGANIZATION')}}</b></th>
-                    </tr>
-                    <tr>
-                        <th>{{Form::text('orgnameSkill1')}}</th>
-                        <th>{{Form::text('orgnameDistinct1')}}</th>
-                        <th>{{Form::text('orgnameMembership1')}}</th>
-                    </tr>
-                    <tr>
-                        <th>{{Form::text('orgnameSkill2')}}</th>
-                        <th>{{Form::text('orgnameDistinct2')}}</th>
-                        <th>{{Form::text('orgnameMembership2')}}</th>
-                    </tr>
-                    <tr>
-                        <th>{{Form::text('orgnameSkill3')}}</th>
-                        <th>{{Form::text('orgnameDistinct3')}}</th>
-                        <th>{{Form::text('orgnameMembership3')}}</th>
-                    </tr>
-                    <tr>
-                        <th>{{Form::text('orgnameSkill4')}}</th>
-                        <th>{{Form::text('orgnameDistinct4')}}</th>
-                        <th>{{Form::text('orgnameMembership4')}}</th>
-                    </tr>
-                    <tr>
-                        <th>{{Form::text('orgnameSkill5')}}</th>
-                        <th>{{Form::text('orgnameDistinct5')}}</th>
-                        <th>{{Form::text('orgnameMembership5')}}</th>
-                    </tr>
-                    <tr>
-                        <th>{{Form::text('orgnameSkill6')}}</th>
-                        <th>{{Form::text('orgnameDistinct6')}}</th>
-                        <th>{{Form::text('orgnameMembership6')}}</th>
-                    </tr>
-                </table>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th id="row5"><b>{{Form::label('form1', 'SPECIAL SKILLS and HOBBIES')}}</b></th>
+                            <th id="row5"><b>{{Form::label('form2', 'NON-ACADEMIC DISTINCTIONS/RECOGNITION')}}</b></th>
+                            <th id="row5"><b>{{Form::label('form3', 'MEMBERSHIP IN ASSOCIATION/ORGANIZATION')}}</b></th>
+                        </tr>
+                        <tr>
+                            <th>{{Form::text('orgnameSkill1')}}</th>
+                            <th>{{Form::text('orgnameDistinct1')}}</th>
+                            <th>{{Form::text('orgnameMembership1')}}</th>
+                        </tr>
+                        <tr>
+                            <th>{{Form::text('orgnameSkill2')}}</th>
+                            <th>{{Form::text('orgnameDistinct2')}}</th>
+                            <th>{{Form::text('orgnameMembership2')}}</th>
+                        </tr>
+                        <tr>
+                            <th>{{Form::text('orgnameSkill3')}}</th>
+                            <th>{{Form::text('orgnameDistinct3')}}</th>
+                            <th>{{Form::text('orgnameMembership3')}}</th>
+                        </tr>
+                        <tr>
+                            <th>{{Form::text('orgnameSkill4')}}</th>
+                            <th>{{Form::text('orgnameDistinct4')}}</th>
+                            <th>{{Form::text('orgnameMembership4')}}</th>
+                        </tr>
+                        <tr>
+                            <th>{{Form::text('orgnameSkill5')}}</th>
+                            <th>{{Form::text('orgnameDistinct5')}}</th>
+                            <th>{{Form::text('orgnameMembership5')}}</th>
+                        </tr>
+                        <tr>
+                            <th>{{Form::text('orgnameSkill6')}}</th>
+                            <th>{{Form::text('orgnameDistinct6')}}</th>
+                            <th>{{Form::text('orgnameMembership6')}}</th>
+                        </tr>
+                    </table>
 
-            </div>
-            <div class="row">
-                <div class="col text-center">
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="c3form"
-                            name="form_radio" class="custom-control-input" value="c3form">
-                        <label class="custom-control-label"
-                            for="PDF Print">PDF</label>
+
+                <div class="container, text-center">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="pdfbutton"
+                            name="form_radio"  value="c3form">
+                        <label class="custom-control-label" for="PDF-Print">PDF</label>
                     </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="c3form"
-                            name="form_radio" class="custom-control-input" value="Sheet">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="dbbutton"
+                            name="form_radio" value="Sheet">
                         <label class="custom-control-label"
-                            for="Save to Database">Save</label>
+                            for="save-to-database">Save</label>
                     </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="c3form"
-                            name="form_radio" class="custom-control-input" value="excelform">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="excelbutton"
+                            name="form_radio" value="excel_form">
                         <label class="custom-control-label"
-                            for="Excel">Export as Excel File</label>
+                            for="excel">Export as Excel File</label>
                     </div>
-                    <button type="submit" class="btn btn-dark ">Submit</button>
+                    <button type="submit"  class="btn btn-dark ">Submit</button>
                     {{-- <a href="exporter" class="btn btn-primary">Export</a> --}}
                 </div>
-            </div>
 
             {{Form::close()}}
 
+            <div class="buttons">
+                <div class="center">
+                    <a href="/temp" class="btn btn-primary">Saved Data</a>
+                </div>
+            </div>
+
     </div>
-    <div class="buttons">
-        <div class="center">
-            <a href="/temp" class="btn btn-primary">Lists</a>
-        </div>
-    </div>
+
 </html>
 
