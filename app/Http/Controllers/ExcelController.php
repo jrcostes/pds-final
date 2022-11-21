@@ -187,7 +187,7 @@ class ExcelController extends Controller
                     $cell->setValue($_GET['orgType10']);
                 });
                 $sheet->cell('I21', function($cell) {
-                    $cell->setValue($_GET['orgnameSponsor11']);
+                    $cell->setValue($_GET['orgnameSponsor10']);
                 });
 
                 $sheet->cell('A22', function($cell) {
@@ -326,6 +326,8 @@ class ExcelController extends Controller
                 $sheet->cell('I48', function($cell) {
                     $cell->setValue($_GET['orgnameMembership6']);
                 });
+
+
             });
         })->download('xlsx');
     }
