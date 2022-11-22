@@ -21,7 +21,7 @@ class PostController extends Controller
     public function index()
     {
         // $products = Sheet::latest()->paginate(5);
-        $products = Sheet::all();
+        $products = Sheet::latest()->paginate(5);
         return view('c3data.homepage', compact('products'));
     }
 

@@ -157,6 +157,7 @@
                 width: 100%;
                 border: none;
                 font-size: 13px;
+                color: #636b6f;
             }
             #row1, #row3 {
                 padding: 35px 10px 10px 10px;

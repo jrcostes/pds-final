@@ -1671,7 +1671,7 @@ td
 .x79
  {
  mso-number-format:"\@";
- text-align:center;
+ text-align:left;
  vertical-align:middle;
  white-space:normal;word-wrap:break-word;
  background:auto;
@@ -1711,7 +1711,7 @@ td
 .x81
  {
  mso-number-format:"\@";
- text-align:center;
+ text-align:left;
  vertical-align:middle;
  white-space:normal;word-wrap:break-word;
  background:auto;
@@ -1771,7 +1771,7 @@ td
 .x84
  {
  mso-number-format:"\@";
- text-align:center;
+ text-align:left;
  vertical-align:middle;
  white-space:normal;word-wrap:break-word;
  background:auto;
@@ -2111,7 +2111,7 @@ td
 .x101
  {
  mso-number-format:General;
- text-align:center;
+ text-align:left;
  vertical-align:middle;
  white-space:normal;word-wrap:break-word;
  background:auto;
@@ -2131,7 +2131,7 @@ td
 .x102
  {
  mso-number-format:General;
- text-align:center;
+ text-align:left;
  vertical-align:middle;
  white-space:normal;word-wrap:break-word;
  background:auto;
