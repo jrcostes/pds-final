@@ -20,9 +20,6 @@ use App\Exports\UsersExport;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
-// Auth::routes();
-
-// //Route::resource('post','PostController');
 
 Route::get('/', function () {
     return view('auth.login');
