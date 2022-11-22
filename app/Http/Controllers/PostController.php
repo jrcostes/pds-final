@@ -20,6 +20,7 @@ class PostController extends Controller
 {
     public function index()
     {
+        // $products = Sheet::latest()->paginate(5);
         $products = Sheet::all();
         return view('c3data.homepage', compact('products'));
     }
@@ -35,7 +36,7 @@ class PostController extends Controller
 
         Sheet::create($request->all());
 
-        return redirect('/')
+        return redirect('/home')
             ->with('success','Entry Saved');
     }
 
@@ -202,7 +203,7 @@ class PostController extends Controller
         else{
             Sheet::create($datacompact);
 
-            return view('c3data.index')
+            return view('index')
             ->with('success', 'Entry Saved');
         }
 

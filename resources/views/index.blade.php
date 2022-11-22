@@ -1,4 +1,4 @@
-@extends('welcome');
+@extends('layouts.app');
 
 
  <head>
@@ -191,23 +191,16 @@
                     </table>
 
 
-                <div class="container, text-center">
+                <div class="container, center">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="pdfbutton"
+                        <input class="form-check-input, text-center" type="radio" id="pdfbutton"
                             name="form_radio"  value="c3form">
-                        <label class="custom-control-label" for="PDF-Print">PDF</label>
+                        <label>PDF</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="dbbutton"
+                        <input class="form-check-input, text-center" type="radio" id="dbbutton"
                             name="form_radio" value="Sheet">
-                        <label class="custom-control-label"
-                            for="save-to-database">Save</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="excelbutton"
-                            name="form_radio" value="excel_form">
-                        <label class="custom-control-label"
-                            for="excel">Export as Excel File</label>
+                        <label>Save</label>
                     </div>
                     <button type="submit"  class="btn btn-dark ">Submit</button>
                     {{-- <a href="exporter" class="btn btn-primary">Export</a> --}}

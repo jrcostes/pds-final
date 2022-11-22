@@ -20,12 +20,12 @@ use App\Exports\UsersExport;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
-Auth::routes();
+// Auth::routes();
 
-//Route::resource('post','PostController');
+// //Route::resource('post','PostController');
 
 Route::get('/', function () {
-    return view('c3data.index');
+    return view('auth.login');
 });
 
 /*Route::get('/sender', function() {
@@ -47,14 +47,10 @@ Route::get('/wkhtmltopdf', [PostController::class, 'print_form'])->name('print_d
 
 //Auth::routes();
 
-Route::get('/home', 'PostController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 Route::get('/excelprint', [ExcelController::class, 'excel_form'])->name('print_data');
 
-Auth::routes();
-
-
-Route::get('/home', 'PostController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
