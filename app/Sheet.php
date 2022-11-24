@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Sheet extends Model
 {
+    use LogsActivity;
     protected $fillable = [
         'id', 'orgnameAddress1', 'orgdateFrom1', 'orgdateTo1','orgnumHours1','orgPosition1',
         'orgnameAddress2', 'orgdateFrom2', 'orgdateTo2','orgnumHours2','orgPosition2',
@@ -28,4 +30,10 @@ class Sheet extends Model
         'orgnameSkill5', 'orgnameDistinct5', 'orgnameMembership5',
         'orgnameSkill6', 'orgnameDistinct6', 'orgnameMembership6'
     ];
+
+    protected static $logName = 'system';
+    public function getDescriptionForEvent(string $eventName): string{
+        return "A user has {$eventName} a form";
+    }
+
 }
