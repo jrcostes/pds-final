@@ -10,6 +10,8 @@ use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
+
+
 use App\Exports\SheetExport;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -36,8 +38,8 @@ class PostController extends Controller
 
         Sheet::create($request->all());
 
-        return redirect('/home')
-            ->with('success','Entry Saved');
+        return redirect()->back()->with('message', 'Submitted!');
+            // ->with('success','Entry Saved');
     }
 
 
@@ -203,8 +205,7 @@ class PostController extends Controller
         else{
             Sheet::create($datacompact);
 
-            return view('index')
-            ->with('success', 'Entry Saved');
+            return redirect()->back()->with('message', 'Submitted!!');
         }
 
 

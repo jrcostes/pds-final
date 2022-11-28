@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('sweetalert::alert')
 
 
  <head>
@@ -10,10 +11,24 @@
     </style>
  </head>
 
+        @if(session()->has('message'))
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js%22%3E"></script>
+            <script src="sweetalert/sweetalert.all.js"></script>
+
+            <script>
+                swal({
+                    title: "Good job!",
+                    text: "Successfully Submitted",
+                    icon: "success",
+                    button: "Proceed",
+                });
+            </script>
+        @endif
 
 <html>
     <div class="container">
         <form method="get" action="/wkhtmltopdf" autocomplete="off" class="form-horizontal">
+
            {{--  <form method="post" action="{{ route('post.store') }}" autocomplete="off" class="form-horizontal"> --}}
             @csrf
                 <h1>VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC/NON-GOVERNMENT/PEOPLE/VOLUNTARY ORGANIZATION</h1><br>
@@ -189,6 +204,8 @@
                             <th>{{Form::text('orgnameMembership6')}}</th>
                         </tr>
                     </table>
+
+
 
 
                 <div class="container, center">

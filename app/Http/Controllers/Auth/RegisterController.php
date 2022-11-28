@@ -7,9 +7,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterController extends Controller
 {
+    use Alert;
+
+
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
