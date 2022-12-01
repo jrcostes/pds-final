@@ -21,9 +21,7 @@ use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', 'HomeController@index');
 
 /*Route::get('/sender', function() {
     $pdf = App::make('snappy.pdf.wrapper');
@@ -38,7 +36,7 @@ Route::resource('sheet', 'PostController');
 
 
 //Route::get('/export', [PostController::class, 'export']);
-Route::get('/wkhtmltopdf', [PostController::class, 'print_form'])->name('print_data');
+Route::get('/wkhtmltopdf', [PostController::class, 'form_submit'])->name('print_data');
 //Route::get('exporter', 'PostController@export');
 //Route::get('excel', 'PostController@excel');
 
@@ -46,6 +44,7 @@ Route::get('/wkhtmltopdf', [PostController::class, 'print_form'])->name('print_d
 
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('/excelprint', [ExcelController::class, 'excel_form'])->name('print_data');
+Route::get('/pdfprint', [PostController::class, 'print_form'])->name('print_data');
 
 
 Auth::routes();

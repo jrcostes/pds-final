@@ -26,8 +26,9 @@
         @endif
 
 <html>
+
     <div class="container">
-        <form method="get" action="/wkhtmltopdf" autocomplete="off" class="form-horizontal">
+        <form method="get" action="/wkhtmltopdf" autocomplete="off" class="form-horizontal" onsubmit="return submitForm(this);">
 
            {{--  <form method="post" action="{{ route('post.store') }}" autocomplete="off" class="form-horizontal"> --}}
             @csrf
@@ -209,24 +210,8 @@
 
 
                 <div class="container, center">
-                    <div class="form-check">
-                        <input class="form-check-input, text-center" type="radio" id="pdfbutton"
-                            name="form_radio"  value="c3form">
-                        <label>PDF</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input, text-center" type="radio" id="dbbutton"
-                            name="form_radio" value="Sheet">
-                        <label>Save</label>
-                    </div>
-            {{-- For Temporary-PDF Button --
-                     <div class="form-check">
-                        <input class="form-check-input, text-center" type="radio" id="temp-pdf"
-                            name="form_radio" value="temp-pdf">
-                        <label>temp-pdf</label>
-                    </div> --}}
 
-                    <button type="submit"  class="btn btn-dark ">Submit</button>
+                   <button type="submit"  class="btn btn-dark ">Submit</button>
                     {{-- <a href="exporter" class="btn btn-primary">Export</a> --}}
                 </div>
 
@@ -241,4 +226,28 @@
     </div>
 
 </html>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="sweetalert/sweetalert.all.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
+        <script>
+            function submitForm(form) {
+                swal({
+                    title: "Are you sure?",
+                    text: "Do you want to submit?",
+                    icon: "info",
+                    buttons: true,
+                    dangerMode: false
+                })
+                .then(function (isOkay) {
+                    if (isOkay) {
+                        swal({
+                             icon: "success",
+                             text: "Your form has been submitted!",
+                             buttons: false
+                        });
+                        form.submit();
+                    }
+                });
+                return false;
+            }
+        </script>

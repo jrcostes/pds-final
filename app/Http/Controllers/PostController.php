@@ -32,7 +32,7 @@ class PostController extends Controller
         return Excel::download(new SheetExport, 'users.xlsx');
     }*/
 
-    public function store(Request $request)
+    public function form_submit(Request $request)
     {
         $request->all();
 
@@ -47,7 +47,7 @@ class PostController extends Controller
         $sheets = Sheet::find($id);
         $datacompact = $sheets;
         $pdf = App::make('snappy.pdf.wrapper');
-            $pdf = PDF::loadView('c3forms.c3form', $datacompact)->setOption('page-width', '215.9')->setOption('page-height','355.6');
+        $pdf = PDF::loadView('c3forms.c3form', $datacompact)->setOption('page-width', '215.9')->setOption('page-height','355.6');
 
             return $pdf->download('c3form.pdf');
     }
@@ -56,184 +56,159 @@ class PostController extends Controller
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function print_form(Request $request){
+        public function print_form(Request $request){
 
-        $orgnameAddress1 = $request->input('orgnameAddress1');
-        $orgdateFrom1 = $request->input('orgdateFrom1');
-        $orgdateTo1 = $request->input('orgdateTo1');
-        $orgnumHours1 = $request->input('orgnumHours1');
-        $orgPosition1 = $request->input('orgPosition1');
+            $orgnameAddress1 = $_GET['orgnameAddress1'];
+            $orgdateFrom1 = $_GET['orgdateFrom1'];
+            $orgdateTo1 = $_GET['orgdateTo1'];
+            $orgnumHours1 = $_GET['orgnumHours1'];
+            $orgPosition1 = $_GET['orgPosition1'];
 
-        $orgnameAddress2 = $request->input('orgnameAddress2');
-        $orgdateFrom2 = $request->input('orgdateFrom2');
-        $orgdateTo2 = $request->input('orgdateTo2');
-        $orgnumHours2 = $request->input('orgnumHours2');
-        $orgPosition2 = $request->input('orgPosition2');
+            $orgnameAddress2 = $_GET['orgnameAddress2'];
+            $orgdateFrom2 = $_GET['orgdateFrom2'];
+            $orgdateTo2 = $_GET['orgdateTo2'];
+            $orgnumHours2 = $_GET['orgnumHours2'];
+            $orgPosition2 = $_GET['orgPosition2'];
 
-        $orgnameAddress3 = $request->input('orgnameAddress3');
-        $orgdateFrom3 = $request->input('orgdateFrom3');
-        $orgdateTo3 = $request->input('orgdateTo3');
-        $orgnumHours3 = $request->input('orgnumHours3');
-        $orgPosition3 = $request->input('orgPosition3');
+            $orgnameAddress3 = $_GET['orgnameAddress3'];
+            $orgdateFrom3 = $_GET['orgdateFrom3'];
+            $orgdateTo3 = $_GET['orgdateTo3'];
+            $orgnumHours3 = $_GET['orgnumHours3'];
+            $orgPosition3 = $_GET['orgPosition3'];
 
-        $orgnameAddress4 = $request->input('orgnameAddress4');
-        $orgdateFrom4 = $request->input('orgdateFrom4');
-        $orgdateTo4 = $request->input('orgdateTo4');
-        $orgnumHours4 = $request->input('orgnumHours4');
-        $orgPosition4 = $request->input('orgPosition4');
+            $orgnameAddress4 = $_GET['orgnameAddress4'];
+            $orgdateFrom4 = $_GET['orgdateFrom4'];
+            $orgdateTo4 = $_GET['orgdateTo4'];
+            $orgnumHours4 = $_GET['orgnumHours4'];
+            $orgPosition4 = $_GET['orgPosition4'];
 
-        $orgnameAddress5 = $request->input('orgnameAddress5');
-        $orgdateFrom5 = $request->input('orgdateFrom5');
-        $orgdateTo5 = $request->input('orgdateTo5');
-        $orgnumHours5 = $request->input('orgnumHours5');
-        $orgPosition5 = $request->input('orgPosition5');
+            $orgnameAddress5 = $_GET['orgnameAddress5'];
+            $orgdateFrom5 = $_GET['orgdateFrom5'];
+            $orgdateTo5 = $_GET['orgdateTo5'];
+            $orgnumHours5 = $_GET['orgnumHours5'];
+            $orgPosition5 = $_GET['orgPosition5'];
 
-        $orgnameAddress6 = $request->input('orgnameAddress6');
-        $orgdateFrom6 = $request->input('orgdateFrom6');
-        $orgdateTo6 = $request->input('orgdateTo6');
-        $orgnumHours6 = $request->input('orgnumHours6');
-        $orgPosition6 = $request->input('orgPosition6');
+            $orgnameAddress6 = $_GET['orgnameAddress6'];
+            $orgdateFrom6 = $_GET['orgdateFrom6'];
+            $orgdateTo6 = $_GET['orgdateTo6'];
+            $orgnumHours6 = $_GET['orgnumHours6'];
+            $orgPosition6 = $_GET['orgPosition6'];
 
-        $orgnameAddress7 = $request->input('orgnameAddress7');
-        $orgdateFrom7 = $request->input('orgdateFrom7');
-        $orgdateTo7 = $request->input('orgdateTo7');
-        $orgnumHours7 = $request->input('orgnumHours7');
-        $orgPosition7 = $request->input('orgPosition7');
+            $orgnameAddress7 = $_GET['orgnameAddress7'];
+            $orgdateFrom7 = $_GET['orgdateFrom7'];
+            $orgdateTo7 = $_GET['orgdateTo7'];
+            $orgnumHours7 = $_GET['orgnumHours7'];
+            $orgPosition7 = $_GET['orgPosition7'];
 
-        $orgnameAddress8 = $request->input('orgnameAddress8');
-        $orgdateFrom8 = $request->input('orgdateFrom8');
-        $orgdateTo8 = $request->input('orgdateTo8');
-        $orgnumHours8 = $request->input('orgnumHours8');
-        $orgType8 = $request->input('orgType8');
-        $orgnameSponsor8 = $request->input('orgnameSponsor8');
+            $orgnameAddress8 = $_GET['orgnameAddress8'];
+            $orgdateFrom8 = $_GET['orgdateFrom8'];
+            $orgdateTo8 = $_GET['orgdateTo8'];
+            $orgnumHours8 = $_GET['orgnumHours8'];
+            $orgType8 = $_GET['orgType8'];
+            $orgnameSponsor8 = $_GET['orgnameSponsor8'];
 
-        $orgnameAddress9 = $request->input('orgnameAddress9');
-        $orgdateFrom9 = $request->input('orgdateFrom9');
-        $orgdateTo9 = $request->input('orgdateTo9');
-        $orgnumHours9 = $request->input('orgnumHours9');
-        $orgType9 = $request->input('orgType9');
-        $orgnameSponsor9 = $request->input('orgnameSponsor9');
+            $orgnameAddress9 = $_GET['orgnameAddress9'];
+            $orgdateFrom9 = $_GET['orgdateFrom9'];
+            $orgdateTo9 = $_GET['orgdateTo9'];
+            $orgnumHours9 = $_GET['orgnumHours9'];
+            $orgType9 = $_GET['orgType9'];
+            $orgnameSponsor9 = $_GET['orgnameSponsor9'];
 
-        $orgnameAddress10 = $request->input('orgnameAddress10');
-        $orgdateFrom10 = $request->input('orgdateFrom10');
-        $orgdateTo10 = $request->input('orgdateTo10');
-        $orgnumHours10 = $request->input('orgnumHours10');
-        $orgType10 = $request->input('orgType10');
-        $orgnameSponsor10 = $request->input('orgnameSponsor10');
+            $orgnameAddress10 = $_GET['orgnameAddress10'];
+            $orgdateFrom10 = $_GET['orgdateFrom10'];
+            $orgdateTo10 = $_GET['orgdateTo10'];
+            $orgnumHours10 = $_GET['orgnumHours10'];
+            $orgType10 = $_GET['orgType10'];
+            $orgnameSponsor10 = $_GET['orgnameSponsor10'];
 
-        $orgnameAddress11 = $request->input('orgnameAddress11');
-        $orgdateFrom11 = $request->input('orgdateFrom11');
-        $orgdateTo11 = $request->input('orgdateTo11');
-        $orgnumHours11 = $request->input('orgnumHours11');
-        $orgType11 = $request->input('orgType11');
-        $orgnameSponsor11 = $request->input('orgnameSponsor11');
+            $orgnameAddress11 = $_GET['orgnameAddress11'];
+            $orgdateFrom11 = $_GET['orgdateFrom11'];
+            $orgdateTo11 = $_GET['orgdateTo11'];
+            $orgnumHours11 = $_GET['orgnumHours11'];
+            $orgType11 = $_GET['orgType11'];
+            $orgnameSponsor11 = $_GET['orgnameSponsor11'];
 
-        $orgnameAddress12 = $request->input('orgnameAddress12');
-        $orgdateFrom12 = $request->input('orgdateFrom12');
-        $orgdateTo12 = $request->input('orgdateTo12');
-        $orgnumHours12 = $request->input('orgnumHours12');
-        $orgType12 = $request->input('orgType12');
-        $orgnameSponsor12 = $request->input('orgnameSponsor12');
+            $orgnameAddress12 = $_GET['orgnameAddress12'];
+            $orgdateFrom12 = $_GET['orgdateFrom12'];
+            $orgdateTo12 = $_GET['orgdateTo12'];
+            $orgnumHours12 = $_GET['orgnumHours12'];
+            $orgType12 = $_GET['orgType12'];
+            $orgnameSponsor12 = $_GET['orgnameSponsor12'];
 
-        $orgnameAddress13 = $request->input('orgnameAddress13');
-        $orgdateFrom13 = $request->input('orgdateFrom13');
-        $orgdateTo13 = $request->input('orgdateTo13');
-        $orgnumHours13 = $request->input('orgnumHours13');
-        $orgType13 = $request->input('orgType13');
-        $orgnameSponsor13 = $request->input('orgnameSponsor13');
+            $orgnameAddress13 = $_GET['orgnameAddress13'];
+            $orgdateFrom13 = $_GET['orgdateFrom13'];
+            $orgdateTo13 = $_GET['orgdateTo13'];
+            $orgnumHours13 = $_GET['orgnumHours13'];
+            $orgType13 = $_GET['orgType13'];
+            $orgnameSponsor13 = $_GET['orgnameSponsor13'];
 
-        $orgnameAddress14 = $request->input('orgnameAddress14');
-        $orgdateFrom14 = $request->input('orgdateFrom14');
-        $orgdateTo14 = $request->input('orgdateTo14');
-        $orgnumHours14 = $request->input('orgnumHours14');
-        $orgType14 = $request->input('orgType14');
-        $orgnameSponsor14 = $request->input('orgnameSponsor14');
+            $orgnameAddress14 = $_GET['orgnameAddress14'];
+            $orgdateFrom14 = $_GET['orgdateFrom14'];
+            $orgdateTo14 = $_GET['orgdateTo14'];
+            $orgnumHours14 = $_GET['orgnumHours14'];
+            $orgType14 = $_GET['orgType14'];
+            $orgnameSponsor14 = $_GET['orgnameSponsor14'];
 
-        $orgnameSkill1 = $request->input('orgnameSkill1');
-        $orgnameDistinct1 = $request->input('orgnameDistinct1');
-        $orgnameMembership1 = $request->input('orgnameMembership1');
+            $orgnameSkill1 = $_GET['orgnameSkill1'];
+            $orgnameDistinct1 = $_GET['orgnameDistinct1'];
+            $orgnameMembership1 = $_GET['orgnameMembership1'];
 
-        $orgnameSkill2 = $request->input('orgnameSkill2');
-        $orgnameDistinct2 = $request->input('orgnameDistinct2');
-        $orgnameMembership2 = $request->input('orgnameMembership2');
+            $orgnameSkill2 = $_GET['orgnameSkill2'];
+            $orgnameDistinct2 = $_GET['orgnameDistinct2'];
+            $orgnameMembership2 = $_GET['orgnameMembership2'];
 
-        $orgnameSkill3 = $request->input('orgnameSkill3');
-        $orgnameDistinct3 = $request->input('orgnameDistinct3');
-        $orgnameMembership3 = $request->input('orgnameMembership3');
+            $orgnameSkill3 = $_GET['orgnameSkill3'];
+            $orgnameDistinct3 = $_GET['orgnameDistinct3'];
+            $orgnameMembership3 = $_GET['orgnameMembership3'];
 
-        $orgnameSkill4 = $request->input('orgnameSkill4');
-        $orgnameDistinct4 = $request->input('orgnameDistinct4');
-        $orgnameMembership4 = $request->input('orgnameMembership4');
+            $orgnameSkill4 = $_GET['orgnameSkill4'];
+            $orgnameDistinct4 = $_GET['orgnameDistinct4'];
+            $orgnameMembership4 = $_GET['orgnameMembership4'];
 
-        $orgnameSkill5 = $request->input('orgnameSkill5');
-        $orgnameDistinct5 = $request->input('orgnameDistinct5');
-        $orgnameMembership5 = $request->input('orgnameMembership5');
+            $orgnameSkill5 = $_GET['orgnameSkill5'];
+            $orgnameDistinct5 = $_GET['orgnameDistinct5'];
+            $orgnameMembership5 = $_GET['orgnameMembership5'];
 
-        $orgnameSkill6 = $request->input('orgnameSkill6');
-        $orgnameDistinct6 = $request->input('orgnameDistinct6');
-        $orgnameMembership6 = $request->input('orgnameMembership6');
-        $form_radio = $request->input('form_radio');
-        $datacompact = compact('orgnameAddress1', 'orgdateFrom1', 'orgdateTo1','orgnumHours1','orgPosition1',
-                                'orgnameAddress2', 'orgdateFrom2', 'orgdateTo2','orgnumHours2','orgPosition2',
-                                'orgnameAddress3', 'orgdateFrom3', 'orgdateTo3','orgnumHours3','orgPosition3',
-                                'orgnameAddress4', 'orgdateFrom4', 'orgdateTo4','orgnumHours4','orgPosition4',
-                                'orgnameAddress5', 'orgdateFrom5', 'orgdateTo5','orgnumHours5','orgPosition5',
-                                'orgnameAddress6', 'orgdateFrom6', 'orgdateTo6','orgnumHours6','orgPosition6',
-                                'orgnameAddress7', 'orgdateFrom7', 'orgdateTo7','orgnumHours7','orgPosition7',
-                                'orgnameAddress8', 'orgdateFrom8', 'orgdateTo8','orgnumHours8', 'orgType8', 'orgnameSponsor8',
-                                'orgnameAddress9', 'orgdateFrom9', 'orgdateTo9','orgnumHours9', 'orgType9', 'orgnameSponsor9',
-                                'orgnameAddress10', 'orgdateFrom10', 'orgdateTo10','orgnumHours10', 'orgType10', 'orgnameSponsor10',
-                                'orgnameAddress11', 'orgdateFrom11', 'orgdateTo11','orgnumHours11', 'orgType11', 'orgnameSponsor11',
-                                'orgnameAddress12', 'orgdateFrom12', 'orgdateTo12','orgnumHours12', 'orgType12', 'orgnameSponsor12',
-                                'orgnameAddress13', 'orgdateFrom13', 'orgdateTo13','orgnumHours13', 'orgType13', 'orgnameSponsor13',
-                                'orgnameAddress14', 'orgdateFrom14', 'orgdateTo14','orgnumHours14', 'orgType14', 'orgnameSponsor14',
-                                'orgnameSkill1', 'orgnameDistinct1', 'orgnameMembership1',
-                                'orgnameSkill2', 'orgnameDistinct2', 'orgnameMembership2',
-                                'orgnameSkill3', 'orgnameDistinct3', 'orgnameMembership3',
-                                'orgnameSkill4', 'orgnameDistinct4', 'orgnameMembership4',
-                                'orgnameSkill5', 'orgnameDistinct5', 'orgnameMembership5',
-                                'orgnameSkill6', 'orgnameDistinct6', 'orgnameMembership6');
-
-        if($form_radio == 'c3form') {
-            $pdf = App::make('snappy.pdf.wrapper');
-            $pdf = PDF::loadView('c3forms.c3form', $datacompact)->setOption('page-width','215.9')->setOption('page-height','355.6');
-
-            return $pdf->download('c3form.pdf');
-        }
+            $orgnameSkill6 = $_GET['orgnameSkill6'];
+            $orgnameDistinct6 = $_GET['orgnameDistinct6'];
+            $orgnameMembership6 = $_GET['orgnameMembership6'];
+            // $form_radio = $request->input('form_radio');
+            $datacompact = compact('orgnameAddress1', 'orgdateFrom1', 'orgdateTo1','orgnumHours1','orgPosition1',
+                                    'orgnameAddress2', 'orgdateFrom2', 'orgdateTo2','orgnumHours2','orgPosition2',
+                                    'orgnameAddress3', 'orgdateFrom3', 'orgdateTo3','orgnumHours3','orgPosition3',
+                                    'orgnameAddress4', 'orgdateFrom4', 'orgdateTo4','orgnumHours4','orgPosition4',
+                                    'orgnameAddress5', 'orgdateFrom5', 'orgdateTo5','orgnumHours5','orgPosition5',
+                                    'orgnameAddress6', 'orgdateFrom6', 'orgdateTo6','orgnumHours6','orgPosition6',
+                                    'orgnameAddress7', 'orgdateFrom7', 'orgdateTo7','orgnumHours7','orgPosition7',
+                                    'orgnameAddress8', 'orgdateFrom8', 'orgdateTo8','orgnumHours8', 'orgType8', 'orgnameSponsor8',
+                                    'orgnameAddress9', 'orgdateFrom9', 'orgdateTo9','orgnumHours9', 'orgType9', 'orgnameSponsor9',
+                                    'orgnameAddress10', 'orgdateFrom10', 'orgdateTo10','orgnumHours10', 'orgType10', 'orgnameSponsor10',
+                                    'orgnameAddress11', 'orgdateFrom11', 'orgdateTo11','orgnumHours11', 'orgType11', 'orgnameSponsor11',
+                                    'orgnameAddress12', 'orgdateFrom12', 'orgdateTo12','orgnumHours12', 'orgType12', 'orgnameSponsor12',
+                                    'orgnameAddress13', 'orgdateFrom13', 'orgdateTo13','orgnumHours13', 'orgType13', 'orgnameSponsor13',
+                                    'orgnameAddress14', 'orgdateFrom14', 'orgdateTo14','orgnumHours14', 'orgType14', 'orgnameSponsor14',
+                                    'orgnameSkill1', 'orgnameDistinct1', 'orgnameMembership1',
+                                    'orgnameSkill2', 'orgnameDistinct2', 'orgnameMembership2',
+                                    'orgnameSkill3', 'orgnameDistinct3', 'orgnameMembership3',
+                                    'orgnameSkill4', 'orgnameDistinct4', 'orgnameMembership4',
+                                    'orgnameSkill5', 'orgnameDistinct5', 'orgnameMembership5',
+                                    'orgnameSkill6', 'orgnameDistinct6', 'orgnameMembership6');
 
 
-        else{
-            Sheet::create($datacompact);
+                $pdf = App::make('snappy.pdf.wrapper');
+                $pdf = PDF::loadView('c3forms.c3form', $datacompact)->setOption('page-width','215.9')->setOption('page-height','355.6');
 
-            return redirect()->back()->with('message', 'Submitted!!');
-        }
+                return $pdf->download('c3form.pdf');
 
-
-
-
-
-
-        //
-       // $pdf = App::make('snappy.pdf.wrapper');
-       //$pdf = PDF::loadView('c3forms.c3form',
-       // return $pdf->download('c3form.pdf');
+         }
 
     }
 
-    //public function excel_form() {
 
-    //    Excel::load(env('EXCEL_PATH'), function($excel){
-    //        $excel->sheet('C3', function($sheet) {
 
-    //            $sheet->cell('A6', function($cell) {
-    //                $cell->setValue($_GET['orgnameAddress1']);
-    //            });
 
-    //        });
-     //   })->download('xlsx');
-   // }
 
-}
+
 
 
 
