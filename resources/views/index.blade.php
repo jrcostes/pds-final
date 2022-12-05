@@ -33,52 +33,8 @@
            {{--  <form method="post" action="{{ route('post.store') }}" autocomplete="off" class="form-horizontal"> --}}
             @csrf
                 <h1>VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC/NON-GOVERNMENT/PEOPLE/VOLUNTARY ORGANIZATION</h1><br>
-                <span class="border-top"></span>
+                    <table class="table table-bordered">
 
-                <div class="container">
-                    <div class="contents">
-                        <label for="name">Name & Address of Organization</label>
-                        <input name="orgnameAddress1" type="text" class="form-control" placeholder="Type Name & Address of Organization">
-                    </div>
-
-                    <div class="row">
-                            <label for="incl-dates">Inclusive Dates</label><br>
-                            <div class="col-5">
-                                <b for="orgdateFrom1">From: </b>
-                                <input type="date" class="form-control" id="orgdateFrom1">
-                            </div>
-                            <div class="col-5">
-                                <b for="orgdateTo1">To: </b>
-                                <input type="date" class="form-control" id="orgdateTo1">
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="num-hours">Number of Hours: </label><br>
-                                <input type="date" class="form-control" id="orgnumHours1">
-                            </div>
-
-                    </div>
-                </div>
-
-
-
-
-                    {{-- Increment Buttons --}}
-                    <div class="col-1 row px-2">
-                        <div class="col-5 offset-1 px-0">
-                            <button class="btn btn-secondary btn-sm w-100" id="minus-ref" disabled>-</button>
-                        </div>
-                        <div class="col-5 offset-1 px-0">
-                            <button class="btn btn-secondary btn-sm w-100" id="add-ref">+</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-    </div>
                             <tr>
                                 <th id="row1", rowspan='2'><b>{{Form::label('form1', 'NAME & ADDRESS OF ORGANIZATION')}}</b></th>
                                 <th id="row-dates", colspan='2'><b>{{Form:: label('form2', 'INCLUSIVE DATES')}}</b></th>
@@ -138,7 +94,7 @@
                             <th>{{Form::number('orgnumHours7')}}</th>
                             <th>{{Form::text('orgPosition7')}}</th>
                         </tr>
-                    </div>
+                    </table>
 
                 <h1>VII. LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS ATTENDED</h1>
                     <h3 style="font-style: italic;">(Start from the most recent L&D/training program and include only the relevant L&D/training taken for the last five (5) years for Division Chief/Executive/Managerial positions)</h3><br>
