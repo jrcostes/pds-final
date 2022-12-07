@@ -93,7 +93,9 @@
                 margin: 0;
                 padding-top: 35px;
             }
-
+            h5 {
+                font-style: italic;
+            }
             .full-height {
                 height: 100vh;
             }
@@ -114,7 +116,7 @@
             }
 
             .content {
-                text-align: center;
+                text-align: justify;
             }
 
             .title {
@@ -137,17 +139,15 @@
 
             /* Index CSS */
 
-            .formbody{
-                margin: 5px 50px 5px 50px;
+            .org{
+                padding: 5px;
+                margin: 5px;
             }
 
-            /* .form-horizontal{
-                padding: 5px 5px 5px 5px;
-            } */
-            h1 {
+
+
+            h2 {
                 text-align: justify;
-                padding: 0px 10px 0px 10px;
-                font-weight: bold;
                 font-size: 30px;
             }
             .table {
@@ -189,18 +189,7 @@
                 font-size: 15px;
             }
 
-            tr, th{
-                text-align; left;
-            }
-            .VI button {
-                text-align: center;
-                border-radius: 25px;
-                width: 50%;
-            }
 
-            .buttons{
-
-            }
 
             .center {
                 margin:  5px 5px 5px 5px;

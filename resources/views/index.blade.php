@@ -5,8 +5,8 @@
  <head>
     <title>PDS_C3</title>
     <style>
-        [contenteditable] {
-        outline: 0px solid transparent;
+        .h2{
+            text-align: justify;
         }
     </style>
  </head>
@@ -31,182 +31,611 @@
         <form method="get" action="/wkhtmltopdf" autocomplete="off" class="form-horizontal" onsubmit="return submitForm(this);">
 
            {{--  <form method="post" action="{{ route('post.store') }}" autocomplete="off" class="form-horizontal"> --}}
-            @csrf
-                <h1>VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC/NON-GOVERNMENT/PEOPLE/VOLUNTARY ORGANIZATION</h1><br>
-                    <table class="table table-bordered">
 
-                            <tr>
-                                <th id="row1", rowspan='2'><b>{{Form::label('form1', 'NAME & ADDRESS OF ORGANIZATION')}}</b></th>
-                                <th id="row-dates", colspan='2'><b>{{Form:: label('form2', 'INCLUSIVE DATES')}}</b></th>
-                                <th id="row1", rowspan='2'><b>{{Form::label('form3', 'NUMBER OF HOURS')}}</b></th>
-                                <th id="row1", rowspan='2'><b>{{Form::label('form2','POSITION / NATURE OF WORK')}}</b></th>
-                            </tr>
-                            <tr>
-                                <th id = "row2">{{Form::label('form21', 'From')}}</th>
-                                <th id = "row2">{{Form::label('form22', 'To')}}</th>
-                            </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress1')}}</th>
-                            <th>{{Form::date('orgdateFrom1')}}</th>
-                            <th>{{Form::date('orgdateTo1')}}</th>
-                            <th>{{Form::number('orgnumHours1')}}</th>
-                            <th>{{Form::text('orgPosition1')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress2')}}</th>
-                            <th>{{Form::date('orgdateFrom2')}}</th>
-                            <th>{{Form::date('orgdateTo2')}}</th>
-                            <th>{{Form::number('orgnumHours2')}}</th>
-                            <th>{{Form::text('orgPosition2')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress3')}}</th>
-                            <th>{{Form::date('orgdateFrom3')}}</th>
-                            <th>{{Form::date('orgdateTo3')}}</th>
-                            <th>{{Form::number('orgnumHours3')}}</th>
-                            <th>{{Form::text('orgPosition3')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress4')}}</th>
-                            <th>{{Form::date('orgdateFrom4')}}</th>
-                            <th>{{Form::date('orgdateTo4')}}</th>
-                            <th>{{Form::number('orgnumHours4')}}</th>
-                            <th>{{Form::text('orgPosition4')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress5')}}</th>
-                            <th>{{Form::date('orgdateFrom5')}}</th>
-                            <th>{{Form::date('orgdateTo5')}}</th>
-                            <th>{{Form::number('orgnumHours5')}}</th>
-                            <th>{{Form::text('orgPosition5')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress6')}}</th>
-                            <th>{{Form::date('orgdateFrom6')}}</th>
-                            <th>{{Form::date('orgdateTo6')}}</th>
-                            <th>{{Form::number('orgnumHours6')}}</th>
-                            <th>{{Form::text('orgPosition6')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress7')}}</th>
-                            <th>{{Form::date('orgdateFrom7')}}</th>
-                            <th>{{Form::date('orgdateTo7')}}</th>
-                            <th>{{Form::number('orgnumHours7')}}</th>
-                            <th>{{Form::text('orgPosition7')}}</th>
-                        </tr>
-                    </table>
+                <h2>VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC/NON-GOVERNMENT/PEOPLE/VOLUNTARY ORGANIZATION</h2>
 
-                <h1>VII. LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS ATTENDED</h1>
-                    <h3 style="font-style: italic;">(Start from the most recent L&D/training program and include only the relevant L&D/training taken for the last five (5) years for Division Chief/Executive/Managerial positions)</h3><br>
-                    <table class="table table-bordered">
-                        <tr>
-                            <th id="row3-1", rowspan='2'><b>{{Form::label('form1', 'TITLE OF LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS')}}</b></th>
-                            <th id="row-dates", colspan='2'><b>{{Form::label('form2', 'INCLUSIVE DATES OF ATTENDANCE')}}</b></th>
-                            <th id="row3", rowspan='2'><b>{{Form::label('form3', 'NUMBER OF HOURS')}}</b></th>
-                            <th id="row3", rowspan='2'><b>{{Form::label('form3', 'Type of LD')}}</b></th>
-                            <th id="row3", rowspan='2'><b>{{Form::label('form2','CONDUCTED/SPONSORED BY')}}</b></th>
-                        </tr>
-                        <tr>
-                            <th id="row4">{{Form::label('form21', 'From')}}</th>
-                            <th id="row4">{{Form::label('form22', 'To')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress8')}}</th>
-                            <th>{{Form::date('orgdateFrom8')}}</th>
-                            <th>{{Form::date('orgdateTo8')}}</th>
-                            <th>{{Form::number('orgnumHours8')}}</th>
-                            <th>{{Form::text('orgType8')}}</th>
-                            <th>{{Form::text('orgnameSponsor8')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress9')}}</th>
-                            <th>{{Form::date('orgdateFrom9')}}</th>
-                            <th>{{Form::date('orgdateTo9')}}</th>
-                            <th>{{Form::number('orgnumHours9')}}</th>
-                            <th>{{Form::text('orgType9')}}</th>
-                            <th>{{Form::text('orgnameSponsor9')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress10')}}</th>
-                            <th>{{Form::date('orgdateFrom10')}}</th>
-                            <th>{{Form::date('orgdateTo10')}}</th>
-                            <th>{{Form::number('orgnumHours10')}}</th>
-                            <th>{{Form::text('orgType10')}}</th>
-                            <th>{{Form::text('orgnameSponsor10')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress11')}}</th>
-                            <th>{{Form::date('orgdateFrom11')}}</th>
-                            <th>{{Form::date('orgdateTo11')}}</th>
-                            <th>{{Form::number('orgnumHours11')}}</th>
-                            <th>{{Form::text('orgType11')}}</th>
-                            <th>{{Form::text('orgnameSponsor11')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress12')}}</th>
-                            <th>{{Form::date('orgdateFrom12')}}</th>
-                            <th>{{Form::date('orgdateTo12')}}</th>
-                            <th>{{Form::number('orgnumHours12')}}</th>
-                            <th>{{Form::text('orgType12')}}</th>
-                            <th>{{Form::text('orgnameSponsor12')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress13')}}</th>
-                            <th>{{Form::date('orgdateFrom13')}}</th>
-                            <th>{{Form::date('orgdateTo13')}}</th>
-                            <th>{{Form::number('orgnumHours13')}}</th>
-                            <th>{{Form::text('orgType13')}}</th>
-                            <th>{{Form::text('orgnameSponsor13')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameAddress14')}}</th>
-                            <th>{{Form::date('orgdateFrom14')}}</th>
-                            <th>{{Form::date('orgdateTo14')}}</th>
-                            <th>{{Form::number('orgnumHours14')}}</th>
-                            <th>{{Form::text('orgType14')}}</th>
-                            <th>{{Form::text('orgnameSponsor14')}}</th>
-                        </tr>
-                    </table>
-                <h1>VIII. OTHER INFORMATION</h1>
-                    <table class="table table-bordered">
-                        <tr>
-                            <th id="row5"><b>{{Form::label('form1', 'SPECIAL SKILLS and HOBBIES')}}</b></th>
-                            <th id="row5"><b>{{Form::label('form2', 'NON-ACADEMIC DISTINCTIONS/RECOGNITION')}}</b></th>
-                            <th id="row5"><b>{{Form::label('form3', 'MEMBERSHIP IN ASSOCIATION/ORGANIZATION')}}</b></th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameSkill1')}}</th>
-                            <th>{{Form::text('orgnameDistinct1')}}</th>
-                            <th>{{Form::text('orgnameMembership1')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameSkill2')}}</th>
-                            <th>{{Form::text('orgnameDistinct2')}}</th>
-                            <th>{{Form::text('orgnameMembership2')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameSkill3')}}</th>
-                            <th>{{Form::text('orgnameDistinct3')}}</th>
-                            <th>{{Form::text('orgnameMembership3')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameSkill4')}}</th>
-                            <th>{{Form::text('orgnameDistinct4')}}</th>
-                            <th>{{Form::text('orgnameMembership4')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameSkill5')}}</th>
-                            <th>{{Form::text('orgnameDistinct5')}}</th>
-                            <th>{{Form::text('orgnameMembership5')}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{Form::text('orgnameSkill6')}}</th>
-                            <th>{{Form::text('orgnameDistinct6')}}</th>
-                            <th>{{Form::text('orgnameMembership6')}}</th>
-                        </tr>
-                    </table>
+                <div class="org">
+                        <h5>{{ Form::label('orgname', 'Please fill-up the following: ') }}</h5>
 
 
+                    <div class="orgname1">
+                        <div class="row">
+                            <div class="col">
+                                <b>{{ Form::label('orgnameAddress1', 'Name & Address of Organization: ') }}</b>
+                                {{ Form::text('orgnameAddress1', null, ['class' => 'form-control', 'id' => 'orgnameAddress1', 'placeholder' => 'Name & Address of Organization...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateFrom1', 'From: ') }}</b><br>
+                                    {{ Form::date('orgdateFrom1', '') }}
+                                </div>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateTo1', 'To: ') }}</b><br>
+                                    {{ Form::date('orgdateTo1', '') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <b>{{ Form::label('orgnumHours1', 'Number of Hours: ') }}</b><br>
+                                {{ Form::text('orgnumHours1', null, ['class' => 'form-control', 'id' => 'orgnumHours1', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('orgPosition1', 'Position/Nature of Work: ') }}</b>
+                                {{ Form::text('orgPosition1', null, ['class' => 'form-control', 'id' => 'orgPosition1', 'placeholder' => 'Position/Nature of Work...', 'autocomplete' => 'off']) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orgname2-container d-none"><br>
+                        <div class="row">
+                            <div class="col">
+                                <b>{{ Form::label('orgnameAddress2', 'Name & Address of Organization: ') }}</b>
+                                {{ Form::text('orgnameAddress2', null, ['class' => 'form-control', 'id' => 'orgnameAddress2', 'placeholder' => 'Name & Address of Organization...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateFrom2', 'From: ') }}</b><br>
+                                    {{ Form::date('orgdateFrom2', '') }}
+                                </div>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateTo2', 'To: ') }}</b><br>
+                                    {{ Form::date('orgdateTo2', '') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <b>{{ Form::label('orgnumHours2', 'Number of Hours: ') }}</b><br>
+                                {{ Form::text('orgnumHours2', null, ['class' => 'form-control', 'id' => 'orgnumHours2', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('orgPosition2', 'Position/Nature of Work: ') }}</b>
+                                {{ Form::text('orgPosition2', null, ['class' => 'form-control', 'id' => 'orgPosition2', 'placeholder' => 'Position/Nature of Work...', 'autocomplete' => 'off']) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orgname3-container d-none"><br>
+                        <div class="row">
+                            <div class="col">
+                                <b>{{ Form::label('orgnameAddress3', 'Name & Address of Organization: ') }}</b>
+                                {{ Form::text('orgnameAddress3', null, ['class' => 'form-control', 'id' => 'orgnameAddress3', 'placeholder' => 'Name & Address of Organization...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateFrom3', 'From: ') }}</b><br>
+                                    {{ Form::date('orgdateFrom3', '') }}
+                                </div>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateTo3', 'To: ') }}</b><br>
+                                    {{ Form::date('orgdateTo3', '') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <b>{{ Form::label('orgnumHours3', 'Number of Hours: ') }}</b><br>
+                                {{ Form::text('orgnumHours3', null, ['class' => 'form-control', 'id' => 'orgnumHours3', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('orgPosition3', 'Position/Nature of Work: ') }}</b>
+                                {{ Form::text('orgPosition3', null, ['class' => 'form-control', 'id' => 'orgPosition3', 'placeholder' => 'Position/Nature of Work...', 'autocomplete' => 'off']) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orgname4-container d-none"><br>
+                        <div class="row">
+                            <div class="col">
+                                <b>{{ Form::label('orgnameAddress4', 'Name & Address of Organization: ') }}</b>
+                                {{ Form::text('orgnameAddress4', null, ['class' => 'form-control', 'id' => 'orgnameAddress4', 'placeholder' => 'Name & Address of Organization...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateFrom4', 'From: ') }}</b><br>
+                                    {{ Form::date('orgdateFrom4', '') }}
+                                </div>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateTo4', 'To: ') }}</b><br>
+                                    {{ Form::date('orgdateTo4', '') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <b>{{ Form::label('orgnumHours4', 'Number of Hours: ') }}</b><br>
+                                {{ Form::text('orgnumHours4', null, ['class' => 'form-control', 'id' => 'orgnumHours4', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('orgPosition4', 'Position/Nature of Work: ') }}</b>
+                                {{ Form::text('orgPosition4', null, ['class' => 'form-control', 'id' => 'orgPosition4', 'placeholder' => 'Position/Nature of Work...', 'autocomplete' => 'off']) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orgname5-container d-none"><br>
+                        <div class="row">
+                            <div class="col">
+                                <b>{{ Form::label('orgnameAddress5', 'Name & Address of Organization: ') }}</b>
+                                {{ Form::text('orgnameAddress5', null, ['class' => 'form-control', 'id' => 'orgnameAddress5', 'placeholder' => 'Name & Address of Organization...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateFrom5', 'From: ') }}</b><br>
+                                    {{ Form::date('orgdateFrom5', '') }}
+                                </div>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateTo5', 'To: ') }}</b><br>
+                                    {{ Form::date('orgdateTo5', '') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <b>{{ Form::label('orgnumHours5', 'Number of Hours: ') }}</b><br>
+                                {{ Form::text('orgnumHours5', null, ['class' => 'form-control', 'id' => 'orgnumHours5', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('orgPosition5', 'Position/Nature of Work: ') }}</b>
+                                {{ Form::text('orgPosition5', null, ['class' => 'form-control', 'id' => 'orgPosition5', 'placeholder' => 'Position/Nature of Work...', 'autocomplete' => 'off']) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orgname6-container d-none"><br>
+                        <div class="row">
+                            <div class="col">
+                                <b>{{ Form::label('orgnameAddress6', 'Name & Address of Organization: ') }}</b>
+                                {{ Form::text('orgnameAddress6', null, ['class' => 'form-control', 'id' => 'orgnameAddress6', 'placeholder' => 'Name & Address of Organization...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateFrom6', 'From: ') }}</b><br>
+                                    {{ Form::date('orgdateFrom6', '') }}
+                                </div>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateTo6', 'To: ') }}</b><br>
+                                    {{ Form::date('orgdateTo6', '') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <b>{{ Form::label('orgnumHours6', 'Number of Hours: ') }}</b><br>
+                                {{ Form::text('orgnumHours6', null, ['class' => 'form-control', 'id' => 'orgnumHours6', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('orgPosition6', 'Position/Nature of Work: ') }}</b>
+                                {{ Form::text('orgPosition6', null, ['class' => 'form-control', 'id' => 'orgPosition6', 'placeholder' => 'Position/Nature of Work...', 'autocomplete' => 'off']) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orgname7-container d-none"><br>
+                        <div class="row">
+                            <div class="col">
+                                <b>{{ Form::label('orgnameAddress7', 'Name & Address of Organization: ') }}</b>
+                                {{ Form::text('orgnameAddress7', null, ['class' => 'form-control', 'id' => 'orgnameAddress7', 'placeholder' => 'Name & Address of Organization...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateFrom7', 'From: ') }}</b><br>
+                                    {{ Form::date('orgdateFrom7', '') }}
+                                </div>
+                                <div class="form-inline">
+                                    <b>{{ Form::label('orgdateTo7', 'To: ') }}</b><br>
+                                    {{ Form::date('orgdateTo7', '') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <b>{{ Form::label('orgnumHours7', 'Number of Hours: ') }}</b><br>
+                                {{ Form::text('orgnumHours7', null, ['class' => 'form-control', 'id' => 'orgnumHours7', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                            </div>
+                            <div class="col">
+                                <b>{{ Form::label('orgPosition7', 'Position/Nature of Work: ') }}</b>
+                                {{ Form::text('orgPosition7', null, ['class' => 'form-control', 'id' => 'orgPosition7', 'placeholder' => 'Position/Nature of Work...', 'autocomplete' => 'off']) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Buttons --}}
+                    <div class="col-1 row px-0">
+                        <div class="col-5 offset-1 px-0">
+                            <button class="btn btn-secondary btn-sm w-100" id="minus-ref" disabled>-</button>
+                        </div>
+                        <div class="col-5 offset-1 px-0">
+                            <button class="btn btn-secondary btn-sm w-100" id="add-ref">+</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h2>VII. LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS ATTENDED</h2>
+                    <h6 style="font-style: italic;">(Start from the most recent L&D/training program and include only the relevant L&D/training taken for the last five (5) years for Division Chief/Executive/Managerial positions)</h6><br>
+
+                    <div class="org">
+                        <h5>{{ Form::label('orgname', 'Please fill-up the following:') }}</h5>
+
+
+                        <div class="orgname8">
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameAddress8', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
+                                    {{ Form::text('orgnameAddress8', null, ['class' => 'form-control', 'id' => 'orgnameAddress8', 'placeholder' => 'Title of Learning and Development Interventions/Training Programs...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateFrom8', 'From: ') }}</b><br>
+                                        {{ Form::date('orgdateFrom8', '') }}
+                                    </div>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateTo8', 'To: ') }}</b><br>
+                                        {{ Form::date('orgdateTo8', '') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <b>{{ Form::label('orgnumHours8', 'Number of Hours: ') }}</b><br>
+                                    {{ Form::text('orgnumHours8', null, ['class' => 'form-control', 'id' => 'orgnumHours8', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgType8', 'Type of LD: ') }}</b>
+                                    {{ Form::text('orgType8', null, ['class' => 'form-control', 'id' => 'orgType8', 'placeholder' => 'Type of LD...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSponsor8', 'Conducted/Sponsored by: ') }}</b>
+                                    {{ Form::text('orgnameSponsor8', null, ['class' => 'form-control', 'id' => 'orgnameSponsor8', 'placeholder' => 'Conducted/Sponsored by...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgname9-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameAddress9', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
+                                    {{ Form::text('orgnameAddress9', null, ['class' => 'form-control', 'id' => 'orgnameAddress9', 'placeholder' => 'Title of Learning and Development Interventions/Training Programs...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateFrom9', 'From: ') }}</b><br>
+                                        {{ Form::date('orgdateFrom9', '') }}
+                                    </div>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateTo9', 'To: ') }}</b><br>
+                                        {{ Form::date('orgdateTo9', '') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <b>{{ Form::label('orgnumHours9', 'Number of Hours: ') }}</b><br>
+                                    {{ Form::text('orgnumHours9', null, ['class' => 'form-control', 'id' => 'orgnumHours9', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgType9', 'Type of LD: ') }}</b>
+                                    {{ Form::text('orgType9', null, ['class' => 'form-control', 'id' => 'orgType9', 'placeholder' => 'Type of LD...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSponsor9', 'Conducted/Sponsored by: ') }}</b>
+                                    {{ Form::text('orgnameSponsor9', null, ['class' => 'form-control', 'id' => 'orgnameSponsor9', 'placeholder' => 'Conducted/Sponsored by...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgname10-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameAddress10', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
+                                    {{ Form::text('orgnameAddress10', null, ['class' => 'form-control', 'id' => 'orgnameAddress10', 'placeholder' => 'Title of Learning and Development Interventions/Training Programs...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateFrom10', 'From: ') }}</b><br>
+                                        {{ Form::date('orgdateFrom10', '') }}
+                                    </div>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateTo10', 'To: ') }}</b><br>
+                                        {{ Form::date('orgdateTo10', '') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <b>{{ Form::label('orgnumHours10', 'Number of Hours: ') }}</b><br>
+                                    {{ Form::text('orgnumHours10', null, ['class' => 'form-control', 'id' => 'orgnumHours10', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgType10', 'Type of LD: ') }}</b>
+                                    {{ Form::text('orgType10', null, ['class' => 'form-control', 'id' => 'orgType10', 'placeholder' => 'Type of LD...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSponsor10', 'Conducted/Sponsored by: ') }}</b>
+                                    {{ Form::text('orgnameSponsor10', null, ['class' => 'form-control', 'id' => 'orgnameSponsor10', 'placeholder' => 'Conducted/Sponsored by...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgname11-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameAddress11', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
+                                    {{ Form::text('orgnameAddress11', null, ['class' => 'form-control', 'id' => 'orgnameAddress11', 'placeholder' => 'Title of Learning and Development Interventions/Training Programs...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateFrom11', 'From: ') }}</b><br>
+                                        {{ Form::date('orgdateFrom11', '') }}
+                                    </div>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateTo11', 'To: ') }}</b><br>
+                                        {{ Form::date('orgdateTo11', '') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <b>{{ Form::label('orgnumHours11', 'Number of Hours: ') }}</b><br>
+                                    {{ Form::text('orgnumHours11', null, ['class' => 'form-control', 'id' => 'orgnumHours11', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgType11', 'Type of LD: ') }}</b>
+                                    {{ Form::text('orgType11', null, ['class' => 'form-control', 'id' => 'orgType11', 'placeholder' => 'Type of LD...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSponsor11', 'Conducted/Sponsored by: ') }}</b>
+                                    {{ Form::text('orgnameSponsor11', null, ['class' => 'form-control', 'id' => 'orgnameSponsor11', 'placeholder' => 'Conducted/Sponsored by...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgname12-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameAddress12', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
+                                    {{ Form::text('orgnameAddress12', null, ['class' => 'form-control', 'id' => 'orgnameAddress12', 'placeholder' => 'Title of Learning and Development Interventions/Training Programs...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateFrom12', 'From: ') }}</b><br>
+                                        {{ Form::date('orgdateFrom12', '') }}
+                                    </div>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateTo12', 'To: ') }}</b><br>
+                                        {{ Form::date('orgdateTo12', '') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <b>{{ Form::label('orgnumHours12', 'Number of Hours: ') }}</b><br>
+                                    {{ Form::text('orgnumHours12', null, ['class' => 'form-control', 'id' => 'orgnumHours12', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgType12', 'Type of LD: ') }}</b>
+                                    {{ Form::text('orgType12', null, ['class' => 'form-control', 'id' => 'orgType12', 'placeholder' => 'Type of LD...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSponsor12', 'Conducted/Sponsored by: ') }}</b>
+                                    {{ Form::text('orgnameSponsor12', null, ['class' => 'form-control', 'id' => 'orgnameSponsor12', 'placeholder' => 'Conducted/Sponsored by...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgname13-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameAddress13', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
+                                    {{ Form::text('orgnameAddress13', null, ['class' => 'form-control', 'id' => 'orgnameAddress13', 'placeholder' => 'Title of Learning and Development Interventions/Training Programs...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateFrom13', 'From: ') }}</b><br>
+                                        {{ Form::date('orgdateFrom13', '') }}
+                                    </div>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateTo13', 'To: ') }}</b><br>
+                                        {{ Form::date('orgdateTo13', '') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <b>{{ Form::label('orgnumHours13', 'Number of Hours: ') }}</b><br>
+                                    {{ Form::text('orgnumHours13', null, ['class' => 'form-control', 'id' => 'orgnumHours13', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgType13', 'Type of LD: ') }}</b>
+                                    {{ Form::text('orgType13', null, ['class' => 'form-control', 'id' => 'orgType13', 'placeholder' => 'Type of LD...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSponsor13', 'Conducted/Sponsored by: ') }}</b>
+                                    {{ Form::text('orgnameSponsor13', null, ['class' => 'form-control', 'id' => 'orgnameSponsor13', 'placeholder' => 'Conducted/Sponsored by...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgname14-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameAddress14', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
+                                    {{ Form::text('orgnameAddress14', null, ['class' => 'form-control', 'id' => 'orgnameAddress14', 'placeholder' => 'Title of Learning and Development Interventions/Training Programs...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateFrom14', 'From: ') }}</b><br>
+                                        {{ Form::date('orgdateFrom14', '') }}
+                                    </div>
+                                    <div class="form-inline">
+                                        <b>{{ Form::label('orgdateTo14', 'To: ') }}</b><br>
+                                        {{ Form::date('orgdateTo14', '') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <b>{{ Form::label('orgnumHours14', 'Number of Hours: ') }}</b><br>
+                                    {{ Form::text('orgnumHours14', null, ['class' => 'form-control', 'id' => 'orgnumHours14', 'placeholder' => 'No. of Hours...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgType14', 'Type of LD: ') }}</b>
+                                    {{ Form::text('orgType14', null, ['class' => 'form-control', 'id' => 'orgType14', 'placeholder' => 'Type of LD...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSponsor14', 'Conducted/Sponsored by: ') }}</b>
+                                    {{ Form::text('orgnameSponsor14', null, ['class' => 'form-control', 'id' => 'orgnameSponsor14', 'placeholder' => 'Conducted/Sponsored by...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Buttons --}}
+                        <div class="col-1 row px-0">
+                            <div class="col-5 offset-1 px-0">
+                                <button class="btn btn-secondary btn-sm w-100" id="minus-ref" disabled>-</button>
+                            </div>
+                            <div class="col-5 offset-1 px-0">
+                                <button class="btn btn-secondary btn-sm w-100" id="add-ref">+</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                <h2>VIII. OTHER INFORMATION</h2>
+
+                    <div class="org" >
+                        <h5>{{ Form::label('orgname', 'Please fill-up the following: ') }}</h5>
+
+                        <div class="orgnameSkill1">
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSkill1', 'Special Skills and Hobbies: ') }}</b><br>
+                                    {{ Form::text('orgnameSkill1', null, ['class' => 'form-control', 'id' => 'orgnameSkill1', 'placeholder' => 'Special Skills and Hobbies...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameDistinct1', 'Non-Academic Distinctions/Recognition: ') }}</b>
+                                    {{ Form::text('orgnameDistinct1', null, ['class' => 'form-control', 'id' => 'orgnameDistinct1', 'placeholder' => 'Non-Academic Distinctions/Recognition...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameMembership1', 'Membership in Association/Organization: ') }}</b>
+                                    {{ Form::text('orgnameMembership1', null, ['class' => 'form-control', 'id' => 'orgnameMembership1', 'placeholder' => 'Membership in Association/Organization...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgnameSkill2-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSkill2', 'Special Skills and Hobbies: ') }}</b><br>
+                                    {{ Form::text('orgnameSkill2', null, ['class' => 'form-control', 'id' => 'orgnameSkill2', 'placeholder' => 'Special Skills and Hobbies...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameDistinct2', 'Non-Academic Distinctions/Recognition: ') }}</b>
+                                    {{ Form::text('orgnameDistinct2', null, ['class' => 'form-control', 'id' => 'orgnameDistinct2', 'placeholder' => 'Non-Academic Distinctions/Recognition...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameMembership2', 'Membership in Association/Organization: ') }}</b>
+                                    {{ Form::text('orgnameMembership2', null, ['class' => 'form-control', 'id' => 'orgnameMembership2', 'placeholder' => 'Membership in Association/Organization...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgnameSkill3-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSkill3', 'Special Skills and Hobbies: ') }}</b><br>
+                                    {{ Form::text('orgnameSkill3', null, ['class' => 'form-control', 'id' => 'orgnameSkill3', 'placeholder' => 'Special Skills and Hobbies...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameDistinct3', 'Non-Academic Distinctions/Recognition: ') }}</b>
+                                    {{ Form::text('orgnameDistinct3', null, ['class' => 'form-control', 'id' => 'orgnameDistinct3', 'placeholder' => 'Non-Academic Distinctions/Recognition...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameMembership3', 'Membership in Association/Organization: ') }}</b>
+                                    {{ Form::text('orgnameMembership3', null, ['class' => 'form-control', 'id' => 'orgnameMembership3', 'placeholder' => 'Membership in Association/Organization...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgnameSkill4-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSkill4', 'Special Skills and Hobbies: ') }}</b><br>
+                                    {{ Form::text('orgnameSkill4', null, ['class' => 'form-control', 'id' => 'orgnameSkill4', 'placeholder' => 'Special Skills and Hobbies...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameDistinct4', 'Non-Academic Distinctions/Recognition: ') }}</b>
+                                    {{ Form::text('orgnameDistinct4', null, ['class' => 'form-control', 'id' => 'orgnameDistinct4', 'placeholder' => 'Non-Academic Distinctions/Recognition...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameMembership4', 'Membership in Association/Organization: ') }}</b>
+                                    {{ Form::text('orgnameMembership4', null, ['class' => 'form-control', 'id' => 'orgnameMembership4', 'placeholder' => 'Membership in Association/Organization...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgnameSkill5-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSkill5', 'Special Skills and Hobbies: ') }}</b><br>
+                                    {{ Form::text('orgnameSkill5', null, ['class' => 'form-control', 'id' => 'orgnameSkill5', 'placeholder' => 'Special Skills and Hobbies...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameDistinct5', 'Non-Academic Distinctions/Recognition: ') }}</b>
+                                    {{ Form::text('orgnameDistinct5', null, ['class' => 'form-control', 'id' => 'orgnameDistinct5', 'placeholder' => 'Non-Academic Distinctions/Recognition...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameMembership5', 'Membership in Association/Organization: ') }}</b>
+                                    {{ Form::text('orgnameMembership5', null, ['class' => 'form-control', 'id' => 'orgnameMembership5', 'placeholder' => 'Membership in Association/Organization...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="orgnameSkill6-container d-none"><br>
+                            <div class="row">
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameSkill6', 'Special Skills and Hobbies: ') }}</b><br>
+                                    {{ Form::text('orgnameSkill6', null, ['class' => 'form-control', 'id' => 'orgnameSkill6', 'placeholder' => 'Special Skills and Hobbies...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameDistinct6', 'Non-Academic Distinctions/Recognition: ') }}</b>
+                                    {{ Form::text('orgnameDistinct6', null, ['class' => 'form-control', 'id' => 'orgnameDistinct6', 'placeholder' => 'Non-Academic Distinctions/Recognition...', 'autocomplete' => 'off']) }}
+                                </div>
+                                <div class="col">
+                                    <b>{{ Form::label('orgnameMembership6', 'Membership in Association/Organization: ') }}</b>
+                                    {{ Form::text('orgnameMembership6', null, ['class' => 'form-control', 'id' => 'orgnameMembership6', 'placeholder' => 'Membership in Association/Organization...', 'autocomplete' => 'off']) }}
+                                </div>
+                            </div>
+                        </div>
+
+                       {{-- Buttons --}}
+                        <div class="col-1 row px-0">
+                            <div class="col-5 offset-1 px-0">
+                                <button class="btn btn-secondary btn-sm w-100" id="minus-ref" disabled>-</button>
+                            </div>
+                            <div class="col-5 offset-1 px-0">
+                                <button class="btn btn-secondary btn-sm w-100" id="add-ref">+</button>
+                            </div>
+                        </div>
+
+                    </div>
 
 
                 <div class="container, center">
@@ -226,6 +655,34 @@
     </div>
 
 </html>
+
+<script>
+    $(function() {
+        var refCount = 11;
+        var counter = 0
+
+        $('#add-ref').on('click', function(e) {
+            e.preventDefault();
+
+            if (refCount <= 11 && counter == 0) {
+                $('..orgname2-container').removeClass('d-none');
+                $('#minus-ref').attr('disabled', false);
+                counter++;
+            }
+        });
+
+        $('#minus-ref').on('click', function(e) {
+            e.preventDefault();
+
+            if (refCount <= 11 && counter == 11) {
+                $('.orgname2-container').addClass('d-none');
+                $('#add-ref').attr('disabled', false);
+                counter--;
+            }
+        });
+    });
+</script>
+
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="sweetalert/sweetalert.all.js"></script>
         <link rel="stylesheet" href="sweetalert2.min.css">
