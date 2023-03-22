@@ -8,10 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Providers\RouteServiceProvider;
 
 class RegisterController extends Controller
 {
-    use Alert;
+
 
 
 
@@ -33,7 +34,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.

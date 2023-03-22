@@ -21,32 +21,40 @@ use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
 
-Route::get('/', 'HomeController@index');
-
-/*Route::get('/sender', function() {
-    $pdf = App::make('snappy.pdf.wrapper');
-    $pdf->loadview('c3data.index');
-    //return $pdf->inline();
-    return $pdf->download('c3data.index.pdf');
-});*/
-
-Route::get('/temp', 'PostController@index');
-Route::resource('sheet', 'PostController');
-
-
-
-//Route::get('/export', [PostController::class, 'export']);
-Route::get('/wkhtmltopdf', [PostController::class, 'form_submit'])->name('print_data');
-//Route::get('exporter', 'PostController@export');
-//Route::get('excel', 'PostController@excel');
-
-//Auth::routes();
-
-Route::get('home', 'HomeController@index')->name('home');
-Route::get('/excelprint', [ExcelController::class, 'excel_form'])->name('print_data');
-Route::get('/pdfprint', [PostController::class, 'print_form'])->name('print_data');
-
-
 Auth::routes();
+Route::redirect('/', '/login');
+Route::get('/home', function () {
+    if (session('status')) {
+        return redirect()->route('admin.home')->with('status', session('status'));
+    }
+
+    return redirect()->route('admin.home');
+});
+Route::get('/dbtable', function () {
+    if (session('status')) {
+        return redirect()->route('admin.dbtable')->with('status', session('status'));
+    }
+
+    return redirect()->route('admin.dbtable');
+});
+Route::group([
+    'prefix' => 'user',
+    'as' => 'user.',
+    'namespace' => 'User',
+    'middleware' => ['auth']
+], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+});
+
+Route::group([
+    'prefix' => 'admin',
+    'as' => 'admin.',
+    'namespace' => 'Admin',
+    'middleware' => ['auth', 'admin']
+], function() {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('dbtable', 'HomeController@show')->name('dbtable');
+});
+
 
 
