@@ -1,4 +1,4 @@
-@extends('admin.datatables.welcome2')
+@extends('layouts.admin')
 
 @section('content')
 

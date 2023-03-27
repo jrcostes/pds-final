@@ -54,6 +54,8 @@ Route::group([
 ], function() {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('dbtable', 'HomeController@show')->name('dbtable');
+
+    Route::resource('users', 'UsersController');
 });
 
 
