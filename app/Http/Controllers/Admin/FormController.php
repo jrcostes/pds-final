@@ -14,7 +14,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 use function PHPSTORM_META\map;
 
-class PostController
+class FormController
 {
     //storing functions
     // public function c1form(Request $request){
@@ -690,7 +690,6 @@ class PostController
 
         $c1answers = [
             'firstnameext' => $data['nameext'] ?? null,
-            'midname' => $data['midname'] ?? null,
             'birthdate' => $data['birthdate'] ?? null,
             'placeBirth' => $data['placeofBirth'] ?? null,
             'civilStatus' => $data['civilStatus'] ?? null,
@@ -1375,6 +1374,7 @@ class PostController
         $newForm->c2answers = json_encode($c2answers);
         $newForm->c3answers = json_encode($c3answers);
         $newForm->c4answers = json_encode($c4answers);
+        $newForm->midname = $request->midname;
         $newForm->surname = $request->surname;
         $newForm->firstname = $request->firstname;
         $newForm->sex = $request->sex;
@@ -1389,4 +1389,4 @@ class PostController
 
         return redirect()->back();
     }
-}   
+}

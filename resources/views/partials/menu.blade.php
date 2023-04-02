@@ -7,7 +7,7 @@
                     <i class="nav-icon fas fa-fw fa-tachometer-alt">
 
                     </i>
-                    {{ trans('global.dashboard') }}
+                    {{ trans('Dashboard Form') }}
                 </a>
             </li>
 
@@ -16,7 +16,7 @@
                         <i class="fa-fw fas fa-users nav-icon">
 
                         </i>
-                        {{ trans('cruds.userManagement.title') }}
+                        {{ trans('User Management') }}
                     </a>
                     <ul class="nav-dropdown-items">
 
@@ -37,7 +37,7 @@
                                     <i class="fa-fw fas fa-user nav-icon">
 
                                     </i>
-                                    {{ trans('cruds.user.title') }}
+                                    {{ trans('User List') }}
                                 </a>
                             </li>
 

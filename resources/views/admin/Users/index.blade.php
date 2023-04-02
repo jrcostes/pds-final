@@ -4,14 +4,14 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.users.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.user.title_singular') }}
+                {{ trans('Add User') }}
             </a>
         </div>
     </div>
 
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.user.title_singular') }} {{ trans('global.list') }}
+        {{ trans('Enrolled Users') }} 
     </div>
 
     <div class="card-body">
@@ -68,13 +68,13 @@
                             <td>
 
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
-                                        {{ trans('global.view') }}
+                                        {{ trans('View Details') }}
                                     </a>
 
 
 
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', $user->id) }}">
-                                        {{ trans('global.edit') }}
+                                        {{ trans('Edit User') }}
                                     </a>
 
 

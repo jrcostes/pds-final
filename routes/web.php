@@ -18,6 +18,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\PdfController;
 use App\Exports\UsersExport;
 use Illuminate\Support\Facades\Auth;
+
 use Maatwebsite\Excel\Facades\Excel;
 
 
@@ -66,3 +67,5 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
             Route::post('password', 'ChangePasswordController@update')->name('password.update');
         }
     });
+
+    Route::get('/c1formsubmit', [PostController::class, 'submittal'])->name('print_data');
