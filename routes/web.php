@@ -55,6 +55,7 @@ Route::group([
 ], function() {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('dbtable', 'HomeController@show')->name('dbtable');
+    Route::get('/pdf1print', 'HomeController@pdf_print')->name('print_data');
 
     Route::resource('users', 'UsersController');
 });

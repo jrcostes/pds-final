@@ -10,9 +10,7 @@
 
     <body>
         <div class="box-form">
-            <div id="pdf_button">
-                <a class="btn btn-secondary pdf-btn" href="/pdf">View PDF</a>
-            </div>
+
             <div class="container mt-5">
                 <table id="myTable" class="table table-striped" style="width: 100%">
                     <thead>
