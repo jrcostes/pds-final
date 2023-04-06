@@ -38,6 +38,7 @@ Route::get('/dbtable', function () {
 
     return redirect()->route('admin.dbtable');
 });
+Route::get('admin/pdf1print', 'HomeController@pdf_print')->name('print_data');
 Route::group([
     'prefix' => 'user',
     'as' => 'user.',
@@ -55,7 +56,6 @@ Route::group([
 ], function() {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('dbtable', 'HomeController@show')->name('dbtable');
-    Route::get('/pdf1print', 'HomeController@pdf_print')->name('print_data');
 
     Route::resource('users', 'UsersController');
 });
