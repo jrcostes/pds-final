@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\C1answers;
 use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
+use Illuminate\Support\Facades\App;
 
 use Illuminate\Http\Request;
 
