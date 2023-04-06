@@ -28,7 +28,7 @@
                                 <td>{{ $sheet->surname }}</td>
                                 <td>{{ $sheet->firstname }}</td>
                                 <td>
-                                    <form id="form1Pdf" method="get" action="admin/pdf1print" autocomplete="off"
+                                    <form id="form1Pdf" method="get" action="pdf1print" autocomplete="off"
                                         onsubmit="return submitForm2(this);">
                                         <input type="hidden" id="admin.formid" name="formid" value="{{ $sheet->id }}">
                                         <button type="submit" class="btn btn-outline-primary">PDF</button>

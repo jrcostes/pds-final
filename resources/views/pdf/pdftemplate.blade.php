@@ -14991,7 +14991,7 @@ td
 <td colspan='2' rowspan='2' height='32' class='x496' style='border-right:1px solid windowtext;height:24pt;'>CIVIL STATUS</td>
 <td colspan='3' rowspan='2' height='32' class='x760'  width='190' style='text-align: left;height:24pt;width:160.5pt;' align='left' valign='top'>
     <php>
-@if ($answersc1['civilStataus'] == 'separated' )
+@if ($answersc1['civilStatus'] == 'separated' )
 <span style='mso-ignore:vglayout;position:absolute;z-index:8;margin-left:120px;margin-top:26px;width:81px;height:44px'>
         <input type="radio" id="Separated" checked> <label class="radio">Separated</label></span>
     <span style='mso-ignore:vglayout;position:absolute;z-index:9;margin-left:120px;margin-top:5px;width:81px;height:38px'>
@@ -15005,7 +15005,7 @@ td
         <input type="radio" id="Other/s"> <label class="radio">Other/s</label></span>
     </span>
     <span style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td colspan='3' height='32' class='x324' width='214' style='height:24pt;width:160.5pt;background-color:white;'></td></tr></table></span>
-@elseif ($answersc1['civilStataus']  == 'married')
+@elseif ($answersc1['civilStatus']  == 'married')
 <span style='mso-ignore:vglayout;position:absolute;z-index:8;margin-left:120px;margin-top:26px;width:81px;height:44px'>
         <input type="radio" id="Separated"> <label class="radio">Separated</label></span>
     <span style='mso-ignore:vglayout;position:absolute;z-index:9;margin-left:120px;margin-top:5px;width:81px;height:38px'>
@@ -15020,7 +15020,7 @@ td
     </span>
     <span style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td colspan='3' height='32' class='x324' width='214' style='height:24pt;width:160.5pt;background-color:white;'></td></tr></table></span>
 
-@elseif ($answersc1['civilStataus']  === 'single')
+@elseif ($answersc1['civilStatus']  === 'single')
     <span style='mso-ignore:vglayout;position:absolute;z-index:8;margin-left:120px;margin-top:26px;width:81px;height:44px'>
         <input type="radio" id="Separated"> <label class="radio">Separated</label></span>
     <span style='mso-ignore:vglayout;position:absolute;z-index:9;margin-left:120px;margin-top:5px;width:81px;height:38px'>
@@ -15035,7 +15035,7 @@ td
     </span>
     <span style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td colspan='3' height='32' class='x324' width='214' style='height:24pt;width:160.5pt;background-color:white;'></td></tr></table></span>
 
-@elseif($answersc1['civilStataus']  === 'widowed')
+@elseif($answersc1['civilStatus']  === 'widowed')
     <span style='mso-ignore:vglayout;position:absolute;z-index:8;margin-left:120px;margin-top:26px;width:81px;height:44px'>
         <input type="radio" id="Separated"> <label class="radio">Separated</label></span>
     <span style='mso-ignore:vglayout;position:absolute;z-index:9;margin-left:120px;margin-top:5px;width:81px;height:38px'>
@@ -15050,7 +15050,7 @@ td
     </span>
     <span style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td colspan='3' height='32' class='x324' width='214' style='height:24pt;width:160.5pt;background-color:white;'></td></tr></table></span>
 
-@elseif($answersc1['civilStataus']  === 'other')
+@elseif($answersc1['civilStatus']  === 'other')
     <span style='mso-ignore:vglayout;position:absolute;z-index:8;margin-left:120px;margin-top:26px;width:81px;height:44px'>
         <input type="radio" id="Separated"> <label class="radio">Separated</label></span>
     <span style='mso-ignore:vglayout;position:absolute;z-index:9;margin-left:120px;margin-top:5px;width:81px;height:38px'>
