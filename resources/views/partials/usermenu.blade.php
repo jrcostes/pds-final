@@ -3,7 +3,7 @@
 
         <ul class="nav">
             <li class="nav-item">
-                <a href="{{ route("admin.home") }}" class="nav-link">
+                <a href="{{ route("user.home") }}" class="nav-link">
                     <i class="nav-icon fas fa-fw fa-tachometer-alt">
 
                     </i>
@@ -11,7 +11,7 @@
                 </a>
             </li>
 
-                <li class="nav-item nav-dropdown">
+                <!-- <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle" href="#">
                         <i class="fa-fw fas fa-users nav-icon">
 
@@ -41,16 +41,8 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item">
-                                <a href="{{ route("admin.dbtable") }}" class="nav-link {{ request()->is('admin/dbtable') || request()->is('admin/dbtable/*') ? 'active' : '' }}">
-                                    <i class="fa-fw fas fa-user nav-icon">
-
-                                    </i>
-                                    {{ trans('Data Tables') }}
-                                </a>
-                            </li>
                     </ul>
-                </li>
+                </li> -->
 
 
             @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))

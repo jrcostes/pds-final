@@ -30,15 +30,10 @@
                                 <td>
                                     <form id="form1Pdf" method="get" action="/pdf1print" autocomplete="off"
                                         onsubmit="return submitForm2(this);">
-                                        <input type="hidden" id="formid" name="formid" value="{{ $sheet->id }}">
+                                        <input type="hidden" id="admin.formid" name="formid" value="{{ $sheet->id }}">
                                         <button type="submit" class="btn btn-outline-primary">PDF</button>
                                     </form>
-                                    <form action="{{ route('sheets.destroy', $sheet->id) }}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit"
-                                            onclick="return confirm('{{ __('Are you sure you want to delete?') }}')">Delete</button>
-                                    </form>
+                                   
                                 </td>
                             </tr>
                         @endforeach
