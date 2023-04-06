@@ -37,10 +37,17 @@ return [
         'enabled' => true,
         'binary' => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"',
         'timeout' => false,
-        'options' => [],
+        'options' => [
+                        'page-height' => '234mm',
+                        'page-width'  => '150.9mm',
+                        'orientation'=>'portrait',
+                        'margin-top'=>'9mm',
+                        'margin-bottom'=>'5mm',
+                        'margin-right'=>'7mm',
+                        'margin-left'=>'18mm',
+        ],
         'env'     => [],
     ],
-
     'image' => [
         'enabled' => true,
         'binary'  => env('WKHTML_IMG_BINARY', '/usr/local/bin/wkhtmltoimage'),
