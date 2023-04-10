@@ -8,6 +8,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Role;
 use App\User;
+use App\C1answers;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,8 +19,9 @@ class UsersController extends Controller
     {
 
         $users = User::all();
+        $forms = C1answers::all();
 
-        return view('admin.users.index', compact('users'));
+        return view('admin.users.index', compact('users','forms'));
     }
 
     public function create()

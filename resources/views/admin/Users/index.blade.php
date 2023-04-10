@@ -11,7 +11,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('Enrolled Users') }} 
+        {{ trans('Enrolled Users') }}
     </div>
 
     <div class="card-body">
@@ -58,7 +58,9 @@
                                 {{ $user->email ?? '' }}
                             </td>
                             <td>
-                                {{ $user->email_verified_at ?? '' }}
+                                @foreach($user->forms as $key => $item)
+                                    <span class="badge badge-info"> {{$item->id}}</span>
+                                @endforeach
                             </td>
                             <td>
                                 @foreach($user->roles as $key => $item)
