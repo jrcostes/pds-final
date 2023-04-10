@@ -14,11 +14,12 @@ class CreateFormTrigger extends Migration
      */
     public function up()
     {
-        DB::unprepared(' CREATE TRIGGER tr_User_Form AFTER INSERT ON `c1answers` FOR EACH ROW
+        $user = Auth::id();
+        DB::unprepared(" CREATE TRIGGER tr_User_Form AFTER INSERT ON `c1answers` FOR EACH ROW
         BEGIN
             INSERT INTO c1answers_user (`user_id`, `c1answers_id`)
-            VALUES (`Auth::id()`, NEW.id);
-        END');
+            VALUES ('$user', NEW.id);
+        END");
     }
 
     /**
