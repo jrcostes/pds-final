@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Activitylog\Models\Activity;
+use App\C1answers;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
         Activity::saving(function (Activity $activity){
             $activity->properties = $activity->properties->put('ip', request()->ip());
         });
+        C1answers::observe(UserObserver::class);
     }
 
     /**
