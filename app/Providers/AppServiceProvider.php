@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
         Activity::saving(function (Activity $activity){
             $activity->properties = $activity->properties->put('ip', request()->ip());
         });
-        C1answers::observe(UserObserver::class);
+        C1answers::observe(FormObserver::class);
     }
 
     /**
