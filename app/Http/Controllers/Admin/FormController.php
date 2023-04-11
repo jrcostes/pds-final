@@ -10,6 +10,7 @@ use App\Sheets3;
 use App\Sheets4;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
 use function PHPSTORM_META\map;
@@ -685,7 +686,7 @@ class FormController
             'issuanceplace44' => 'max:64',
             'issuancedate44' => 'before:today|nullable'
         ]);
-
+        $id = rand($max = 9999);
         $newForm = new C1answers();
 
         $c1answers = [
@@ -1370,6 +1371,7 @@ class FormController
             'issuancedate44' => $data['issuancedate44'] ?? null
 
         ];
+
         $newForm->c1answers = json_encode($c1answers);
         $newForm->c2answers = json_encode($c2answers);
         $newForm->c3answers = json_encode($c3answers);
@@ -1378,12 +1380,14 @@ class FormController
         $newForm->surname = $request->surname;
         $newForm->firstname = $request->firstname;
         $newForm->sex = $request->sex;
+        $newForm->user_id=Auth::id();
 
 
 
 
+        $userid = Auth::id();
 
-        $newForm->save();
+
 
 
 

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Activitylog\Models\Activity;
 use App\C1answers;
+use App\Observers\FormObserver;
 
 class AppServiceProvider extends ServiceProvider
 {

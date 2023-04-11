@@ -10,6 +10,7 @@ use App\Sheets3;
 use App\Sheets4;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
 use function PHPSTORM_META\map;
@@ -1378,6 +1379,7 @@ class PostController
         $newForm->surname = $request->surname;
         $newForm->firstname = $request->firstname;
         $newForm->sex = $request->sex;
+        $newForm->user_id=Auth::id();
 
 
 
@@ -1387,6 +1389,7 @@ class PostController
 
 
 
+
         return redirect()->back();
     }
-}   
+}

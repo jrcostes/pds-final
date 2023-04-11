@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\C1answers;
 use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController
 {
@@ -28,6 +29,7 @@ class HomeController
         $surname = $form->surname;
         $firstname = $form->surname;
         $sex = $form->sex;
+
 
         $pdf = App::make('snappy.pdf.wrapper');
         $pdf = PDF::loadvIEW('pdf.pdftemplate', compact('answersc1', 'answersc2', 'answersc3', 'answersc4', 'firstname', 'surname', 'sex'));
