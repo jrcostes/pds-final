@@ -544,7 +544,7 @@ $group = [
             @endif
 
             <form method="get" action="/c1formsubmit" autocomplete="off" class="form-horizontal">
-
+                @csrf
                 <div id="C1FORM" class="tabcontent">
                     <div class="box-form">
                         <div>

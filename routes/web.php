@@ -39,13 +39,15 @@ Route::get('/dbtable', function () {
     return redirect()->route('admin.dbtable');
 });
 Route::get('admin/pdf1print', 'admin/HomeController@pdf_print')->name('print_data');
+Route::get('user/pdf1print', 'PostController@pdf_print')->name('print_data');
 Route::group([
     'prefix' => 'user',
     'as' => 'user.',
     'namespace' => 'User',
     'middleware' => ['auth']
 ], function () {
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'FormController@index')->name('home');
+    Route::get('forms', 'FormController@show')->name('forms');
 });
 
 Route::group([
