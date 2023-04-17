@@ -33,7 +33,14 @@
                                         <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
                                         <button type="submit" class="btn btn-outline-primary">PDF</button>
                                     </form>
-
+                                    <form id="show1Form" method="get" action="show1form" autocomplete="off">
+                                        <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
+                                        <button type="submit" class="btn btn-outline-primary">View</button>
+                                    </form>
+                                    <form id="edit1Form" method="get" action="edit1form" autocomplete="off">
+                                        <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
+                                        <button type="submit" class="btn btn-outline-primary">Edit</button>
+                                    </form>
                                 </td>
                             </tr>
 

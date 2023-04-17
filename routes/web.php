@@ -17,7 +17,9 @@ use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PdfController;
 use App\Exports\UsersExport;
+use App\Http\Controllers\User\FormController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\HomeController;
 
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -38,8 +40,14 @@ Route::get('/dbtable', function () {
 
     return redirect()->route('admin.dbtable');
 });
-Route::get('admin/pdf1print', 'admin/HomeController@pdf_print')->name('print_data');
-Route::get('user/pdf1print', 'PostController@pdf_print')->name('print_data');
+Route::get('admin/pdf1print', 'Admin\HomeController@pdf_print')->name('print_data');
+Route::get('user/pdf1print', 'User\FormController@pdf_print')->name('print_data');
+Route::get('user/show1form', 'User\FormController@formshow')->name('formshow');
+Route::get('user/edit1form', 'User\EditController@show')->name('formshow');
+
+
+
+
 Route::group([
     'prefix' => 'user',
     'as' => 'user.',
@@ -48,6 +56,7 @@ Route::group([
 ], function () {
     Route::get('/', 'FormController@index')->name('home');
     Route::get('forms', 'FormController@show')->name('forms');
+
 });
 
 Route::group([
