@@ -24,4 +24,7 @@ class EditController
 
         return view('user.forms.edit', compact('answersc1', 'answersc2', 'answersc3', 'answersc4', 'firstname', 'surname', 'sex'));
     }
+    public function update(){
+
+    }
 }

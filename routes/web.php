@@ -56,6 +56,7 @@ Route::group([
 ], function () {
     Route::get('/', 'FormController@index')->name('home');
     Route::get('forms', 'FormController@show')->name('forms');
+    Route::resource('formss', 'EditController');
 
 });
 

@@ -543,7 +543,7 @@ $group = [
                 </div>
             @endif
 
-            <form method="POST" action="{{ route("admin.users.update", [$surname]) }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route("user.formss.update", [$surname]) }}" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div id="C1FORM" class="tabcontent">
