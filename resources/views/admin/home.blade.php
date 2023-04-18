@@ -1237,7 +1237,7 @@ $group = [
                                         {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
                                         {{ Form::text('placeofexam', '', ['class' => 'form-control']) }}
 
-                                        {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
+                                        {{ Form::label('licenseno', 'License number (if applicable)') }}
                                         {{ Form::text('licenseno', '', ['class' => 'form-control']) }}
 
                                         {{ Form::label('validity', 'Date of Validity') }}<br>

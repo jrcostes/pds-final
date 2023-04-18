@@ -31,11 +31,11 @@
                                     <form id="form1Pdf" method="get" action="pdf1print" autocomplete="off"
                                         onsubmit="return submitForm2(this);">
                                         <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
-                                        <button type="submit" class="btn btn-outline-primary">PDF</button>
+                                        <button type="submit" class="btn btn-outline-primary"> Download PDF</button>
                                     </form>
                                     <form id="show1Form" method="get" action="show1form" autocomplete="off">
                                         <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
-                                        <button type="submit" class="btn btn-outline-primary">View</button>
+                                        <button type="submit" class="btn btn-outline-primary">View PDF</button>
                                     </form>
                                     <form id="edit1Form" method="get" action="edit1form" autocomplete="off">
                                         <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">

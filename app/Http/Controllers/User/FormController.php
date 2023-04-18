@@ -39,9 +39,9 @@ class FormController
 
 
         $pdf = App::make('snappy.pdf.wrapper');
-        $pdf = PDF::loadvIEW('pdf.pdftemplate', compact('answersc1', 'answersc2', 'answersc3', 'answersc4', 'firstname', 'surname', 'sex'));
+        $pdf = PDF::loadView('pdf.pdftemplate', compact('answersc1', 'answersc2', 'answersc3', 'answersc4', 'firstname', 'surname', 'sex'));
 
-        return $pdf->stream('pdsform.pdf');
+        return $pdf->download();
     }
     public function formshow(){
         $id = $_GET['formid'];
@@ -56,6 +56,10 @@ class FormController
         $firstname = $form->surname;
         $sex = $form->sex;
 
-        return view('user.forms.show', compact('answersc1', 'answersc2', 'answersc3', 'answersc4', 'firstname', 'surname', 'sex'));
+
+        $pdf = App::make('snappy.pdf.wrapper');
+        $pdf = PDF::loadView('pdf.pdftemplate', compact('answersc1', 'answersc2', 'answersc3', 'answersc4', 'firstname', 'surname', 'sex'));
+
+        return $pdf->inline();
     }
 }

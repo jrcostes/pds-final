@@ -35,7 +35,7 @@ class HomeController
         $pdf = App::make('snappy.pdf.wrapper');
         $pdf = PDF::loadvIEW('pdf.pdftemplate', compact('answersc1', 'answersc2', 'answersc3', 'answersc4', 'firstname', 'surname', 'sex'));
 
-        return $pdf->stream('pdsform.pdf');
+        return $pdf->inline('pdsform.pdf');
     }
 
 }

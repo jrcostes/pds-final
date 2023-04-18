@@ -572,15 +572,15 @@ $group = [
                                 </div>
                                 <div class="col">
                                     {{ Form::label('firstname', 'First Name') }}
-                                    <input class="form-control" type="text" name="firstname" id="firstname" value="{{ old('surname', $firstname) }}" required>
+                                    <input class="form-control" type="text" name="firstname" id="firstname" value="{{ old('firstname', $firstname) }}" required>
                                 </div>
                                 <div class="col">
                                     {{ Form::label('midname', 'Middle Name') }}
-                                    <input class="form-control" type="text" name="midname" id="mid" value="{{ old('surname', $answersc1['midname']) }}" required>
+                                    <input class="form-control" type="text" name="midname" id="mid" value="{{ old('midname', $answersc1['midname']) }}" required>
                                 </div>
                                 <div class="col col-lg-2">
                                     {{ Form::label('nameext', 'Name Extension') }}
-                                    <input class="form-control" type="text" name="nameext" id="firstnameext" value="{{ old('surname', $answersc1['firstnameext']) }}" required>
+                                    <input class="form-control" type="text" name="nameext" id="firstnameext" value="{{ old('firstnameext', $answersc1['firstnameext']) }}" required>
                                 </div>
                             </div>
 
@@ -589,14 +589,15 @@ $group = [
                                 <div class="col-12 col-md-8">
                                     <br>
                                     {{ Form::label('placeofBirth', 'Place of Birth') }}
-                                    {{ Form::text('placeofBirth', null, ['class' => 'form-control', 'id' => 'placeofBirth', 'placeholder' => 'Municipality/City, Province, Country', 'reqiured' => 'required']) }}
+                                    <input class="form-control" type="text" name="nameext" id="placeofbirth" value="{{ old('placeofBirth', $answersc1['placeBirth']) }}" required>
+                
                                 </div>
                                 <div class="col-6 col-md-4">
                                     <br>
 
                                     <label for="birthdate">Date of Birth</label><br>
 
-                                    <input type="date" class="date-picker" name="birthdate" id="birthdate"
+                                    <input type="date" class="date-picker" name="birthdate" id="birthdate" value="{{old('birthdate', $answersc1['birthdate'])}}"
                                         data-coreui-toggle="date-picker" required>
                                 </div>
 
@@ -629,7 +630,7 @@ $group = [
                                             <option value='widowed'>Widowed</option>
                                             <option value='other'>Other/s</option>
                                         </select>
-                                        {{ Form::text('civilothers', null, [ 'class' => 'form-control', 'id' => 'civilothers', 'placeholder' => 'If others, specify.']) }}
+                                        <input class="form-control" type="text" name="civilothers" id="civilothers" required>
                                     </div>
                                 </div>
 
@@ -656,11 +657,11 @@ $group = [
                                 </div>
                                 <div class="col-sm">
                                     {{ Form::label('height', 'Height') }}<br>
-                                    {{ Form::number('height', null, ['class' => 'form-control', 'id' => 'height', 'placeholder' => 'in cm.']) }}
+                                    <input class="form-control" type="number" name="height" id="height" value="{{ old('height', $answersc1['height']) }}" required>
                                 </div>
                                 <div class="col-sm">
                                     {{ Form::label('weight', 'Weight') }}<br>
-                                    {{ Form::number('weight', null, ['class' => 'form-control', 'id' => 'weight', 'placeholder' => 'in kg.']) }}
+                                    <input class="form-control" type="number" name="weight" id="weight" value="{{ old('weight', $answersc1['weight']) }}" required>
                                 </div>
                             </div>
                         </div>
@@ -676,21 +677,21 @@ $group = [
                                         <span class="input-group-text" id="gsisno">GSIS No.</span>
                                     </div>
                                     <input name="gsisno" type="text" class="form-control" aria-label="Small"
-                                        aria-describedby="inputGroup-sizing-sm">
+                                        aria-describedby="inputGroup-sizing-sm" value="{{old('gsisno', $answersc1['gsisno'])}}">
                                 </div>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="pagibigno">PAG-IBIG No.</span>
                                     </div>
                                     <input name="pagibigno" type="text" class="form-control" aria-label="Small"
-                                        aria-describedby="inputGroup-sizing-sm">
+                                        aria-describedby="inputGroup-sizing-sm" value="{{old('gsisno', $answersc1['gsisno'])}}">
                                 </div>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="philhealthno">PHILHEALTH No.</span>
                                     </div>
                                     <input name="philhealthno" type="text" class="form-control" aria-label="Small"
-                                        aria-describedby="inputGroup-sizing-sm">
+                                        aria-describedby="inputGroup-sizing-sm" value="{{old('philhealthno', $answersc1['philhealthno'])}}">
                                 </div>
                             </div>
                             <div class="col">
@@ -699,21 +700,21 @@ $group = [
                                         <span class="input-group-text" id="sssno">SSS No.</span>
                                     </div>
                                     <input name="sssno" type="text" class="form-control" aria-label="Small"
-                                        aria-describedby="inputGroup-sizing-sm">
+                                        aria-describedby="inputGroup-sizing-sm" value="{{old('sssno', $answersc1['sssno'])}}">
                                 </div>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="tinno">TIN No.</span>
                                     </div>
                                     <input name="tinno" type="text" class="form-control" aria-label="Small"
-                                        aria-describedby="inputGroup-sizing-sm">
+                                        aria-describedby="inputGroup-sizing-sm" value="{{old('tinno', $answersc1['tinno'])}}">
                                 </div>
                                 <div class="input-group input-group-sm mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="agencyemp">AGENCY EMPLOYEE No.</span>
                                     </div>
                                     <input name="agencyemp" type="text" class="form-control" aria-label="Small"
-                                        aria-describedby="inputGroup-sizing-sm">
+                                        aria-describedby="inputGroup-sizing-sm" value="{{old('agencyemp', $answersc1['agencyemp'])}}">
                                 </div>
                             </div>
                         </div>
@@ -758,15 +759,14 @@ $group = [
                                 <b>{{ Form::label('residential-address', 'Residential Address') }}<br></b>
                                 <div class="row">
                                     <div class="col">
-                                        {{ Form::text('residentialhouse', null, ['class' => 'form-control', 'id' => 'houseno-R', 'placeholder' => 'House/Block/Lot No.']) }}
-                                        {{ Form::text('residentialst', null, ['class' => 'form-control', 'id' => 'street-R', 'placeholder' => 'Street']) }}
-                                        {{ Form::text('residentialsudv', null, ['class' => 'form-control', 'id' => 'subdivillage-R', 'placeholder' => 'Subdivision/Village']) }}
+                                    <input class="form-control" type="text" name="residentialhouse" id="houseno-R" value="{{ old('', $answersc1['residentialhouse']) }}" required>
+                                    <input class="form-control" type="text" name="residentialst" id="street-R" value="{{ old('residentialst', $answersc1['residentialst']) }}" required>
+                                    <input class="form-control" type="text" name="residentialsudv" id="sudbivillage-R" value="{{ old('residentialsudv', $answersc1['residentialsudv']) }}" required>
                                     </div><br>
                                     <div class="col">
-                                        {{ Form::text('residentialbrgy', null, ['class' => 'form-control', 'id' => 'barangay-R', 'placeholder' => 'Barangay']) }}
-                                        {{ Form::text('residentialcity', null, ['class' => 'form-control', 'id' => 'City/Municipality-R', 'placeholder' => 'City/Municipality']) }}
-                                        {{ Form::text('residentialprv', null, ['class' => 'form-control', 'id' => 'province-R', 'placeholder' => 'Province', ]) }}
-                                        {{-- {{ Form::number('residentialzip', null, ['class' => 'form-control', 'id' => 'zipcode-R', 'placeholder' => 'Zip Code', 'reqiured' => 'required']) }} --}}
+                                    <input class="form-control" type="text" name="residentialbrgy" id="barangay-R" value="{{ old('residentialbrgy', $answersc1['residentialbrgy']) }}" required>
+                                    <input class="form-control" type="text" name="residentailcity" id="CityMunicipality-R" value="{{ old('residentialcity', $answersc1['residentialcity']) }}" required>    
+                                    <input class="form-control" type="text" name="residentialprv" id="province-R" value="{{ old('residentialprv', $answersc1['residentialprv']) }}" required>
                                     </div>
                                 </div>
                                 <br>
@@ -775,7 +775,7 @@ $group = [
                                         <span class="input-group-text" id="zipcode-R">Zip Code</span>
                                     </div>
                                     <input type="text" name="residentialzip" id="residentialzip" class="form-control"
-                                        aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{old('residentialzip', $answersc1['residentialzip'])}}">
                                 </div>
                             </div>
 
@@ -783,14 +783,14 @@ $group = [
                                 <b>{{ Form::label('permanentaddress', 'Permanent Address') }}<br></b>
                                 <div class="row">
                                     <div class="col">
-                                        {{ Form::text('permanenthouse', null, ['class' => 'form-control', 'id' => 'houseno-P', 'placeholder' => 'House/Block/Lot No.', 'reqiured' => 'required']) }}
-                                        {{ Form::text('permanentst', null, ['class' => 'form-control', 'id' => 'street-P', 'placeholder' => 'Street', 'reqiured' => 'required']) }}
-                                        {{ Form::text('permanentsubdv', null, ['class' => 'form-control', 'id' => 'subdivillage-P', 'placeholder' => 'Subdivision/Village', 'reqiured' => 'required']) }}
+                                    <input class="form-control" type="text" name="permanenthouse" id="houseno-P" value="{{ old('', $answersc1['permanenthouse']) }}" required>
+                                    <input class="form-control" type="text" name="permanentst" id="street-P" value="{{ old('residentialst', $answersc1['permanentst']) }}" required>
+                                    <input class="form-control" type="text" name="permanentsubdv" id="sudbivillage-P" value="{{ old('permanentsubdv', $answersc1['permanentsubdv']) }}" required>
                                     </div>
                                     <div class="col">
-                                        {{ Form::text('permanentbrgy', null, ['class' => 'form-control', 'id' => 'barangay-P', 'placeholder' => 'Barangay', 'reqiured' => 'required']) }}
-                                        {{ Form::text('permanentcity', null, ['class' => 'form-control', 'id' => 'City/Municipality-P', 'placeholder' => 'City/Municipality', 'reqiured' => 'required']) }}
-                                        {{ Form::text('permanentprv', null, ['class' => 'form-control', 'id' => 'province-P', 'placeholder' => 'Province', 'reqiured' => 'required']) }}
+                                    <input class="form-control" type="text" name="permanentbrgy" id="barangayP" value="{{ old('permanentbrgy', $answersc1['permanentbrgy']) }}" required>
+                                    <input class="form-control" type="text" name="permanentcity" id="CityMunicipality-P" value="{{ old('permanentcity', $answersc1['permanentcity']) }}" required>    
+                                    <input class="form-control" type="text" name="permanentprv" id="province-P" value="{{ old('permanentprv', $answersc1['permanentprv']) }}" required>
                                     </div>
                                 </div>
                                 <br>
@@ -799,7 +799,7 @@ $group = [
                                         <span class="input-group-text" id="zipcode-R">Zip Code</span>
                                     </div>
                                     <input name="permanentzip" id="permanentzip" type="text" class="form-control"
-                                        aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                        aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{old('permanentzip', $answersc1['permanentzip'])}}">
                                 </div>
                             </div>
                         </div>
@@ -810,13 +810,15 @@ $group = [
                         </b>
                         <div class="row">
                             <div class="col">
-                                {{ Form::text('mobno', null, ['class' => 'form-control', 'id' => 'mobno', 'placeholder' => 'Mobile No.']) }}
+                            <input class="form-control" type="text" name="mobno" id="mobno" value="{{ old('mobno', $answersc1['mobno']) }}" required>
                             </div>
                             <div class="col">
-                                {{ Form::text('telno', null, ['class' => 'form-control', 'id' => 'telno', 'placeholder' => 'Telephone No.']) }}
+                            <input class="form-control" type="text" name="telno" id="telno" value="{{ old('telno', $answersc1['telno']) }}" required>
+
                             </div>
                             <div class="col">
-                                {{ Form::email('email', null, ['class' => 'form-control', 'id' => 'email', 'placeholder' => 'Email Addr.']) }}
+                            <input class="form-control" type="text" name="email" id="email" value="{{ old('email', $answersc1['email']) }}" required>
+
                             </div>
                         </div>
                         <br>
@@ -826,240 +828,227 @@ $group = [
                             <b>{{ Form::label('spouse', "Spouse's Name") }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::text('spousesn', null, ['class' => 'form-control', 'id' => 'surname-S', 'placeholder' => 'Last Name']) }}
+                                <input class="form-control" type="text" name="spousesn" id="surname-S" value="{{ old('spousesn', $answersc1['spousesn']) }}" required placeholder="Spouse's Surname">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('spousefn', null, ['class' => 'form-control', 'id' => 'firstname-S', 'placeholder' => 'First Name']) }}
+                                <input class="form-control" type="text" name="spousefn" id="firstname-S" value="{{ old('spousefn', $answersc1['spousefn']) }}" required placeholder="Spouse's Firstname">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('spousemn', null, ['class' => 'form-control', 'id' => 'midname-S', 'placeholder' => 'Middle Name']) }}
+                                <input class="form-control" type="text" name="spousemn" id="midname-S" value="{{ old('spousemn', $answersc1['spousemn']) }}" required placeholder="Spouse's Middle Name">
                                 </div>
                                 <div class="col col-lg-2">
-                                    {{ Form::text('spousenmext', null, ['class' => 'form-control', 'id' => 'namext-S', 'placeholder' => 'Name Ext.']) }}
+                                <input class="form-control" type="text" name="spousenmext" id="namext-S" value="{{ old('spousenmext', $answersc1['spousenmext']) }}" required placeholder="Spouse Name Extension">
                                 </div>
                             </div><br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::text('spouseocc', null, ['class' => 'form-control', 'id' => 'occupation-S', 'placeholder' => 'Occupation']) }}
+                                <input class="form-control" type="text" name="spouseocc" id="occupation-S" value="{{ old('spouseocc', $answersc1['spouseocc']) }}" required placeholder="Spouse's Occupation">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('spouseemp', null, ['class' => 'form-control', 'id' => 'spouseemp', 'placeholder' => 'Employer/Business Name']) }}
+                                <input class="form-control" type="text" name="spouseemp" id="spouseemp" value="{{ old('spouseemp', $answersc1['spouseemp']) }}" required placeholder="Spouse's Employer">
                                 </div>
                                 <div class="w-100"></div>
                                 <div class="col">
-                                    {{ Form::text('spouseempadd', null, ['class' => 'form-control', 'id' => 'employadd-S', 'placeholder' => 'Business Address']) }}
+                                <input class="form-control" type="text" name="spouseempadd" id="employadd-S" value="{{ old('spouseempadd', $answersc1['spouseempadd']) }}" required placeholder="Employer's Address">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('spousetel', null, ['class' => 'form-control', 'id' => 'telno-S', 'placeholder' => 'Telephone No.']) }}
+                                <input class="form-control" type="text" name="spousesn" id="surname-S" value="{{ old('spousetel', $answersc1['spousetel']) }}" required placeholder="Telephone Number">    
                                 </div>
                             </div><br>
 
                             <b>{{ Form::label('father', "Father's Name") }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::text('fathersn', null, ['class' => 'form-control', 'id' => 'surname-F', 'placeholder' => 'Last Name']) }}
+                                <input class="form-control" type="text" name="fathersn" id="surname-F" value="{{ old('fathersn', $answersc1['fathersn']) }}" required placeholder="Father's Surname">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('fatherfn', null, ['class' => 'form-control', 'id' => 'firstname-F', 'placeholder' => 'First Name']) }}
+                                <input class="form-control" type="text" name="fatherfn" id="firstname-F" value="{{ old('fatherfn', $answersc1['fatherfn']) }}" required placeholder="Father's First name">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('fathermn', null, ['class' => 'form-control', 'id' => 'midname-F', 'placeholder' => 'Middle Name']) }}
+                                <input class="form-control" type="text" name="fathermn" id="midname-F" value="{{ old('fathermn', $answersc1['fathermn']) }}" required placeholder="Father's Middle name">
                                 </div>
                                 <div class="col col-lg-2">
-                                    {{ Form::text('fatherext', null, ['class' => 'form-control', 'id' => 'namext-F', 'placeholder' => 'Name Ext.']) }}
+                                <input class="form-control" type="text" name="fatherext" id="namext-F" value="{{ old('fatherext', $answersc1['fatherext']) }}" required placeholder="Father's First name extention">
                                 </div>
                             </div><br>
 
                             <b>{{ Form::label('mother', "Mother's Maiden Name") }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::text('mothernm', null, ['class' => 'form-control', 'id' => 'firstname-M', 'placeholder' => 'Last Name']) }}
+                                <input class="form-control" type="text" name="mothernm" id="surname-M" value="{{ old('mothernm', $answersc1['mothernm']) }}" required placeholder="Mother's Last name">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('motherfn', null, ['class' => 'form-control', 'id' => 'midname-M', 'placeholder' => 'First Name']) }}
+                                <input class="form-control" type="text" name="motherfn" id="firstname-M" value="{{ old('motherfn', $answersc1['motherfn']) }}" required placeholder="Mother's First name">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('mothermn', null, ['class' => 'form-control', 'id' => 'namext-M', 'placeholder' => 'Middle Name']) }}
-                                </div>
-                                <div class="col col-lg-2">
-                                    {{ Form::text('fatherext', null, ['class' => 'form-control', 'id' => 'namext-F', 'placeholder' => 'Name Ext.']) }}
+                                <input class="form-control" type="text" name="mothermn" id="midname-M" value="{{ old('mothermn', $answersc1['mothermn']) }}" required placeholder="Mother's Middle name">
                                 </div>
                             </div><br>
 
                             <div class="children">
                                 <b>{{ Form::label('children', 'Name of Children (List all names)') }}</b>
-                                <div class="col-1 row px-0">
-                                    <div class="col-5 offset-1 px-0">
-                                        <button class="btn btn-secondary btn-sm w-100" id="minus-refc1"
-                                            disabled>-</button>
-                                    </div>
-                                    <div class="col-5 offset-1 px-0">
-                                        <button class="btn btn-secondary btn-sm w-100" id="add-refc1">+</button>
-                                    </div>
-                                </div>
-
                                 <div class="row">
                                     <div class="col">
                                         <b>{{ Form::label('child0', 'Name: ') }}</b>
-                                        {{ Form::text('child0', null, ['class' => 'form-control', 'id' => 'child0', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                        <input class="form-control" type="text" name="child0" id="child0" value="{{ old('child0', $answersc1['child0']) }}" required placeholder="Child's Name">
                                     </div>
                                     <div class="col">
                                         <b><label for="birthchild0">Date of Birth:</label><br></b>
                                         <input type="date" class="date-picker" name="birthchild0" id="birthchild0"
-                                            data-coreui-toggle="date-picker">
+                                            data-coreui-toggle="date-picker" value="{{old('birthchild0', $answersc1['birthchild0'])}}">
                                     </div>
                                 </div>
 
-                                <div class="child1-container d-none">
+                                <div class="child1-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child1', 'Name: ') }}</b>
-                                            {{ Form::text('child1', null, ['class' => 'form-control', 'id' => 'child1', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child1" id="child1" value="{{ old('child1', $answersc1['child1']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild1">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild1"
-                                                id="birthchild1" data-coreui-toggle="date-picker">
+                                                id="birthchild1" data-coreui-toggle="date-picker" value="{{old('birthchild1', $answersc1['birthchild1']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child2-container d-none">
+                                <div class="child2-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child2', 'Name: ') }}</b>
-                                            {{ Form::text('child2', null, ['class' => 'form-control', 'id' => 'child2', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child2" id="child2" value="{{ old('child2', $answersc1['child2']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild2">Date of Birth:</label><br></b>
                                             <input type="date" class="date-picker" name="birthchild2"
-                                                id="birthchild2" data-coreui-toggle="date-picker">
+                                                id="birthchild2" data-coreui-toggle="date-picker" value="{{old('birthchild2', $answersc1['birthchild2']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child3-container d-none">
+                                <div class="child3-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child3', 'Name: ') }}</b>
-                                            {{ Form::text('child3', null, ['class' => 'form-control', 'id' => 'child3', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child3" id="child3" value="{{ old('child3', $answersc1['child3']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild3">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild3"
-                                                id="birthchild3" data-coreui-toggle="date-picker">
+                                                id="birthchild3" data-coreui-toggle="date-picker"  value="{{old('birthchild3', $answersc1['birthchild3']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child4-container d-none">
+                                <div class="child4-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child4', 'Name: ') }}</b>
-                                            {{ Form::text('child4', null, ['class' => 'form-control', 'id' => 'child4', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child4" id="child4" value="{{ old('child4', $answersc1['child4']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild4">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild4"
-                                                id="birthchild4" data-coreui-toggle="date-picker">
+                                                id="birthchild4" data-coreui-toggle="date-picker" value="{{old('birthchild4', $answersc1['birthchild4']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child5-container d-none">
+                                <div class="child5-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child5', 'Name: ') }}</b>
-                                            {{ Form::text('child5', null, ['class' => 'form-control', 'id' => 'child5', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child5" id="child5" value="{{ old('child5', $answersc1['child5']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild5">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild5"
-                                                id="birthchild5" data-coreui-toggle="date-picker">
+                                                id="birthchild5" data-coreui-toggle="date-picker" value="{{old('birthchild5', $answersc1['birthchild5']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child6-container d-none">
+                                <div class="child6-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child6', 'Name: ') }}</b>
-                                            {{ Form::text('child6', null, ['class' => 'form-control', 'id' => 'child6', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child6" id="child6" value="{{ old('child6', $answersc1['child6']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild6">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild6"
-                                                id="birthchild6" data-coreui-toggle="date-picker">
+                                                id="birthchild6" data-coreui-toggle="date-picker" value="{{old('birthchild6', $answersc1['birthchild6']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child7-container d-none">
+                                <div class="child7-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child7', 'Name: ') }}</b>
-                                            {{ Form::text('child7', null, ['class' => 'form-control', 'id' => 'child7', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child7" id="child7" value="{{ old('child7', $answersc1['child7']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild7">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild7"
-                                                id="birthchild7" data-coreui-toggle="date-picker">
+                                                id="birthchild7" data-coreui-toggle="date-picker" value="{{old('birthchild7', $answersc1['birthchild7']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child8-container d-none">
+                                <div class="child8-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child8', 'Name: ') }}</b>
-                                            {{ Form::text('child8', null, ['class' => 'form-control', 'id' => 'child8', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child8" id="child8" value="{{ old('child8', $answersc1['child8']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild8">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild8"
-                                                id="birthchild8" data-coreui-toggle="date-picker">
+                                                id="birthchild8" data-coreui-toggle="date-picker" value="{{old('birthchild8', $answersc1['birthchild8']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child9-container d-none">
+                                <div class="child9-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child9', 'Name: ') }}</b>
-                                            {{ Form::text('child9', null, ['class' => 'form-control', 'id' => 'child9', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child9" id="child9" value="{{ old('child9', $answersc1['child9']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild9">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild9"
-                                                id="birthchild9" data-coreui-toggle="date-picker">
+                                                id="birthchild9" data-coreui-toggle="date-picker" value="{{old('birthchild9', $answersc1['birthchild9']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child10-container d-none">
+                                <div class="child10-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child10', 'Name: ') }}</b>
-                                            {{ Form::text('child10', null, ['class' => 'form-control', 'id' => 'child10', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child10" id="child10" value="{{ old('child10', $answersc1['child10']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild10">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild10"
-                                                id="birthchild10" data-coreui-toggle="date-picker">
+                                                id="birthchild10" data-coreui-toggle="date-picker" value="{{old('birthchild10', $answersc1['birthchild10']) }}">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="child11-container d-none">
+                                <div class="child11-container">
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child11', 'Name: ') }}</b>
-                                            {{ Form::text('child11', null, ['class' => 'form-control', 'id' => 'child11', 'placeholder' => 'Full Name', 'autocomplete' => 'off']) }}
+                                            <input class="form-control" type="text" name="child11" id="child11" value="{{ old('child11', $answersc1['child11']) }}" required placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild11">Date of Birth:</label></b><br>
                                             <input type="date" class="date-picker" name="birthchild11"
-                                                id="birthchild11" data-coreui-toggle="date-picker">
+                                                id="birthchild11" data-coreui-toggle="date-picker" value="{{old('birthchild11', $answersc1['birthchild11']) }}">
                                         </div>
                                     </div>
                                 </div>
