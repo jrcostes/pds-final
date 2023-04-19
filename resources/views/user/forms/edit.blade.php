@@ -590,7 +590,7 @@ $group = [
                                     <br>
                                     {{ Form::label('placeofBirth', 'Place of Birth') }}
                                     <input class="form-control" type="text" name="nameext" id="placeofbirth" value="{{ old('placeofBirth', $answersc1['placeBirth']) }}" required>
-                
+
                                 </div>
                                 <div class="col-6 col-md-4">
                                     <br>
@@ -765,7 +765,7 @@ $group = [
                                     </div><br>
                                     <div class="col">
                                     <input class="form-control" type="text" name="residentialbrgy" id="barangay-R" value="{{ old('residentialbrgy', $answersc1['residentialbrgy']) }}" required>
-                                    <input class="form-control" type="text" name="residentailcity" id="CityMunicipality-R" value="{{ old('residentialcity', $answersc1['residentialcity']) }}" required>    
+                                    <input class="form-control" type="text" name="residentailcity" id="CityMunicipality-R" value="{{ old('residentialcity', $answersc1['residentialcity']) }}" required>
                                     <input class="form-control" type="text" name="residentialprv" id="province-R" value="{{ old('residentialprv', $answersc1['residentialprv']) }}" required>
                                     </div>
                                 </div>
@@ -789,7 +789,7 @@ $group = [
                                     </div>
                                     <div class="col">
                                     <input class="form-control" type="text" name="permanentbrgy" id="barangayP" value="{{ old('permanentbrgy', $answersc1['permanentbrgy']) }}" required>
-                                    <input class="form-control" type="text" name="permanentcity" id="CityMunicipality-P" value="{{ old('permanentcity', $answersc1['permanentcity']) }}" required>    
+                                    <input class="form-control" type="text" name="permanentcity" id="CityMunicipality-P" value="{{ old('permanentcity', $answersc1['permanentcity']) }}" required>
                                     <input class="form-control" type="text" name="permanentprv" id="province-P" value="{{ old('permanentprv', $answersc1['permanentprv']) }}" required>
                                     </div>
                                 </div>
@@ -852,7 +852,7 @@ $group = [
                                 <input class="form-control" type="text" name="spouseempadd" id="employadd-S" value="{{ old('spouseempadd', $answersc1['spouseempadd']) }}" required placeholder="Employer's Address">
                                 </div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="spousesn" id="surname-S" value="{{ old('spousetel', $answersc1['spousetel']) }}" required placeholder="Telephone Number">    
+                                <input class="form-control" type="text" name="spousesn" id="surname-S" value="{{ old('spousetel', $answersc1['spousetel']) }}" required placeholder="Telephone Number">
                                 </div>
                             </div><br>
 
@@ -895,7 +895,7 @@ $group = [
                                     <div class="col">
                                         <b><label for="birthchild0">Date of Birth:</label><br></b>
                                         <input type="date" class="date-picker" name="birthchild0" id="birthchild0"
-                                            data-coreui-toggle="date-picker" value="{{old('birthchild0', $answersc1['birthchild0'])}}">
+                                            data-coreui-toggle="date-picker" value="{{old('birthchild', $answersc1['birthchild'])}}">
                                     </div>
                                 </div>
 
@@ -1063,133 +1063,158 @@ $group = [
                             <b>{{ Form::label('elem', 'Elementary') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::text('elemname', null, ['class' => 'form-control', 'id' => 'elemname', 'placeholder' => 'Name of School (No Abbreviations)']) }}<br>
+                                    <input class="form-control" type="text" name="elemname" id="elemname" value="{{ old('elemname', $answersc1['elemname']) }}" required placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('elemdeg', null, ['class' => 'form-control', 'id' => 'elemdegree', 'placeholder' => 'Basic Education/Degree/Course (No Abbreviations)']) }}<br>
+                                    <input class="form-control" type="text" name="elemdeg" id="elemdeg" value="{{ old('elemdeg', $answersc1['elemdeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
                                 </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
                             <div class="row">
                                 <div class="col">
-
-                                    {{ Form::month('attendancefrom', null, ['class' => 'form-control', 'id' => 'elemattendFrom', 'placeholder' => 'FROM']) }}
+                                    <input class="form-control" type="month" name="attendancefrom" id="elemattendFrom" value="{{ old('attendancefrom', $answersc1['attendancefrom']) }}" required placeholder="FROM">
                                 </div>
                                 <div class="col">
-                                    {{ Form::month('attendanceto', null, ['class' => 'form-control', 'id' => 'elemattendto', 'placeholder' => 'TO']) }}<br>
+                                    <input class="form-control" type="month" name="attendanceto" id="elemattendto" value="{{ old('attendanceto', $answersc1['attendanceto']) }}" required placeholder="TO">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::number('elemunitLevel', null, ['class' => 'form-control', 'id' => 'unitLevelelem', 'placeholder' => 'Highest Unit / Level earned']) }}<br>
+                                    <input class="form-control" type="number" name="elemunitLevel" id="elemunitLevel" value="{{ old('elemunitLevel', $answersc1['elemunitLevel']) }}" required placeholder="Highest Unit / Level earned">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('yeargradelem', null, ['class' => 'form-control', 'id' => 'yearelem', 'placeholder' => 'Year Graduated']) }}<br>
+                                    <input class="form-control" type="text" name="yeargradelem" id="yearelem" value="{{ old('yeargradelem', $answersc1['yeargradelem']) }}" required placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
-                                    {{ Form::text('scholarshipelem', null, ['class' => 'form-control', 'id' => 'scholarelem', 'placeholder' => 'Scholarship/Academic Honors Recieved']) }}<br>
+                                    <input class="form-control" type="text" name="scholarshipelem" id="scholarelem" value="{{ old('scholarshipelem', $answersc1['scholarshipelem']) }}" required placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
 
                             <b>{{ Form::label('hs', 'Secondary') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::text('hsname', null, ['class' => 'form-control', 'id' => 'hsname', 'placeholder' => 'Name of School (No Abbreviations)']) }}<br>
+                                    <input class="form-control" type="text" name="hsname" id="hsname" value="{{ old('hsname', $answersc1['hsname']) }}" required placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('hsdeg', null, ['class' => 'form-control', 'id' => 'hsdegree', 'placeholder' => 'Basic Education/Degree/Course (No Abbreviations)']) }}<br>
-                                </div>
+                                    <input class="form-control" type="text" name="hsdeg" id="hsdeg" value="{{ old('hsdeg', $answersc1['hsdeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
+                                 </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
-                            {{ Form::month('attendancefromhs', null, ['class' => 'form-control', 'id' => 'hsattendFrom', 'placeholder' => 'FROM']) }}
-                            {{ Form::month('attendancetohs', null, ['class' => 'form-control', 'id' => 'hsattendto', 'placeholder' => 'TO']) }}<br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::number('hsunitLevel', null, ['class' => 'form-control', 'id' => 'unitLevelelem', 'placeholder' => 'Highest Unit / Level earned']) }}<br>
+                                    <input class="form-control" type="month" name="attendancefromhs" id="hsattendFrom" value="{{ old('attendancefromhs', $answersc1['attendancefromhs']) }}" required placeholder="FROM">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('yeargradhs', null, ['class' => 'form-control', 'id' => 'yearhs', 'placeholder' => 'Year Graduated']) }}<br>
+                                    <input class="form-control" type="month" name="attendancetohs" id="hsattendto" value="{{ old('attendancetohs', $answersc1['attendancetohs']) }}" required placeholder="TO">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control" type="number" name="hsunitLevel" id="hsunitLevel" value="{{ old('hsunitLevel', $answersc1['hsunitLevel']) }}" required placeholder="Highest Unit / Level earned">
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="text" name="yeargradhs" id="yearhs" value="{{ old('yeargradhs', $answersc1['yeargradhs']) }}" required placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
-                                    {{ Form::text('scholarshiphs', null, ['class' => 'form-control', 'id' => 'scholarhs', 'placeholder' => 'Scholarship/Academic Honors Recieved']) }}<br>
+                                    <input class="form-control" type="text" name="scholarshiphs" id="scholarhs" value="{{ old('scholarshiphs', $answersc1['scholarshiphs']) }}" required placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
 
                             <b>{{ Form::label('voc', 'Vocational/Trade Course') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::text('vocname', null, ['class' => 'form-control', 'id' => 'vocname', 'placeholder' => 'Name of School (No Abbreviations)']) }}<br>
+                                    <input class="form-control" type="text" name="vocname" id="vocname" value="{{ old('vocname', $answersc1['vocname']) }}" required placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('vocdeg', null, ['class' => 'form-control', 'id' => 'vocdegree', 'placeholder' => 'Basic Education/Degree/Course (No Abbreviations)']) }}<br>
-                                </div>
+                                    <input class="form-control" type="text" name="vocdeg" id="vocdegree" value="{{ old('vocdeg', $answersc1['vocdeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
+                                 </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
-                            {{ Form::month('attendancefromvoc', null, ['class' => 'form-control', 'id' => 'vocattendFrom', 'placeholder' => 'FROM']) }}
-                            {{ Form::month('attendancetovoc', null, ['class' => 'form-control', 'id' => 'vocattendto', 'placeholder' => 'TO']) }}<br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::number('vocunitLevel', null, ['class' => 'form-control', 'id' => 'unitLevelelem', 'placeholder' => 'Highest Unit / Level earned']) }}<br>
+                                    <input class="form-control" type="month" name="attendancefromvoc" id="vocattendFrom" value="{{ old('attendancefromvoc', $answersc1['attendancefromvoc']) }}" required placeholder="FROM">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('yeargradvoc', null, ['class' => 'form-control', 'id' => 'yearvoc', 'placeholder' => 'Year Graduated']) }}<br>
+                                    <input class="form-control" type="month" name="attendancetovoc" id="vocattendto" value="{{ old('attendancetovoc', $answersc1['attendancetovoc']) }}" required placeholder="TO">
+                                </div>
+                            </div>
+
+                             <div class="row">
+                                <div class="col">
+                                    <input class="form-control" type="number" name="vocunitLevel" id="vocunitLevel" value="{{ old('vocunitLevel', $answersc1['vocunitLevel']) }}" required placeholder="Highest Unit / Level earned">
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="text" name="yeargradvoc" id="yearvoc" value="{{ old('yeargradvoc', $answersc1['yeargradvoc']) }}" required placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
-                                    {{ Form::text('scholarshipvoc', null, ['class' => 'form-control', 'id' => 'scholarvoc', 'placeholder' => 'Scholarship/Academic Honors Recieved']) }}<br>
+                                    <input class="form-control" type="text" name="scholarshipvoc" id="scholarvoc" value="{{ old('scholarshipvoc', $answersc1['scholarshipvoc']) }}" required placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
 
                             <b>{{ Form::label('col', 'College') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::text('colname', null, ['class' => 'form-control', 'id' => 'colname', 'placeholder' => 'Name of School (No Abbreviations)']) }}<br>
+                                    <input class="form-control" type="text" name="colname" id="colname" value="{{ old('colname', $answersc1['colname']) }}" required placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('coldeg', null, ['class' => 'form-control', 'id' => 'coldegree', 'placeholder' => 'Basic Education/Degree/Course (No Abbreviations)']) }}<br>
-                                </div>
+                                    <input class="form-control" type="text" name="coldeg" id="coldegree" value="{{ old('coldeg', $answersc1['coldeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
+                                 </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
-                            {{ Form::month('attendancefromcol', null, ['class' => 'form-control', 'id' => 'colattendFrom', 'placeholder' => 'FROM']) }}
-                            {{ Form::month('attendancetocol', null, ['class' => 'form-control', 'id' => 'colattendto', 'placeholder' => 'TO']) }}<br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::number('colunitLevel', null, ['class' => 'form-control', 'id' => 'unitLevelelem', 'placeholder' => 'Highest Unit / Level earned']) }}<br>
+                                    <input class="form-control" type="month" name="attendancefromcol" id="colattendFrom" value="{{ old('attendncefromcol', $answersc1['attendncefromcol']) }}" required placeholder="FROM">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('yeargradcol', null, ['class' => 'form-control', 'id' => 'yearcol', 'placeholder' => 'Year Graduated']) }}<br>
+                                    <input class="form-control" type="month" name="attendancetovcol" id="colattendto" value="{{ old('attendancetocol', $answersc1['attendancetocol']) }}" required placeholder="TO">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control" type="number" name="colunitLevel" id="colunitLevel" value="{{ old('colunitLevel', $answersc1['colunitLevel']) }}" required placeholder="Highest Unit / Level earned">
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="text" name="yeargradcol" id="yearcol" value="{{ old('yeargradcol', $answersc1['yeargradcol']) }}" required placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
-                                    {{ Form::text('scholarshipcol', null, ['class' => 'form-control', 'id' => 'scholarcol', 'placeholder' => 'Scholarship/Academic Honors Recieved']) }}<br>
+                                    <input class="form-control" type="text" name="scholarshipcol" id="scholarcol" value="{{ old('scholarshipcol', $answersc1['scholarshipcol']) }}" required placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
 
                             <b>{{ Form::label('grad', 'Graduate Studies') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::text('gradname', null, ['class' => 'form-control', 'id' => 'gradname', 'placeholder' => 'Name of School (No Abbreviations)']) }}<br>
+                                    <input class="form-control" type="text" name="gradname" id="gradname" value="{{ old('gradname', $answersc1['gradname']) }}" required placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('graddeg', null, ['class' => 'form-control', 'id' => 'graddegree', 'placeholder' => 'Basic Education/Degree/Course (No Abbreviations)']) }}<br>
-                                </div>
+                                    <input class="form-control" type="text" name="graddeg" id="graddegree" value="{{ old('graddeg', $answersc1['graddeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
+                                 </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
-                            {{ Form::month('attendancefromgrad', null, ['class' => 'form-control', 'id' => 'gradattendFrom', 'placeholder' => 'FROM']) }}
-                            {{ Form::month('attendancetograd', null, ['class' => 'form-control', 'id' => 'gradattendto', 'placeholder' => 'TO']) }}<br>
+                            <div class="col">
+                                <input class="form-control" type="month" name="attendancefromgrad" id="gradattendFrom" value="{{ old('attendancefromgrad', $answersc1['attendancefromgrad']) }}" required placeholder="FROM">
+                            </div>
+                            <div class="col">
+                                <input class="form-control" type="month" name="attendancetograd" id="gradattendto" value="{{ old('attendancetograd', $answersc1['attendancetograd']) }}" required placeholder="TO">
+                            </div>
+
                             <div class="row">
                                 <div class="col">
-                                    {{ Form::number('gradunitLevel', null, ['class' => 'form-control', 'id' => 'unitLevelelem', 'placeholder' => 'Highest Unit / Level earned']) }}<br>
+                                    <input class="form-control" type="number" name="gradunitLevel" id="gradunitLevel" value="{{ old('gradunitLevel', $answersc1['colunitLevel']) }}" required placeholder="Highest Unit / Level earned">
                                 </div>
                                 <div class="col">
-                                    {{ Form::text('yeargradgrad', null, ['class' => 'form-control', 'id' => 'yeargrad', 'placeholder' => 'Year Graduated']) }}<br>
+                                    <input class="form-control" type="text" name="yeargrad" id="yeargrad" value="{{ old('yeargrad', $answersc1['yeargrad']) }}" required placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
-                                    {{ Form::text('scholarshipgrad', null, ['class' => 'form-control', 'id' => 'scholargrad', 'placeholder' => 'Scholarship/Academic Honors Recieved']) }}<br>
+                                    <input class="form-control" type="text" name="scholarshipgrad" id="scholargrad" value="{{ old('scholarshipgrad', $answersc1['scholarshipgrad']) }}" required placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
                         </div>

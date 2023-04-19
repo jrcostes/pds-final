@@ -22,27 +22,29 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @if ($surname != null)
+                        <tr>
+                            <td>{{ $user_id}}</td>
+                            <td>{{ $surname }}</td>
+                            <td>{{ $firstname }}</td>
+                            <td>
+                                <form id="form1Pdf" method="get" action="pdf1print" autocomplete="off"
+                                    onsubmit="return submitForm2(this);">
+                                    <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
+                                    <button type="submit" class="btn btn-outline-primary"> Download PDF</button>
+                                </form>
+                                <form id="show1Form" method="get" action="show1form" autocomplete="off">
+                                    <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
+                                    <button type="submit" class="btn btn-outline-primary">View PDF</button>
+                                </form>
+                                <form id="edit1Form" method="get" action="edit1form" autocomplete="off">
+                                    <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
+                                    <button type="submit" class="btn btn-outline-primary">Edit</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endif
 
-                            <tr>
-                                <td>{{ $user_id}}</td>
-                                <td>{{ $surname }}</td>
-                                <td>{{ $firstname }}</td>
-                                <td>
-                                    <form id="form1Pdf" method="get" action="pdf1print" autocomplete="off"
-                                        onsubmit="return submitForm2(this);">
-                                        <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
-                                        <button type="submit" class="btn btn-outline-primary"> Download PDF</button>
-                                    </form>
-                                    <form id="show1Form" method="get" action="show1form" autocomplete="off">
-                                        <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
-                                        <button type="submit" class="btn btn-outline-primary">View PDF</button>
-                                    </form>
-                                    <form id="edit1Form" method="get" action="edit1form" autocomplete="off">
-                                        <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
-                                        <button type="submit" class="btn btn-outline-primary">Edit</button>
-                                    </form>
-                                </td>
-                            </tr>
 
                     </tbody>
                 </table>

@@ -17,12 +17,13 @@ class FormController
     {
         $authid = Auth::id();
 
-        $form = C1answers::where('id', $authid)->first();
-        $user_id = $form->user_id;
-        $surname = $form->surname;
-        $firstname = $form->surname;
-        $sex = $form->sex;
-        return view('user.forms.index', compact('user_id','surname','firstname','sex'));
+        $form = C1answers::where('user_id', $authid)->first();
+        $user_id = $form->user_id ?? null;
+        $surname = $form->surname ?? null;
+        $firstname = $form->firstname ?? null;
+        $sex = $form->sex ?? null;
+
+        return view('user.forms.index', compact('surname','firstname','sex', 'user_id'));
     }
     public function pdf_print(){
         $id = $_GET['formid'];
