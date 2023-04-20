@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.userlayout')
 <?php
 $countries = [
     '' => '',
@@ -1248,7 +1248,7 @@ $group = [
                             </div>
                         </div>
 
-                        <div class='form-container1 d-none'>
+                        <div class='form-container1'>
                             <div class='form-group'>
                                 <div class='container'>
                                     <h3>#2</h3>
@@ -1274,7 +1274,7 @@ $group = [
                                 </div>
                             </div>
                         </div>
-                        <div class='form-container2 d-none'>
+                        <div class='form-container2'>
                             <div class='form-group'>
                                 <div class='container'>
                                     <h3>#3</h3>
@@ -1300,7 +1300,7 @@ $group = [
                                 </div>
                             </div>
                         </div>
-                        <div class='form-container3 d-none'>
+                        <div class='form-container3'>
                             <div class='form-group'>
                                 <div class='container'>
                                     <h3>#4</h3>

@@ -790,6 +790,7 @@ class PostController
             'colname' => $data['colname'] ?? null,
             'coldeg' => $data['coldeg'] ?? null,
             'colunitLevel' => $data['colunitLevel'] ?? null,
+            'yeargradcol' => $data['yeargradcol'] ?? null,
             'attendncefromcol' => $data['attendancefromcol'] ?? null,
             'attendancetocol' => $data['attendancetocol'] ?? null,
             'scholarshipcol' => $data['scholarshipcol'] ?? null,

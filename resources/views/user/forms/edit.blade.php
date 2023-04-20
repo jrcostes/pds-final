@@ -1240,127 +1240,158 @@ $group = [
                                 <div class="row align-items-center">
                                     <div class="col">
                                         {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                        {{ Form::text('eligibility', '', ['class' => 'form-control']) }}
+                                        <input class="form-control" type="text" name="eligibility" id="eligibility" value="{{ old('eligibility', $answersc2['eligibility']) }}" required>
 
                                         {{ Form::label('rating', 'Rating (if applicable)') }}
-                                        {{ Form::text('rating', '', ['class' => 'form-control']) }}
+                                        <input class="form-control" type="text" name="rating" id="rating" value="{{ old('rating', $answersc2['rating']) }}" required>
+                                        
 
                                         {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
-                                        {{ Form::date('dateofexam', '', ['class' => '']) }}<br>
+                                        <input class="form-control" type="date" name="dateofexam" id="dateofexam" value="{{ old('dateofexam', $answersc2['dateofexam']) }}" required>
                                     </div>
                                     <div class="col">
                                         {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
-                                        {{ Form::text('placeofexam', '', ['class' => 'form-control']) }}
-
+                                        
+                                        <input class="form-control" type="text" name="placeofexam" id="placeofexam" value="{{ old('placeofexam', $answersc2['placeofexam']) }}" required>
+                                        
                                         {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
-                                        {{ Form::text('licenseno', '', ['class' => 'form-control']) }}
-
+                                        <input class="form-control" type="text" name="licenseno" id="licenseno" value="{{ old('licenseno', $answersc2['licenseno']) }}" required>
+                                        
                                         {{ Form::label('validity', 'Date of Validity') }}<br>
-                                        {{ Form::date('validity', '', ['class' => '']) }}
+                                        <input class="form-control" type="date" name="validity" id="validity" value="{{ old('validity', $answersc2['validity']) }}" required>
+                                        
                                     </div>
                                 </div>
                                 <br>
                             </div>
                         </div>
 
-                        <div class='form-container1 d-none'>
+                        <div class='form-container1'>
                             <div class='form-group'>
                                 <div class='container'>
                                     <h3>#2</h3>
                                     <div class='row align-items-center'>
-                                        <div class='col'>
-                                            {{ Form::label('eligibility2', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            {{ Form::text('eligibility2', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('rating2', 'Rating (if applicable)') }}
-                                            {{ Form::text('rating2', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('dateofexam2', 'Date of Examination/Conferment') }}<br>
-                                            {{ Form::date('dateofexam2', '', ['class' => '']) }}<br>
+                                        <div class="col">
+                                            {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
+                                            <input class="form-control" type="text" name="eligibility2" id="eligibility2" value="{{ old('eligibility2', $answersc2['eligibility2']) }}" required>
+
+                                            {{ Form::label('rating', 'Rating (if applicable)') }}
+                                            <input class="form-control" type="text" name="rating2" id="rating2" value="{{ old('rating2', $answersc2['rating2']) }}" required>
+                                            
+
+                                            {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
+                                            <input class="form-control" type="date" name="dateofexam2" id="dateofexam2" value="{{ old('dateofexam2', $answersc2['dateofexam2']) }}" required>
                                         </div>
-                                        <div class='col'>
-                                            {{ Form::label('placeofexam2', 'Place of Examination/Conferment') }}
-                                            {{ Form::text('placeofexam2', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('licenseno2', 'License number (if applicable)') }}
-                                            {{ Form::text('licenseno2', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('validity2', 'Date of Validity') }}<br>
-                                            {{ Form::date('validity2', '', ['class' => '']) }}<br>
+                                        <div class="col">
+                                            {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
+                                            
+                                            <input class="form-control" type="text" name="placeofexam2" id="placeofexam2" value="{{ old('placeofexam2', $answersc2['placeofexam2']) }}" required>
+                                            
+                                            {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
+                                            <input class="form-control" type="text" name="licenseno2" id="licenseno2" value="{{ old('licenseno2', $answersc2['licenseno2']) }}" required>
+                                            
+                                            {{ Form::label('validity', 'Date of Validity') }}<br>
+                                            <input class="form-control" type="date" name="validity2" id="validity2" value="{{ old('validity2', $answersc2['validity2']) }}" required>
+                                            
                                         </div>
                                     </div>
                                     <br>
                                 </div>
                             </div>
                         </div>
-                        <div class='form-container2 d-none'>
+                        <div class='form-container2'>
                             <div class='form-group'>
                                 <div class='container'>
                                     <h3>#3</h3>
                                     <div class='row align-items-center'>
-                                        <div class='col'>
-                                            {{ Form::label('eligibility3', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            {{ Form::text('eligibility3', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('rating3', 'Rating (if applicable)') }}
-                                            {{ Form::text('rating3', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('dateofexam3', 'Date of Examination/Conferment') }}<br>
-                                            {{ Form::date('dateofexam3', '', ['class' => '']) }}<br>
+                                    <div class="col">
+                                            {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
+                                            <input class="form-control" type="text" name="eligibility3" id="eligibility3" value="{{ old('eligibility3', $answersc2['eligibility3']) }}" required>
+
+                                            {{ Form::label('rating', 'Rating (if applicable)') }}
+                                            <input class="form-control" type="text" name="rating3" id="rating3" value="{{ old('rating3', $answersc2['rating3']) }}" required>
+                                            
+
+                                            {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
+                                            <input class="form-control" type="date" name="dateofexam3" id="dateofexam3" value="{{ old('dateofexam3', $answersc2['dateofexam3']) }}" required>
                                         </div>
-                                        <div class='col'>
-                                            {{ Form::label('placeofexam3', 'Place of Examination/Conferment') }}
-                                            {{ Form::text('placeofexam3', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('licenseno3', 'License number (if applicable)') }}
-                                            {{ Form::text('licenseno3', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('validity3', 'Date of Validity') }}<br>
-                                            {{ Form::date('validity3', '', ['class' => '']) }}<br>
+                                        <div class="col">
+                                            {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
+                                            
+                                            <input class="form-control" type="text" name="placeofexam3" id="placeofexam3" value="{{ old('placeofexam3', $answersc2['placeofexam3']) }}" required>
+                                            
+                                            {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
+                                            <input class="form-control" type="text" name="licenseno3" id="licenseno3" value="{{ old('licenseno3', $answersc2['licenseno3']) }}" required>
+                                            
+                                            {{ Form::label('validity', 'Date of Validity') }}<br>
+                                            <input class="form-control" type="date" name="validity3" id="validity3" value="{{ old('validity3', $answersc2['validity3']) }}" required>
+                                            
                                         </div>
                                     </div>
                                     <br>
                                 </div>
                             </div>
                         </div>
-                        <div class='form-container3 d-none'>
+                        <div class='form-container3'>
                             <div class='form-group'>
                                 <div class='container'>
                                     <h3>#4</h3>
                                     <div class='row align-items-center'>
-                                        <div class='col'>
-                                            {{ Form::label('eligibility4', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            {{ Form::text('eligibility4', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('rating4', 'Rating (if applicable)') }}
-                                            {{ Form::text('rating4', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('dateofexam4', 'Date of Examination/Conferment') }}<br>
-                                            {{ Form::date('dateofexam4', '', ['class' => '']) }}<br>
+                                    <div class="col">
+                                            {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
+                                            <input class="form-control" type="text" name="eligibility4" id="eligibility4" value="{{ old('eligibility4', $answersc2['eligibility4']) }}" required>
+
+                                            {{ Form::label('rating', 'Rating (if applicable)') }}
+                                            <input class="form-control" type="text" name="rating4" id="rating4" value="{{ old('rating4', $answersc2['rating4']) }}" required>
+                                            
+
+                                            {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
+                                            <input class="form-control" type="date" name="dateofexam4" id="dateofexam4" value="{{ old('dateofexam4', $answersc2['dateofexam4']) }}" required>
                                         </div>
-                                        <div class='col'>
-                                            {{ Form::label('placeofexam4', 'Place of Examination/Conferment') }}
-                                            {{ Form::text('placeofexam4', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('licenseno4', 'License number (if applicable)') }}
-                                            {{ Form::text('licenseno4', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('validity4', 'Date of Validity') }}<br>
-                                            {{ Form::date('validity4', '', ['class' => '']) }}<br>
+                                        <div class="col">
+                                            {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
+                                            
+                                            <input class="form-control" type="text" name="placeofexam4" id="placeofexam4" value="{{ old('placeofexam4', $answersc2['placeofexam4']) }}" required>
+                                            
+                                            {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
+                                            <input class="form-control" type="text" name="licenseno4" id="licenseno4" value="{{ old('licenseno4', $answersc2['licenseno4']) }}" required>
+                                            
+                                            {{ Form::label('validity', 'Date of Validity') }}<br>
+                                            <input class="form-control" type="date" name="validity4" id="validity4" value="{{ old('validity4', $answersc2['validity4']) }}" required>
+                                        
                                         </div>
                                     </div>
                                     <br>
                                 </div>
                             </div>
                         </div>
-                        <div class='form-container4 d-none'>
+                        <div class='form-container4'>
                             <div class='form-group'>
                                 <div class='container'>
                                     <h3>#5</h3>
                                     <div class='row align-items-center'>
-                                        <div class='col'>
-                                            {{ Form::label('eligibility5', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            {{ Form::text('eligibility5', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('rating5', 'Rating (if applicable)') }}
-                                            {{ Form::text('rating5', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('dateofexam5', 'Date of Examination/Conferment') }}<br>
-                                            {{ Form::date('dateofexam5', '', ['class' => '']) }}<br>
+                                        <div class="col">
+                                            {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
+                                            <input class="form-control" type="text" name="eligibility5" id="eligibility5" value="{{ old('eligibility5', $answersc2['eligibility5']) }}" required>
+
+                                            {{ Form::label('rating', 'Rating (if applicable)') }}
+                                            <input class="form-control" type="text" name="rating5" id="rating5" value="{{ old('rating5', $answersc2['rating5']) }}" required>
+                                            
+
+                                            {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
+                                            <input class="form-control" type="date" name="dateofexam5" id="dateofexam5" value="{{ old('dateofexam5', $answersc2['dateofexam5']) }}" required>
                                         </div>
-                                        <div class='col'>
-                                            {{ Form::label('placeofexam5', 'Place of Examination/Conferment') }}
-                                            {{ Form::text('placeofexam5', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('licenseno5', 'License number (if applicable)') }}
-                                            {{ Form::text('licenseno5', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('validity5', 'Date of Validity') }}<br>
-                                            {{ Form::date('validity5', '', ['class' => '']) }}<br>
+                                        <div class="col">
+                                            {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
+                                            
+                                            <input class="form-control" type="text" name="placeofexam5" id="placeofexam5" value="{{ old('placeofexam5', $answersc2['placeofexam5']) }}" required>
+                                            
+                                            {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
+                                            <input class="form-control" type="text" name="licenseno5" id="licenseno5" value="{{ old('licenseno5', $answersc2['licenseno5']) }}" required>
+                                            
+                                            {{ Form::label('validity', 'Date of Validity') }}<br>
+                                            <input class="form-control" type="date" name="validity5" id="validity5" value="{{ old('validity5', $answersc2['validity5']) }}" required>
+                                            
                                         </div>
                                     </div>
                                     <br>
@@ -1372,21 +1403,28 @@ $group = [
                                 <div class='container'>
                                     <h3>#6</h3>
                                     <div class='row align-items-center'>
-                                        <div class='col'>
-                                            {{ Form::label('eligibility6', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            {{ Form::text('eligibility6', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('rating6', 'Rating (if applicable)') }}
-                                            {{ Form::text('rating6', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('dateofexam6', 'Date of Examination/Conferment') }}<br>
-                                            {{ Form::date('dateofexam6', '', ['class' => '']) }}<br>
+                                    <div class="col">
+                                            {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
+                                            <input class="form-control" type="text" name="eligibility6" id="eligibility6" value="{{ old('eligibility6', $answersc2['eligibility6']) }}" required>
+
+                                            {{ Form::label('rating', 'Rating (if applicable)') }}
+                                            <input class="form-control" type="text" name="rating6" id="rating6" value="{{ old('rating6', $answersc2['rating6']) }}" required>
+                                            
+
+                                            {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
+                                            <input class="form-control" type="date" name="dateofexam6" id="dateofexam6" value="{{ old('dateofexam6', $answersc2['dateofexam6']) }}" required>
                                         </div>
-                                        <div class='col'>
-                                            {{ Form::label('placeofexam6', 'Place of Examination/Conferment') }}
-                                            {{ Form::text('placeofexam6', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('licenseno6', 'License number (if applicable)') }}
-                                            {{ Form::text('licenseno6', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('validity6', 'Date of Validity') }}<br>
-                                            {{ Form::date('validity6', '', ['class' => '']) }}<br>
+                                        <div class="col">
+                                            {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
+                                            
+                                            <input class="form-control" type="text" name="placeofexam6" id="placeofexam6" value="{{ old('placeofexam6', $answersc2['placeofexam6']) }}" required>
+                                            
+                                            {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
+                                            <input class="form-control" type="text" name="licenseno6" id="licenseno6" value="{{ old('licenseno6', $answersc2['licenseno6']) }}" required>
+                                            
+                                            {{ Form::label('validity', 'Date of Validity') }}<br>
+                                            <input class="form-control" type="date" name="validity6" id="validity6" value="{{ old('validity6', $answersc2['validity6']) }}" required>
+                                            
                                         </div>
                                     </div>
                                     <br>
@@ -1398,21 +1436,28 @@ $group = [
                                 <div class='container'>
                                     <h3>#7</h3>
                                     <div class='row align-items-center'>
-                                        <div class='col'>
-                                            {{ Form::label('eligibility7', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            {{ Form::text('eligibility7', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('rating7', 'Rating (if applicable)') }}
-                                            {{ Form::text('rating7', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('dateofexam7', 'Date of Examination/Conferment') }}<br>
-                                            {{ Form::date('dateofexam7', '', ['class' => '']) }}<br>
+                                        <div class="col">
+                                            {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
+                                            <input class="form-control" type="text" name="eligibility7" id="eligibility7" value="{{ old('eligibility7', $answersc2['eligibility7']) }}" required>
+
+                                            {{ Form::label('rating', 'Rating (if applicable)') }}
+                                            <input class="form-control" type="text" name="rating7" id="rating7" value="{{ old('rating7', $answersc2['rating7']) }}" required>
+                                            
+
+                                            {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
+                                            <input class="form-control" type="date" name="dateofexam7" id="dateofexam7" value="{{ old('dateofexam7', $answersc2['dateofexam7']) }}" required>
                                         </div>
-                                        <div class='col'>
-                                            {{ Form::label('placeofexam7', 'Place of Examination/Conferment') }}
-                                            {{ Form::text('placeofexam7', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('licenseno7', 'License number (if applicable)') }}
-                                            {{ Form::text('licenseno7', '', ['class' => 'form-control']) }}
-                                            {{ Form::label('validity7', 'Date of Validity') }}<br>
-                                            {{ Form::date('validity7', '', ['class' => '']) }}<br>
+                                        <div class="col">
+                                            {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
+                                            
+                                            <input class="form-control" type="text" name="placeofexam7" id="placeofexam7" value="{{ old('placeofexam7', $answersc2['placeofexam7']) }}" required>
+                                            
+                                            {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
+                                            <input class="form-control" type="text" name="licenseno7" id="licenseno7" value="{{ old('licenseno7', $answersc2['licenseno7']) }}" required>
+                                            
+                                            {{ Form::label('validity', 'Date of Validity') }}<br>
+                                            <input class="form-control" type="date" name="validity7" id="validity7" value="{{ old('validity7', $answersc2['validity7']) }}" required>
+                                            
                                         </div>
                                     </div>
                                     <br>
@@ -1440,26 +1485,28 @@ $group = [
                                     <div class='col'>
                                         <label>Inclusive Dates</label><br>
                                         {{ Form::label('datefrom', 'From') }}
-                                        {{ Form::date('datefrom', '', ['class' => '']) }}
+                                        <input class="form-control" type="date" name="datefrom" id="datefrom" value="{{ old('datefrom', $answersc2['datefrom']) }}" required>
 
                                         {{ Form::label('dateto', 'To') }}
-                                        {{ Form::date('dateto', '', ['class' => '']) }}<br>
+                                        <input class="form-control" type="date" name="dateto" id="dateto" value="{{ old('dateto', $answersc2['dateto']) }}" required>
+                                      
 
                                         {{ Form::label('position', 'Position/Title (Do Not Abbreviate)') }}
-                                        {{ Form::text('position', '', ['class' => 'form-control']) }}
+                                        <input class="form-control" type="text" name="position" id="position" value="{{ old('position', $answersc2['position']) }}" required>
 
                                         {{ Form::label('department', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                        {{ Form::text('department', '', ['class' => 'form-control']) }}
+                                        <input class="form-control" type="text" name="department" id="department" value="{{ old('department', $answersc2['department']) }}" required>
 
                                         {{ Form::label('salary', 'Monthly Salary') }}
+                                        <input class="form-control" type="text" name="salary" id="salary" value="{{ old('salary', $answersc2['salary']) }}" required>
                                         {{ Form::text('salary', '', ['class' => 'form-control']) }}
                                     </div>
                                     <div class='col'>
                                         {{ Form::label('paygrade', 'Salary/Job/Pay Grade (if applicable)') }}
-                                        {{ Form::text('paygrade', '', ['class' => 'form-control']) }}
+                                        <input class="form-control" type="text" name="paygrade" id="paygrade" value="{{ old('paygrade', $answersc2['paygrade']) }}" required>
 
                                         {{ Form::label('appointment', 'Status of Appointment') }}
-                                        {{ Form::text('appointment', '', ['class' => 'form-control']) }}
+                                        <input class="form-control" type="text" name="appointment" id="appointment" value="{{ old('appointment', $answersc2['appointment']) }}" required>
 
                                         {{ Form::label('governmentserv', 'Government service (Y/N)') }}
                                         <select class="custom-select mr-sm-2" id="governmentserv" name="governmentserv"
@@ -1481,22 +1528,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom2', 'From') }}
-                                            {{ Form::date('datefrom2', '', ['class' => '']) }}
+                                            <input class="form-control" type="date" name="datefrom2" id="datefrom2" value="{{ old('datefrom2', $answersc2['datefrom2']) }}" required>
+    
                                             {{ Form::label('dateto2', 'To') }}
-                                            {{ Form::date('dateto2', '', ['class' => '']) }}<br>
+                                            <input class="form-control" type="dateto2" name="dateto2" id="dateto2" value="{{ old('dateto2', $answersc2['dateto2']) }}" required>
+
                                             {{ Form::label('position2', 'Position/Title (Do Not Abbreviate)') }}
-                                            {{ Form::text('position2', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="position2" name="position2" id="position2" value="{{ old('position2', $answersc2['position2']) }}" required>
+                                            
                                             {{ Form::label('department2', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            {{ Form::text('department2', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="department2" name="department2" id="department2" value="{{ old('department2', $answersc2['department2']) }}" required>
+                                            
                                             {{ Form::label('salary2', 'Monthly Salary') }}
-                                            {{ Form::text('salary2', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="salary2" name="salary2" id="salary2" value="{{ old('salary2', $answersc2['salary2']) }}" required>
+                                            
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade2', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            {{ Form::text('paygrade2', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="paygrade2" name="paygrade2" id="paygrade2" value="{{ old('paygrade2', $answersc2['paygrade2']) }}" required>
+
                                             {{ Form::label('appointment2', 'Status of Appointment') }}
-                                            {{ Form::text('appointment2', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="appointment2" name="appointment2" id="appointment2" value="{{ old('appointment2', $answersc2['appointment2']) }}" required>
+                                            
                                             {{ Form::label('governmentserv2', 'Government service (Y/N)') }}
+                                            <input class="form-control" type="governmentserv2" name="governmentserv2" id="governmentserv2" value="{{ old('governmentserv2', $answersc2['governmentserv2']) }}" required>
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv2'>
                                                 <option value=''></option>
@@ -1516,22 +1571,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom3', 'From') }}
-                                            {{ Form::date('datefrom3', '', ['class' => '']) }}
+                                            <input class="form-control" type="datefrom3" name="datefrom3" id="datefrom3" value="{{ old('datefrom3', $answersc2['datefrom3 ']) }}" required>
+                                            
                                             {{ Form::label('dateto3', 'To') }}
-                                            {{ Form::date('dateto3', '', ['class' => '']) }}<br>
+                                            <input class="form-control" type="dateto3" name="dateto3" id="dateto3" value="{{ old('dateto3', $answersc2['dateto3 ']) }}" required>
+                                            
                                             {{ Form::label('position3', 'Position/Title (Do Not Abbreviate)') }}
-                                            {{ Form::text('position3', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="position3" name="position3" id="position3" value="{{ old('position3', $answersc2['position3 ']) }}" required>
+                                            
                                             {{ Form::label('department3', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            {{ Form::text('department3', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="department3" name="department3" id="department3" value="{{ old('department3', $answersc2['department3 ']) }}" required>
+                                            
                                             {{ Form::label('salary3', 'Monthly Salary') }}
-                                            {{ Form::text('salary3', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="salary3" name="salary3" id="salary3" value="{{ old('salary3', $answersc2['salary3 ']) }}" required>
+                                            
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade3', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            {{ Form::text('paygrade3', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="paygrade3" name="paygrade3" id="paygrade3" value="{{ old('paygrade3', $answersc2['paygrade3 ']) }}" required>
+                                            
                                             {{ Form::label('appointment3', 'Status of Appointment') }}
-                                            {{ Form::text('appointment3', '', ['class' => 'form-control']) }}
+                                            <input class="form-control" type="appointment3" name="appointment3" id="appointment3" value="{{ old('appointment3', $answersc2['appointment3 ']) }}" required>
+                                            
                                             {{ Form::label('governmentserv3', 'Government service (Y/N)') }}
+                                            <input class="form-control" type="governmentserv3" name="governmentserv3" id="governmentserv3" value="{{ old('governmentserv3', $answersc2['governmentserv3 ']) }}" required>
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv3'>
                                                 <option value=''></option>
