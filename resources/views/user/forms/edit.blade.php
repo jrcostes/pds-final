@@ -576,11 +576,11 @@ $group = [
                                 </div>
                                 <div class="col">
                                     {{ Form::label('midname', 'Middle Name') }}
-                                    <input class="form-control" type="text" name="midname" id="mid" value="{{ old('midname', $answersc1['midname']) }}" required>
+                                    <input class="form-control" type="text" name="midname" id="mid" value="{{ old('midname', $midname) }}" required>
                                 </div>
                                 <div class="col col-lg-2">
                                     {{ Form::label('nameext', 'Name Extension') }}
-                                    <input class="form-control" type="text" name="nameext" id="firstnameext" value="{{ old('firstnameext', $answersc1['firstnameext']) }}" required>
+                                    <input class="form-control" type="text" name="nameext" id="firstnameext" value="{{ old('firstnameext', $answersc1['firstnameext']) }}" >
                                 </div>
                             </div>
 
@@ -589,7 +589,7 @@ $group = [
                                 <div class="col-12 col-md-8">
                                     <br>
                                     {{ Form::label('placeofBirth', 'Place of Birth') }}
-                                    <input class="form-control" type="text" name="nameext" id="placeofbirth" value="{{ old('placeofBirth', $answersc1['placeBirth']) }}" required>
+                                    <input class="form-control" type="text" name="placeofBirth" id="placeofbirth" value="{{ old('placeofBirth', $answersc1['placeBirth']) }}" required>
 
                                 </div>
                                 <div class="col-6 col-md-4">
@@ -630,7 +630,7 @@ $group = [
                                             <option value='widowed'>Widowed</option>
                                             <option value='other'>Other/s</option>
                                         </select>
-                                        <input class="form-control" type="text" name="civilothers" id="civilothers" required>
+                                        <input class="form-control" type="text" name="civilothers" id="civilothers">
                                     </div>
                                 </div>
 
@@ -639,7 +639,7 @@ $group = [
                                     <div class="col-auto my-1">
                                         <label class="mr-sm-2" for="inlineFormCustomSelect">Bloodtype</label>
                                         <select class="form-select" aria-label="Default select example" id="bloodType"
-                                            name="bloodType" placeholder="Select one...">
+                                            name="bloodType" placeholder="Select one..." value="{{old('bloodType', $answersc1['bloodType'])}}">
                                             <option value="A+">A+</option>
                                             <option value="A-">A-</option>
                                             <option value="B+">B+</option>
@@ -765,7 +765,7 @@ $group = [
                                     </div><br>
                                     <div class="col">
                                     <input class="form-control" type="text" name="residentialbrgy" id="barangay-R" value="{{ old('residentialbrgy', $answersc1['residentialbrgy']) }}" required>
-                                    <input class="form-control" type="text" name="residentailcity" id="CityMunicipality-R" value="{{ old('residentialcity', $answersc1['residentialcity']) }}" required>
+                                    <input class="form-control" type="text" name="residentialcity" id="CityMunicipality-R" value="{{ old('residentialcity', $answersc1['residentialcity']) }}" required>
                                     <input class="form-control" type="text" name="residentialprv" id="province-R" value="{{ old('residentialprv', $answersc1['residentialprv']) }}" required>
                                     </div>
                                 </div>
@@ -828,60 +828,60 @@ $group = [
                             <b>{{ Form::label('spouse', "Spouse's Name") }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                <input class="form-control" type="text" name="spousesn" id="surname-S" value="{{ old('spousesn', $answersc1['spousesn']) }}" required placeholder="Spouse's Surname">
+                                <input class="form-control" type="text" name="spousesn" id="surname-S" value="{{ old('spousesn', $answersc1['spousesn']) }}"  placeholder="Spouse's Surname">
                                 </div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="spousefn" id="firstname-S" value="{{ old('spousefn', $answersc1['spousefn']) }}" required placeholder="Spouse's Firstname">
+                                <input class="form-control" type="text" name="spousefn" id="firstname-S" value="{{ old('spousefn', $answersc1['spousefn']) }}"  placeholder="Spouse's Firstname">
                                 </div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="spousemn" id="midname-S" value="{{ old('spousemn', $answersc1['spousemn']) }}" required placeholder="Spouse's Middle Name">
+                                <input class="form-control" type="text" name="spousemn" id="midname-S" value="{{ old('spousemn', $answersc1['spousemn']) }}"  placeholder="Spouse's Middle Name">
                                 </div>
                                 <div class="col col-lg-2">
-                                <input class="form-control" type="text" name="spousenmext" id="namext-S" value="{{ old('spousenmext', $answersc1['spousenmext']) }}" required placeholder="Spouse Name Extension">
+                                <input class="form-control" type="text" name="spousenmext" id="namext-S" value="{{ old('spousenmext', $answersc1['spousenmext']) }}"  placeholder="Spouse Name Extension">
                                 </div>
                             </div><br>
                             <div class="row">
                                 <div class="col">
-                                <input class="form-control" type="text" name="spouseocc" id="occupation-S" value="{{ old('spouseocc', $answersc1['spouseocc']) }}" required placeholder="Spouse's Occupation">
+                                <input class="form-control" type="text" name="spouseocc" id="occupation-S" value="{{ old('spouseocc', $answersc1['spouseocc']) }}"  placeholder="Spouse's Occupation">
                                 </div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="spouseemp" id="spouseemp" value="{{ old('spouseemp', $answersc1['spouseemp']) }}" required placeholder="Spouse's Employer">
+                                <input class="form-control" type="text" name="spouseemp" id="spouseemp" value="{{ old('spouseemp', $answersc1['spouseemp']) }}"  placeholder="Spouse's Employer">
                                 </div>
                                 <div class="w-100"></div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="spouseempadd" id="employadd-S" value="{{ old('spouseempadd', $answersc1['spouseempadd']) }}" required placeholder="Employer's Address">
+                                <input class="form-control" type="text" name="spouseempadd" id="employadd-S" value="{{ old('spouseempadd', $answersc1['spouseempadd']) }}"  placeholder="Employer's Address">
                                 </div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="spousesn" id="surname-S" value="{{ old('spousetel', $answersc1['spousetel']) }}" required placeholder="Telephone Number">
+                                <input class="form-control" type="text" name="spousesn" id="surname-S" value="{{ old('spousetel', $answersc1['spousetel']) }}"  placeholder="Telephone Number">
                                 </div>
                             </div><br>
 
                             <b>{{ Form::label('father', "Father's Name") }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                <input class="form-control" type="text" name="fathersn" id="surname-F" value="{{ old('fathersn', $answersc1['fathersn']) }}" required placeholder="Father's Surname">
+                                <input class="form-control" type="text" name="fathersn" id="surname-F" value="{{ old('fathersn', $answersc1['fathersn']) }}"  placeholder="Father's Surname">
                                 </div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="fatherfn" id="firstname-F" value="{{ old('fatherfn', $answersc1['fatherfn']) }}" required placeholder="Father's First name">
+                                <input class="form-control" type="text" name="fatherfn" id="firstname-F" value="{{ old('fatherfn', $answersc1['fatherfn']) }}"  placeholder="Father's First name">
                                 </div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="fathermn" id="midname-F" value="{{ old('fathermn', $answersc1['fathermn']) }}" required placeholder="Father's Middle name">
+                                <input class="form-control" type="text" name="fathermn" id="midname-F" value="{{ old('fathermn', $answersc1['fathermn']) }}"  placeholder="Father's Middle name">
                                 </div>
                                 <div class="col col-lg-2">
-                                <input class="form-control" type="text" name="fatherext" id="namext-F" value="{{ old('fatherext', $answersc1['fatherext']) }}" required placeholder="Father's First name extention">
+                                <input class="form-control" type="text" name="fatherext" id="namext-F" value="{{ old('fatherext', $answersc1['fatherext']) }}"  placeholder="Father's First name extention">
                                 </div>
                             </div><br>
 
                             <b>{{ Form::label('mother', "Mother's Maiden Name") }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                <input class="form-control" type="text" name="mothernm" id="surname-M" value="{{ old('mothernm', $answersc1['mothernm']) }}" required placeholder="Mother's Last name">
+                                <input class="form-control" type="text" name="mothernm" id="surname-M" value="{{ old('mothernm', $answersc1['mothernm']) }}"  placeholder="Mother's Last name">
                                 </div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="motherfn" id="firstname-M" value="{{ old('motherfn', $answersc1['motherfn']) }}" required placeholder="Mother's First name">
+                                <input class="form-control" type="text" name="motherfn" id="firstname-M" value="{{ old('motherfn', $answersc1['motherfn']) }}"  placeholder="Mother's First name">
                                 </div>
                                 <div class="col">
-                                <input class="form-control" type="text" name="mothermn" id="midname-M" value="{{ old('mothermn', $answersc1['mothermn']) }}" required placeholder="Mother's Middle name">
+                                <input class="form-control" type="text" name="mothermn" id="midname-M" value="{{ old('mothermn', $answersc1['mothermn']) }}"  placeholder="Mother's Middle name">
                                 </div>
                             </div><br>
 
@@ -890,7 +890,7 @@ $group = [
                                 <div class="row">
                                     <div class="col">
                                         <b>{{ Form::label('child0', 'Name: ') }}</b>
-                                        <input class="form-control" type="text" name="child0" id="child0" value="{{ old('child0', $answersc1['child0']) }}" required placeholder="Child's Name">
+                                        <input class="form-control" type="text" name="child0" id="child0" value="{{ old('child0', $answersc1['child0']) }}"  placeholder="Child's Name">
                                     </div>
                                     <div class="col">
                                         <b><label for="birthchild0">Date of Birth:</label><br></b>
@@ -903,7 +903,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child1', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child1" id="child1" value="{{ old('child1', $answersc1['child1']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child1" id="child1" value="{{ old('child1', $answersc1['child1']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild1">Date of Birth:</label></b><br>
@@ -917,7 +917,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child2', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child2" id="child2" value="{{ old('child2', $answersc1['child2']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child2" id="child2" value="{{ old('child2', $answersc1['child2']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild2">Date of Birth:</label><br></b>
@@ -931,7 +931,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child3', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child3" id="child3" value="{{ old('child3', $answersc1['child3']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child3" id="child3" value="{{ old('child3', $answersc1['child3']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild3">Date of Birth:</label></b><br>
@@ -945,7 +945,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child4', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child4" id="child4" value="{{ old('child4', $answersc1['child4']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child4" id="child4" value="{{ old('child4', $answersc1['child4']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild4">Date of Birth:</label></b><br>
@@ -959,7 +959,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child5', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child5" id="child5" value="{{ old('child5', $answersc1['child5']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child5" id="child5" value="{{ old('child5', $answersc1['child5']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild5">Date of Birth:</label></b><br>
@@ -973,7 +973,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child6', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child6" id="child6" value="{{ old('child6', $answersc1['child6']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child6" id="child6" value="{{ old('child6', $answersc1['child6']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild6">Date of Birth:</label></b><br>
@@ -987,7 +987,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child7', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child7" id="child7" value="{{ old('child7', $answersc1['child7']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child7" id="child7" value="{{ old('child7', $answersc1['child7']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild7">Date of Birth:</label></b><br>
@@ -1001,7 +1001,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child8', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child8" id="child8" value="{{ old('child8', $answersc1['child8']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child8" id="child8" value="{{ old('child8', $answersc1['child8']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild8">Date of Birth:</label></b><br>
@@ -1015,7 +1015,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child9', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child9" id="child9" value="{{ old('child9', $answersc1['child9']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child9" id="child9" value="{{ old('child9', $answersc1['child9']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild9">Date of Birth:</label></b><br>
@@ -1029,7 +1029,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child10', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child10" id="child10" value="{{ old('child10', $answersc1['child10']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child10" id="child10" value="{{ old('child10', $answersc1['child10']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild10">Date of Birth:</label></b><br>
@@ -1043,7 +1043,7 @@ $group = [
                                     <div class="row">
                                         <div class="col">
                                             <b>{{ Form::label('child11', 'Name: ') }}</b>
-                                            <input class="form-control" type="text" name="child11" id="child11" value="{{ old('child11', $answersc1['child11']) }}" required placeholder="Child's Name">
+                                            <input class="form-control" type="text" name="child11" id="child11" value="{{ old('child11', $answersc1['child11']) }}"  placeholder="Child's Name">
                                         </div>
                                         <div class="col">
                                             <b><label for="birthchild11">Date of Birth:</label></b><br>
@@ -1063,158 +1063,158 @@ $group = [
                             <b>{{ Form::label('elem', 'Elementary') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="text" name="elemname" id="elemname" value="{{ old('elemname', $answersc1['elemname']) }}" required placeholder="Name of School (No Abbreviations)">
+                                    <input class="form-control" type="text" name="elemname" id="elemname" value="{{ old('elemname', $answersc1['elemname']) }}"  placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" name="elemdeg" id="elemdeg" value="{{ old('elemdeg', $answersc1['elemdeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
+                                    <input class="form-control" type="text" name="elemdeg" id="elemdeg" value="{{ old('elemdeg', $answersc1['elemdeg']) }}"  placeholder="Basic Education/Degree/Course (No Abbreviations)">
                                 </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="month" name="attendancefrom" id="elemattendFrom" value="{{ old('attendancefrom', $answersc1['attendancefrom']) }}" required placeholder="FROM">
+                                    <input class="form-control" type="month" name="attendancefrom" id="elemattendFrom" value="{{ old('attendancefrom', $answersc1['attendancefrom']) }}"  placeholder="FROM">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="month" name="attendanceto" id="elemattendto" value="{{ old('attendanceto', $answersc1['attendanceto']) }}" required placeholder="TO">
+                                    <input class="form-control" type="month" name="attendanceto" id="elemattendto" value="{{ old('attendanceto', $answersc1['attendanceto']) }}"  placeholder="TO">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="number" name="elemunitLevel" id="elemunitLevel" value="{{ old('elemunitLevel', $answersc1['elemunitLevel']) }}" required placeholder="Highest Unit / Level earned">
+                                    <input class="form-control" type="number" name="elemunitLevel" id="elemunitLevel" value="{{ old('elemunitLevel', $answersc1['elemunitLevel']) }}"  placeholder="Highest Unit / Level earned">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" name="yeargradelem" id="yearelem" value="{{ old('yeargradelem', $answersc1['yeargradelem']) }}" required placeholder="Year Graduated">
+                                    <input class="form-control" type="text" name="yeargradelem" id="yearelem" value="{{ old('yeargradelem', $answersc1['yeargradelem']) }}"  placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
-                                    <input class="form-control" type="text" name="scholarshipelem" id="scholarelem" value="{{ old('scholarshipelem', $answersc1['scholarshipelem']) }}" required placeholder="Scholarship/Academic Honors Recieved">
+                                    <input class="form-control" type="text" name="scholarshipelem" id="scholarelem" value="{{ old('scholarshipelem', $answersc1['scholarshipelem']) }}"  placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
 
                             <b>{{ Form::label('hs', 'Secondary') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="text" name="hsname" id="hsname" value="{{ old('hsname', $answersc1['hsname']) }}" required placeholder="Name of School (No Abbreviations)">
+                                    <input class="form-control" type="text" name="hsname" id="hsname" value="{{ old('hsname', $answersc1['hsname']) }}"  placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" name="hsdeg" id="hsdeg" value="{{ old('hsdeg', $answersc1['hsdeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
+                                    <input class="form-control" type="text" name="hsdeg" id="hsdeg" value="{{ old('hsdeg', $answersc1['hsdeg']) }}"  placeholder="Basic Education/Degree/Course (No Abbreviations)">
                                  </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="month" name="attendancefromhs" id="hsattendFrom" value="{{ old('attendancefromhs', $answersc1['attendancefromhs']) }}" required placeholder="FROM">
+                                    <input class="form-control" type="month" name="attendancefromhs" id="hsattendFrom" value="{{ old('attendancefromhs', $answersc1['attendancefromhs']) }}"  placeholder="FROM">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="month" name="attendancetohs" id="hsattendto" value="{{ old('attendancetohs', $answersc1['attendancetohs']) }}" required placeholder="TO">
+                                    <input class="form-control" type="month" name="attendancetohs" id="hsattendto" value="{{ old('attendancetohs', $answersc1['attendancetohs']) }}"  placeholder="TO">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="number" name="hsunitLevel" id="hsunitLevel" value="{{ old('hsunitLevel', $answersc1['hsunitLevel']) }}" required placeholder="Highest Unit / Level earned">
+                                    <input class="form-control" type="number" name="hsunitLevel" id="hsunitLevel" value="{{ old('hsunitLevel', $answersc1['hsunitLevel']) }}"  placeholder="Highest Unit / Level earned">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" name="yeargradhs" id="yearhs" value="{{ old('yeargradhs', $answersc1['yeargradhs']) }}" required placeholder="Year Graduated">
+                                    <input class="form-control" type="text" name="yeargradhs" id="yearhs" value="{{ old('yeargradhs', $answersc1['yeargradhs']) }}"  placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
-                                    <input class="form-control" type="text" name="scholarshiphs" id="scholarhs" value="{{ old('scholarshiphs', $answersc1['scholarshiphs']) }}" required placeholder="Scholarship/Academic Honors Recieved">
+                                    <input class="form-control" type="text" name="scholarshiphs" id="scholarhs" value="{{ old('scholarshiphs', $answersc1['scholarshiphs']) }}"  placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
 
                             <b>{{ Form::label('voc', 'Vocational/Trade Course') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="text" name="vocname" id="vocname" value="{{ old('vocname', $answersc1['vocname']) }}" required placeholder="Name of School (No Abbreviations)">
+                                    <input class="form-control" type="text" name="vocname" id="vocname" value="{{ old('vocname', $answersc1['vocname']) }}"  placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" name="vocdeg" id="vocdegree" value="{{ old('vocdeg', $answersc1['vocdeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
+                                    <input class="form-control" type="text" name="vocdeg" id="vocdegree" value="{{ old('vocdeg', $answersc1['vocdeg']) }}"  placeholder="Basic Education/Degree/Course (No Abbreviations)">
                                  </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="month" name="attendancefromvoc" id="vocattendFrom" value="{{ old('attendancefromvoc', $answersc1['attendancefromvoc']) }}" required placeholder="FROM">
+                                    <input class="form-control" type="month" name="attendancefromvoc" id="vocattendFrom" value="{{ old('attendancefromvoc', $answersc1['attendancefromvoc']) }}"  placeholder="FROM">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="month" name="attendancetovoc" id="vocattendto" value="{{ old('attendancetovoc', $answersc1['attendancetovoc']) }}" required placeholder="TO">
+                                    <input class="form-control" type="month" name="attendancetovoc" id="vocattendto" value="{{ old('attendancetovoc', $answersc1['attendancetovoc']) }}"  placeholder="TO">
                                 </div>
                             </div>
 
                              <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="number" name="vocunitLevel" id="vocunitLevel" value="{{ old('vocunitLevel', $answersc1['vocunitLevel']) }}" required placeholder="Highest Unit / Level earned">
+                                    <input class="form-control" type="number" name="vocunitLevel" id="vocunitLevel" value="{{ old('vocunitLevel', $answersc1['vocunitLevel']) }}"  placeholder="Highest Unit / Level earned">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" name="yeargradvoc" id="yearvoc" value="{{ old('yeargradvoc', $answersc1['yeargradvoc']) }}" required placeholder="Year Graduated">
+                                    <input class="form-control" type="text" name="yeargradvoc" id="yearvoc" value="{{ old('yeargradvoc', $answersc1['yeargradvoc']) }}"  placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
-                                    <input class="form-control" type="text" name="scholarshipvoc" id="scholarvoc" value="{{ old('scholarshipvoc', $answersc1['scholarshipvoc']) }}" required placeholder="Scholarship/Academic Honors Recieved">
+                                    <input class="form-control" type="text" name="scholarshipvoc" id="scholarvoc" value="{{ old('scholarshipvoc', $answersc1['scholarshipvoc']) }}"  placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
 
                             <b>{{ Form::label('col', 'College') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="text" name="colname" id="colname" value="{{ old('colname', $answersc1['colname']) }}" required placeholder="Name of School (No Abbreviations)">
+                                    <input class="form-control" type="text" name="colname" id="colname" value="{{ old('colname', $answersc1['colname']) }}"  placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" name="coldeg" id="coldegree" value="{{ old('coldeg', $answersc1['coldeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
+                                    <input class="form-control" type="text" name="coldeg" id="coldegree" value="{{ old('coldeg', $answersc1['coldeg']) }}"  placeholder="Basic Education/Degree/Course (No Abbreviations)">
                                  </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="month" name="attendancefromcol" id="colattendFrom" value="{{ old('attendncefromcol', $answersc1['attendncefromcol']) }}" required placeholder="FROM">
+                                    <input class="form-control" type="month" name="attendancefromcol" id="colattendFrom" value="{{ old('attendncefromcol', $answersc1['attendncefromcol']) }}"  placeholder="FROM">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="month" name="attendancetovcol" id="colattendto" value="{{ old('attendancetocol', $answersc1['attendancetocol']) }}" required placeholder="TO">
+                                    <input class="form-control" type="month" name="attendancetovcol" id="colattendto" value="{{ old('attendancetocol', $answersc1['attendancetocol']) }}"  placeholder="TO">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="number" name="colunitLevel" id="colunitLevel" value="{{ old('colunitLevel', $answersc1['colunitLevel']) }}" required placeholder="Highest Unit / Level earned">
+                                    <input class="form-control" type="number" name="colunitLevel" id="colunitLevel" value="{{ old('colunitLevel', $answersc1['colunitLevel']) }}"  placeholder="Highest Unit / Level earned">
                                 </div>
                                 <div class="col">
-                                    {{-- <input class="form-control" type="text" name="yeargradcol" id="yearcol" value="{{ old('yeargradcol', $answersc1['yeargradcol']) }}" required placeholder="Year Graduated">--}}
+                                    {{-- <input class="form-control" type="text" name="yeargradcol" id="yearcol" value="{{ old('yeargradcol', $answersc1['yeargradcol']) }}"  placeholder="Year Graduated">--}}
                                 </div>
                                 <div class="col-5">
-                                    <input class="form-control" type="text" name="scholarshipcol" id="scholarcol" value="{{ old('scholarshipcol', $answersc1['scholarshipcol']) }}" required placeholder="Scholarship/Academic Honors Recieved">
+                                    <input class="form-control" type="text" name="scholarshipcol" id="scholarcol" value="{{ old('scholarshipcol', $answersc1['scholarshipcol']) }}"  placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
 
                             <b>{{ Form::label('grad', 'Graduate Studies') }}</b><br>
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="text" name="gradname" id="gradname" value="{{ old('gradname', $answersc1['gradname']) }}" required placeholder="Name of School (No Abbreviations)">
+                                    <input class="form-control" type="text" name="gradname" id="gradname" value="{{ old('gradname', $answersc1['gradname']) }}"  placeholder="Name of School (No Abbreviations)">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" name="graddeg" id="graddegree" value="{{ old('graddeg', $answersc1['graddeg']) }}" required placeholder="Basic Education/Degree/Course (No Abbreviations)">
+                                    <input class="form-control" type="text" name="graddeg" id="graddegree" value="{{ old('graddeg', $answersc1['graddeg']) }}"  placeholder="Basic Education/Degree/Course (No Abbreviations)">
                                  </div>
                             </div>
 
                             <b>Period of Attendance</b><br>
                             <div class="col">
-                                <input class="form-control" type="month" name="attendancefromgrad" id="gradattendFrom" value="{{ old('attendancefromgrad', $answersc1['attendancefromgrad']) }}" required placeholder="FROM">
+                                <input class="form-control" type="month" name="attendancefromgrad" id="gradattendFrom" value="{{ old('attendancefromgrad', $answersc1['attendancefromgrad']) }}"  placeholder="FROM">
                             </div>
                             <div class="col">
-                                <input class="form-control" type="month" name="attendancetograd" id="gradattendto" value="{{ old('attendancetograd', $answersc1['attendancetograd']) }}" required placeholder="TO">
+                                <input class="form-control" type="month" name="attendancetograd" id="gradattendto" value="{{ old('attendancetograd', $answersc1['attendancetograd']) }}"  placeholder="TO">
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control" type="number" name="gradunitLevel" id="gradunitLevel" value="{{ old('gradunitLevel', $answersc1['colunitLevel']) }}" required placeholder="Highest Unit / Level earned">
+                                    <input class="form-control" type="number" name="gradunitLevel" id="gradunitLevel" value="{{ old('gradunitLevel', $answersc1['colunitLevel']) }}"  placeholder="Highest Unit / Level earned">
                                 </div>
                                 <div class="col">
-                                    <input class="form-control" type="text" name="yeargrad" id="yeargrad" value="{{ old('yeargrad', $answersc1['yeargrad']) }}" required placeholder="Year Graduated">
+                                    <input class="form-control" type="text" name="yeargrad" id="yeargrad" value="{{ old('yeargrad', $answersc1['yeargrad']) }}"  placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
-                                    <input class="form-control" type="text" name="scholarshipgrad" id="scholargrad" value="{{ old('scholarshipgrad', $answersc1['scholarshipgrad']) }}" required placeholder="Scholarship/Academic Honors Recieved">
+                                    <input class="form-control" type="text" name="scholarshipgrad" id="scholargrad" value="{{ old('scholarshipgrad', $answersc1['scholarshipgrad']) }}"  placeholder="Scholarship/Academic Honors Recieved">
                                 </div>
                             </div>
                         </div>
@@ -1240,25 +1240,25 @@ $group = [
                                 <div class="row align-items-center">
                                     <div class="col">
                                         {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                        <input class="form-control" type="text" name="eligibility" id="eligibility" value="{{ old('eligibility', $answersc2['eligibility']) }}" required>
+                                        <input class="form-control" type="text" name="eligibility" id="eligibility" value="{{ old('eligibility', $answersc2['eligibility']) }}" >
 
                                         {{ Form::label('rating', 'Rating (if applicable)') }}
-                                        <input class="form-control" type="text" name="rating" id="rating" value="{{ old('rating', $answersc2['rating']) }}" required>
+                                        <input class="form-control" type="text" name="rating" id="rating" value="{{ old('rating', $answersc2['rating']) }}" >
 
 
                                         {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
-                                        <input class="form-control" type="date" name="dateofexam" id="dateofexam" value="{{ old('dateofexam', $answersc2['dateofexam']) }}" required>
+                                        <input class="form-control" type="date" name="dateofexam" id="dateofexam" value="{{ old('dateofexam', $answersc2['dateofexam']) }}" >
                                     </div>
                                     <div class="col">
                                         {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
 
-                                        <input class="form-control" type="text" name="placeofexam" id="placeofexam" value="{{ old('placeofexam', $answersc2['placeofexam']) }}" required>
+                                        <input class="form-control" type="text" name="placeofexam" id="placeofexam" value="{{ old('placeofexam', $answersc2['placeofexam']) }}" >
 
                                         {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
-                                        <input class="form-control" type="text" name="licenseno" id="licenseno" value="{{ old('licenseno', $answersc2['licenseno']) }}" required>
+                                        <input class="form-control" type="text" name="licenseno" id="licenseno" value="{{ old('licenseno', $answersc2['licenseno']) }}" >
 
                                         {{ Form::label('validity', 'Date of Validity') }}<br>
-                                        <input class="form-control" type="date" name="validity" id="validity" value="{{ old('validity', $answersc2['validity']) }}" required>
+                                        <input class="form-control" type="date" name="validity" id="validity" value="{{ old('validity', $answersc2['validity']) }}" >
 
                                     </div>
                                 </div>
@@ -1273,25 +1273,25 @@ $group = [
                                     <div class='row align-items-center'>
                                         <div class="col">
                                             {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            <input class="form-control" type="text" name="eligibility2" id="eligibility2" value="{{ old('eligibility2', $answersc2['eligibility2']) }}" required>
+                                            <input class="form-control" type="text" name="eligibility2" id="eligibility2" value="{{ old('eligibility2', $answersc2['eligibility2']) }}" >
 
                                             {{ Form::label('rating', 'Rating (if applicable)') }}
-                                            <input class="form-control" type="text" name="rating2" id="rating2" value="{{ old('rating2', $answersc2['rating2']) }}" required>
+                                            <input class="form-control" type="text" name="rating2" id="rating2" value="{{ old('rating2', $answersc2['rating2']) }}" >
 
 
                                             {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
-                                            <input class="form-control" type="date" name="dateofexam2" id="dateofexam2" value="{{ old('dateofexam2', $answersc2['dateofexam2']) }}" required>
+                                            <input class="form-control" type="date" name="dateofexam2" id="dateofexam2" value="{{ old('dateofexam2', $answersc2['dateofexam2']) }}" >
                                         </div>
                                         <div class="col">
                                             {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
 
-                                            <input class="form-control" type="text" name="placeofexam2" id="placeofexam2" value="{{ old('placeofexam2', $answersc2['placeofexam2']) }}" required>
+                                            <input class="form-control" type="text" name="placeofexam2" id="placeofexam2" value="{{ old('placeofexam2', $answersc2['placeofexam2']) }}" >
 
                                             {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
-                                            <input class="form-control" type="text" name="licenseno2" id="licenseno2" value="{{ old('licenseno2', $answersc2['licenseno2']) }}" required>
+                                            <input class="form-control" type="text" name="licenseno2" id="licenseno2" value="{{ old('licenseno2', $answersc2['licenseno2']) }}" >
 
                                             {{ Form::label('validity', 'Date of Validity') }}<br>
-                                            <input class="form-control" type="date" name="validity2" id="validity2" value="{{ old('validity2', $answersc2['validity2']) }}" required>
+                                            <input class="form-control" type="date" name="validity2" id="validity2" value="{{ old('validity2', $answersc2['validity2']) }}" >
 
                                         </div>
                                     </div>
@@ -1306,25 +1306,25 @@ $group = [
                                     <div class='row align-items-center'>
                                     <div class="col">
                                             {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            <input class="form-control" type="text" name="eligibility3" id="eligibility3" value="{{ old('eligibility3', $answersc2['eligibility3']) }}" required>
+                                            <input class="form-control" type="text" name="eligibility3" id="eligibility3" value="{{ old('eligibility3', $answersc2['eligibility3']) }}" >
 
                                             {{ Form::label('rating', 'Rating (if applicable)') }}
-                                            <input class="form-control" type="text" name="rating3" id="rating3" value="{{ old('rating3', $answersc2['rating3']) }}" required>
+                                            <input class="form-control" type="text" name="rating3" id="rating3" value="{{ old('rating3', $answersc2['rating3']) }}" >
 
 
                                             {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
-                                            <input class="form-control" type="date" name="dateofexam3" id="dateofexam3" value="{{ old('dateofexam3', $answersc2['dateofexam3']) }}" required>
+                                            <input class="form-control" type="date" name="dateofexam3" id="dateofexam3" value="{{ old('dateofexam3', $answersc2['dateofexam3']) }}" >
                                         </div>
                                         <div class="col">
                                             {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
 
-                                            <input class="form-control" type="text" name="placeofexam3" id="placeofexam3" value="{{ old('placeofexam3', $answersc2['placeofexam3']) }}" required>
+                                            <input class="form-control" type="text" name="placeofexam3" id="placeofexam3" value="{{ old('placeofexam3', $answersc2['placeofexam3']) }}" >
 
                                             {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
-                                            <input class="form-control" type="text" name="licenseno3" id="licenseno3" value="{{ old('licenseno3', $answersc2['licenseno3']) }}" required>
+                                            <input class="form-control" type="text" name="licenseno3" id="licenseno3" value="{{ old('licenseno3', $answersc2['licenseno3']) }}" >
 
                                             {{ Form::label('validity', 'Date of Validity') }}<br>
-                                            <input class="form-control" type="date" name="validity3" id="validity3" value="{{ old('validity3', $answersc2['validity3']) }}" required>
+                                            <input class="form-control" type="date" name="validity3" id="validity3" value="{{ old('validity3', $answersc2['validity3']) }}" >
 
                                         </div>
                                     </div>
@@ -1339,25 +1339,25 @@ $group = [
                                     <div class='row align-items-center'>
                                     <div class="col">
                                             {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            <input class="form-control" type="text" name="eligibility4" id="eligibility4" value="{{ old('eligibility4', $answersc2['eligibility4']) }}" required>
+                                            <input class="form-control" type="text" name="eligibility4" id="eligibility4" value="{{ old('eligibility4', $answersc2['eligibility4']) }}" >
 
                                             {{ Form::label('rating', 'Rating (if applicable)') }}
-                                            <input class="form-control" type="text" name="rating4" id="rating4" value="{{ old('rating4', $answersc2['rating4']) }}" required>
+                                            <input class="form-control" type="text" name="rating4" id="rating4" value="{{ old('rating4', $answersc2['rating4']) }}" >
 
 
                                             {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
-                                            <input class="form-control" type="date" name="dateofexam4" id="dateofexam4" value="{{ old('dateofexam4', $answersc2['dateofexam4']) }}" required>
+                                            <input class="form-control" type="date" name="dateofexam4" id="dateofexam4" value="{{ old('dateofexam4', $answersc2['dateofexam4']) }}" >
                                         </div>
                                         <div class="col">
                                             {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
 
-                                            <input class="form-control" type="text" name="placeofexam4" id="placeofexam4" value="{{ old('placeofexam4', $answersc2['placeofexam4']) }}" required>
+                                            <input class="form-control" type="text" name="placeofexam4" id="placeofexam4" value="{{ old('placeofexam4', $answersc2['placeofexam4']) }}" >
 
                                             {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
-                                            <input class="form-control" type="text" name="licenseno4" id="licenseno4" value="{{ old('licenseno4', $answersc2['licenseno4']) }}" required>
+                                            <input class="form-control" type="text" name="licenseno4" id="licenseno4" value="{{ old('licenseno4', $answersc2['licenseno4']) }}" >
 
                                             {{ Form::label('validity', 'Date of Validity') }}<br>
-                                            <input class="form-control" type="date" name="validity4" id="validity4" value="{{ old('validity4', $answersc2['validity4']) }}" required>
+                                            <input class="form-control" type="date" name="validity4" id="validity4" value="{{ old('validity4', $answersc2['validity4']) }}" >
 
                                         </div>
                                     </div>
@@ -1372,25 +1372,25 @@ $group = [
                                     <div class='row align-items-center'>
                                         <div class="col">
                                             {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            <input class="form-control" type="text" name="eligibility5" id="eligibility5" value="{{ old('eligibility5', $answersc2['eligibility5']) }}" required>
+                                            <input class="form-control" type="text" name="eligibility5" id="eligibility5" value="{{ old('eligibility5', $answersc2['eligibility5']) }}" >
 
                                             {{ Form::label('rating', 'Rating (if applicable)') }}
-                                            <input class="form-control" type="text" name="rating5" id="rating5" value="{{ old('rating5', $answersc2['rating5']) }}" required>
+                                            <input class="form-control" type="text" name="rating5" id="rating5" value="{{ old('rating5', $answersc2['rating5']) }}" >
 
 
                                             {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
-                                            <input class="form-control" type="date" name="dateofexam5" id="dateofexam5" value="{{ old('dateofexam5', $answersc2['dateofexam5']) }}" required>
+                                            <input class="form-control" type="date" name="dateofexam5" id="dateofexam5" value="{{ old('dateofexam5', $answersc2['dateofexam5']) }}" >
                                         </div>
                                         <div class="col">
                                             {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
 
-                                            <input class="form-control" type="text" name="placeofexam5" id="placeofexam5" value="{{ old('placeofexam5', $answersc2['placeofexam5']) }}" required>
+                                            <input class="form-control" type="text" name="placeofexam5" id="placeofexam5" value="{{ old('placeofexam5', $answersc2['placeofexam5']) }}" >
 
                                             {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
-                                            <input class="form-control" type="text" name="licenseno5" id="licenseno5" value="{{ old('licenseno5', $answersc2['licenseno5']) }}" required>
+                                            <input class="form-control" type="text" name="licenseno5" id="licenseno5" value="{{ old('licenseno5', $answersc2['licenseno5']) }}" >
 
                                             {{ Form::label('validity', 'Date of Validity') }}<br>
-                                            <input class="form-control" type="date" name="validity5" id="validity5" value="{{ old('validity5', $answersc2['validity5']) }}" required>
+                                            <input class="form-control" type="date" name="validity5" id="validity5" value="{{ old('validity5', $answersc2['validity5']) }}" >
 
                                         </div>
                                     </div>
@@ -1405,25 +1405,25 @@ $group = [
                                     <div class='row align-items-center'>
                                     <div class="col">
                                             {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            <input class="form-control" type="text" name="eligibility6" id="eligibility6" value="{{ old('eligibility6', $answersc2['eligibility6']) }}" required>
+                                            <input class="form-control" type="text" name="eligibility6" id="eligibility6" value="{{ old('eligibility6', $answersc2['eligibility6']) }}" >
 
                                             {{ Form::label('rating', 'Rating (if applicable)') }}
-                                            <input class="form-control" type="text" name="rating6" id="rating6" value="{{ old('rating6', $answersc2['rating6']) }}" required>
+                                            <input class="form-control" type="text" name="rating6" id="rating6" value="{{ old('rating6', $answersc2['rating6']) }}" >
 
 
                                             {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
-                                            <input class="form-control" type="date" name="dateofexam6" id="dateofexam6" value="{{ old('dateofexam6', $answersc2['dateofexam6']) }}" required>
+                                            <input class="form-control" type="date" name="dateofexam6" id="dateofexam6" value="{{ old('dateofexam6', $answersc2['dateofexam6']) }}" >
                                         </div>
                                         <div class="col">
                                             {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
 
-                                            <input class="form-control" type="text" name="placeofexam6" id="placeofexam6" value="{{ old('placeofexam6', $answersc2['placeofexam6']) }}" required>
+                                            <input class="form-control" type="text" name="placeofexam6" id="placeofexam6" value="{{ old('placeofexam6', $answersc2['placeofexam6']) }}" >
 
                                             {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
-                                            <input class="form-control" type="text" name="licenseno6" id="licenseno6" value="{{ old('licenseno6', $answersc2['licenseno6']) }}" required>
+                                            <input class="form-control" type="text" name="licenseno6" id="licenseno6" value="{{ old('licenseno6', $answersc2['licenseno6']) }}" >
 
                                             {{ Form::label('validity', 'Date of Validity') }}<br>
-                                            <input class="form-control" type="date" name="validity6" id="validity6" value="{{ old('validity6', $answersc2['validity6']) }}" required>
+                                            <input class="form-control" type="date" name="validity6" id="validity6" value="{{ old('validity6', $answersc2['validity6']) }}" >
 
                                         </div>
                                     </div>
@@ -1438,25 +1438,25 @@ $group = [
                                     <div class='row align-items-center'>
                                         <div class="col">
                                             {{ Form::label('eligibility', "Career Service/RA 1080 (Board/Bar)Under Special Laws/ CES/ CSEE Barangay Eligibility/ Driver's License") }}
-                                            <input class="form-control" type="text" name="eligibility7" id="eligibility7" value="{{ old('eligibility7', $answersc2['eligibility7']) }}" required>
+                                            <input class="form-control" type="text" name="eligibility7" id="eligibility7" value="{{ old('eligibility7', $answersc2['eligibility7']) }}" >
 
                                             {{ Form::label('rating', 'Rating (if applicable)') }}
-                                            <input class="form-control" type="text" name="rating7" id="rating7" value="{{ old('rating7', $answersc2['rating7']) }}" required>
+                                            <input class="form-control" type="text" name="rating7" id="rating7" value="{{ old('rating7', $answersc2['rating7']) }}" >
 
 
                                             {{ Form::label('dateofexam', 'Date of Examination/Conferment') }}<br>
-                                            <input class="form-control" type="date" name="dateofexam7" id="dateofexam7" value="{{ old('dateofexam7', $answersc2['dateofexam7']) }}" required>
+                                            <input class="form-control" type="date" name="dateofexam7" id="dateofexam7" value="{{ old('dateofexam7', $answersc2['dateofexam7']) }}" >
                                         </div>
                                         <div class="col">
                                             {{ Form::label('placeofexam', 'Place of Examination/Conferment') }}
 
-                                            <input class="form-control" type="text" name="placeofexam7" id="placeofexam7" value="{{ old('placeofexam7', $answersc2['placeofexam7']) }}" required>
+                                            <input class="form-control" type="text" name="placeofexam7" id="placeofexam7" value="{{ old('placeofexam7', $answersc2['placeofexam7']) }}" >
 
                                             {{ Form::label('licenseno', 'Licsense number (if applicable)') }}
-                                            <input class="form-control" type="text" name="licenseno7" id="licenseno7" value="{{ old('licenseno7', $answersc2['licenseno7']) }}" required>
+                                            <input class="form-control" type="text" name="licenseno7" id="licenseno7" value="{{ old('licenseno7', $answersc2['licenseno7']) }}" >
 
                                             {{ Form::label('validity', 'Date of Validity') }}<br>
-                                            <input class="form-control" type="date" name="validity7" id="validity7" value="{{ old('validity7', $answersc2['validity7']) }}" required>
+                                            <input class="form-control" type="date" name="validity7" id="validity7" value="{{ old('validity7', $answersc2['validity7']) }}" >
 
                                         </div>
                                     </div>
@@ -1485,28 +1485,28 @@ $group = [
                                     <div class='col'>
                                         <label>Inclusive Dates</label><br>
                                         {{ Form::label('datefrom', 'From') }}
-                                        <input class="form-control" type="date" name="datefrom" id="datefrom" value="{{ old('datefrom', $answersc2['datefrom']) }}" required>
+                                        <input class="form-control" type="date" name="datefrom" id="datefrom" value="{{ old('datefrom', $answersc2['datefrom']) }}" >
 
                                         {{ Form::label('dateto', 'To') }}
-                                        <input class="form-control" type="date" name="dateto" id="dateto" value="{{ old('dateto', $answersc2['dateto']) }}" required>
+                                        <input class="form-control" type="date" name="dateto" id="dateto" value="{{ old('dateto', $answersc2['dateto']) }}" >
 
 
                                         {{ Form::label('position', 'Position/Title (Do Not Abbreviate)') }}
-                                        <input class="form-control" type="text" name="position" id="position" value="{{ old('position', $answersc2['position']) }}" required>
+                                        <input class="form-control" type="text" name="position" id="position" value="{{ old('position', $answersc2['position']) }}" >
 
                                         {{ Form::label('department', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                        <input class="form-control" type="text" name="department" id="department" value="{{ old('department', $answersc2['department']) }}" required>
+                                        <input class="form-control" type="text" name="department" id="department" value="{{ old('department', $answersc2['department']) }}" >
 
                                         {{ Form::label('salary', 'Monthly Salary') }}
-                                        <input class="form-control" type="text" name="salary" id="salary" value="{{ old('salary', $answersc2['salary']) }}" required>
+                                        <input class="form-control" type="text" name="salary" id="salary" value="{{ old('salary', $answersc2['salary']) }}" >
                                         {{ Form::text('salary', '', ['class' => 'form-control']) }}
                                     </div>
                                     <div class='col'>
                                         {{ Form::label('paygrade', 'Salary/Job/Pay Grade (if applicable)') }}
-                                        <input class="form-control" type="text" name="paygrade" id="paygrade" value="{{ old('paygrade', $answersc2['paygrade']) }}" required>
+                                        <input class="form-control" type="text" name="paygrade" id="paygrade" value="{{ old('paygrade', $answersc2['paygrade']) }}" >
 
                                         {{ Form::label('appointment', 'Status of Appointment') }}
-                                        <input class="form-control" type="text" name="appointment" id="appointment" value="{{ old('appointment', $answersc2['appointment']) }}" required>
+                                        <input class="form-control" type="text" name="appointment" id="appointment" value="{{ old('appointment', $answersc2['appointment']) }}" >
 
                                         {{ Form::label('governmentserv', 'Government service (Y/N)') }}
                                         <select class="custom-select mr-sm-2" id="governmentserv" name="governmentserv"
@@ -1528,30 +1528,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom2', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom2" id="datefrom2" value="{{ old('datefrom2', $answersc2['datefrom2']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom2" id="datefrom2" value="{{ old('datefrom2', $answersc2['datefrom2']) }}" >
 
                                             {{ Form::label('dateto2', 'To') }}
-                                            <input class="form-control" type="date" name="dateto2" id="dateto2" value="{{ old('dateto2', $answersc2['dateto2']) }}" required>
+                                            <input class="form-control" type="date" name="dateto2" id="dateto2" value="{{ old('dateto2', $answersc2['dateto2']) }}" >
 
                                             {{ Form::label('position2', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position2" id="position2" value="{{ old('position2', $answersc2['position2']) }}" required>
+                                            <input class="form-control" type="text" name="position2" id="position2" value="{{ old('position2', $answersc2['position2']) }}" >
 
                                             {{ Form::label('department2', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department2" id="department2" value="{{ old('department2', $answersc2['department2']) }}" required>
+                                            <input class="form-control" type="text" name="department2" id="department2" value="{{ old('department2', $answersc2['department2']) }}" >
 
                                             {{ Form::label('salary2', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary2" id="salary2" value="{{ old('salary2', $answersc2['salary2']) }}" required>
+                                            <input class="form-control" type="text" name="salary2" id="salary2" value="{{ old('salary2', $answersc2['salary2']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade2', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade2" id="paygrade2" value="{{ old('paygrade2', $answersc2['paygrade2']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade2" id="paygrade2" value="{{ old('paygrade2', $answersc2['paygrade2']) }}" >
 
                                             {{ Form::label('appointment2', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment2" id="appointment2" value="{{ old('appointment2', $answersc2['appointment2']) }}" required>
+                                            <input class="form-control" type="text" name="appointment2" id="appointment2" value="{{ old('appointment2', $answersc2['appointment2']) }}" >
 
                                             {{ Form::label('governmentserv2', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv2" id="governmentserv2" value="{{ old('governmentserv2', $answersc2['governmentserv2']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv2" id="governmentserv2" value="{{ old('governmentserv2', $answersc2['governmentserv2']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv2'>
                                                 <option value=''></option>
@@ -1571,30 +1571,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom3', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom3" id="datefrom3" value="{{ old('datefrom3', $answersc2['datefrom3']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom3" id="datefrom3" value="{{ old('datefrom3', $answersc2['datefrom3']) }}" >
 
                                             {{ Form::label('dateto3', 'To') }}
-                                            <input class="form-control" type="date" name="dateto3" id="dateto3" value="{{ old('dateto3', $answersc2['dateto3']) }}" required>
+                                            <input class="form-control" type="date" name="dateto3" id="dateto3" value="{{ old('dateto3', $answersc2['dateto3']) }}" >
 
                                             {{ Form::label('position3', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position3" id="position3" value="{{ old('position3', $answersc2['position3']) }}" required>
+                                            <input class="form-control" type="text" name="position3" id="position3" value="{{ old('position3', $answersc2['position3']) }}" >
 
                                             {{ Form::label('department3', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department3" id="department3" value="{{ old('department3', $answersc2['department3']) }}" required>
+                                            <input class="form-control" type="text" name="department3" id="department3" value="{{ old('department3', $answersc2['department3']) }}" >
 
                                             {{ Form::label('salary3', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary3" id="salary3" value="{{ old('salary3', $answersc2['salary3']) }}" required>
+                                            <input class="form-control" type="text" name="salary3" id="salary3" value="{{ old('salary3', $answersc2['salary3']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade3', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade3" id="paygrade3" value="{{ old('paygrade3', $answersc2['paygrade3']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade3" id="paygrade3" value="{{ old('paygrade3', $answersc2['paygrade3']) }}" >
 
                                             {{ Form::label('appointment3', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment3" id="appointment3" value="{{ old('appointment3', $answersc2['appointment3']) }}" required>
+                                            <input class="form-control" type="text" name="appointment3" id="appointment3" value="{{ old('appointment3', $answersc2['appointment3']) }}" >
 
                                             {{ Form::label('governmentserv3', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv3" id="governmentserv3" value="{{ old('governmentserv3', $answersc2['governmentserv3']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv3" id="governmentserv3" value="{{ old('governmentserv3', $answersc2['governmentserv3']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv3'>
                                                 <option value=''></option>
@@ -1614,30 +1614,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom4', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom4" id="datefrom4" value="{{ old('datefrom4', $answersc2['datefrom4']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom4" id="datefrom4" value="{{ old('datefrom4', $answersc2['datefrom4']) }}" >
 
                                             {{ Form::label('dateto4', 'To') }}
-                                            <input class="form-control" type="date" name="dateto4" id="dateto4" value="{{ old('dateto4', $answersc2['dateto4']) }}" required>
+                                            <input class="form-control" type="date" name="dateto4" id="dateto4" value="{{ old('dateto4', $answersc2['dateto4']) }}" >
 
                                             {{ Form::label('position4', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position4" id="position4" value="{{ old('position4', $answersc2['position4']) }}" required>
+                                            <input class="form-control" type="text" name="position4" id="position4" value="{{ old('position4', $answersc2['position4']) }}" >
 
                                             {{ Form::label('department4', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department4" id="department4" value="{{ old('department4', $answersc2['department4']) }}" required>
+                                            <input class="form-control" type="text" name="department4" id="department4" value="{{ old('department4', $answersc2['department4']) }}" >
 
                                             {{ Form::label('salary4', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary4" id="salary4" value="{{ old('salary4', $answersc2['salary4']) }}" required>
+                                            <input class="form-control" type="text" name="salary4" id="salary4" value="{{ old('salary4', $answersc2['salary4']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade4', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade4" id="paygrade4" value="{{ old('paygrade4', $answersc2['paygrade4']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade4" id="paygrade4" value="{{ old('paygrade4', $answersc2['paygrade4']) }}" >
 
                                             {{ Form::label('appointment4', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment4" id="appointment4" value="{{ old('appointment3', $answersc2['appointment4']) }}" required>
+                                            <input class="form-control" type="text" name="appointment4" id="appointment4" value="{{ old('appointment3', $answersc2['appointment4']) }}" >
 
                                             {{ Form::label('governmentserv4', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv4" id="governmentserv4" value="{{ old('governmentserv4', $answersc2['governmentserv4']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv4" id="governmentserv4" value="{{ old('governmentserv4', $answersc2['governmentserv4']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv4'>
                                                 <option value=''></option>
@@ -1657,30 +1657,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom5', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom5" id="datefrom5" value="{{ old('datefrom5', $answersc2['datefrom5']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom5" id="datefrom5" value="{{ old('datefrom5', $answersc2['datefrom5']) }}" >
 
                                             {{ Form::label('dateto5', 'To') }}
-                                            <input class="form-control" type="date" name="dateto5" id="dateto5" value="{{ old('dateto5', $answersc2['dateto5']) }}" required>
+                                            <input class="form-control" type="date" name="dateto5" id="dateto5" value="{{ old('dateto5', $answersc2['dateto5']) }}" >
 
                                             {{ Form::label('position5', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position5" id="position5" value="{{ old('position5', $answersc2['position5']) }}" required>
+                                            <input class="form-control" type="text" name="position5" id="position5" value="{{ old('position5', $answersc2['position5']) }}" >
 
                                             {{ Form::label('department5', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department5" id="department5" value="{{ old('department5', $answersc2['department5']) }}" required>
+                                            <input class="form-control" type="text" name="department5" id="department5" value="{{ old('department5', $answersc2['department5']) }}" >
 
                                             {{ Form::label('salary5', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary5" id="salary5" value="{{ old('salary5', $answersc2['salary5']) }}" required>
+                                            <input class="form-control" type="text" name="salary5" id="salary5" value="{{ old('salary5', $answersc2['salary5']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade5', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade5" id="paygrade5" value="{{ old('paygrade5', $answersc2['paygrade5']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade5" id="paygrade5" value="{{ old('paygrade5', $answersc2['paygrade5']) }}" >
 
                                             {{ Form::label('appointment5', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment5" id="appointment5" value="{{ old('appointment5', $answersc2['appointment5']) }}" required>
+                                            <input class="form-control" type="text" name="appointment5" id="appointment5" value="{{ old('appointment5', $answersc2['appointment5']) }}" >
 
                                             {{ Form::label('governmentserv5', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv5" id="governmentserv5" value="{{ old('governmentserv5', $answersc2['governmentserv5']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv5" id="governmentserv5" value="{{ old('governmentserv5', $answersc2['governmentserv5']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv5'>
                                                 <option value=''></option>
@@ -1700,30 +1700,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom6', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom6" id="datefrom6" value="{{ old('datefrom6', $answersc2['datefrom6']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom6" id="datefrom6" value="{{ old('datefrom6', $answersc2['datefrom6']) }}" >
 
                                             {{ Form::label('dateto6', 'To') }}
-                                            <input class="form-control" type="date" name="dateto6" id="dateto6" value="{{ old('dateto6', $answersc2['dateto6']) }}" required>
+                                            <input class="form-control" type="date" name="dateto6" id="dateto6" value="{{ old('dateto6', $answersc2['dateto6']) }}" >
 
                                             {{ Form::label('position6', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position6" id="position6" value="{{ old('position6', $answersc2['position6']) }}" required>
+                                            <input class="form-control" type="text" name="position6" id="position6" value="{{ old('position6', $answersc2['position6']) }}" >
 
                                             {{ Form::label('department6', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department6" id="department6" value="{{ old('department6', $answersc2['department6']) }}" required>
+                                            <input class="form-control" type="text" name="department6" id="department6" value="{{ old('department6', $answersc2['department6']) }}" >
 
                                             {{ Form::label('salary6', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary6" id="salary6" value="{{ old('salary6', $answersc2['salary6']) }}" required>
+                                            <input class="form-control" type="text" name="salary6" id="salary6" value="{{ old('salary6', $answersc2['salary6']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade6', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade6" id="paygrade6" value="{{ old('paygrade6', $answersc2['paygrade6']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade6" id="paygrade6" value="{{ old('paygrade6', $answersc2['paygrade6']) }}" >
 
                                             {{ Form::label('appointment6', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment6" id="appointment6" value="{{ old('appointment6', $answersc2['appointment6']) }}" required>
+                                            <input class="form-control" type="text" name="appointment6" id="appointment6" value="{{ old('appointment6', $answersc2['appointment6']) }}" >
 
                                             {{ Form::label('governmentserv6', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv6" id="governmentserv6" value="{{ old('governmentserv6', $answersc2['governmentserv6']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv6" id="governmentserv6" value="{{ old('governmentserv6', $answersc2['governmentserv6']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv6'>
                                                 <option value=''></option>
@@ -1743,30 +1743,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom7', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom7" id="datefrom7" value="{{ old('datefrom7', $answersc2['datefrom7']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom7" id="datefrom7" value="{{ old('datefrom7', $answersc2['datefrom7']) }}" >
 
                                             {{ Form::label('dateto7', 'To') }}
-                                            <input class="form-control" type="date" name="dateto7" id="dateto7" value="{{ old('dateto7', $answersc2['dateto7']) }}" required>
+                                            <input class="form-control" type="date" name="dateto7" id="dateto7" value="{{ old('dateto7', $answersc2['dateto7']) }}" >
 
                                             {{ Form::label('position7', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position7" id="position7" value="{{ old('position7', $answersc2['position7']) }}" required>
+                                            <input class="form-control" type="text" name="position7" id="position7" value="{{ old('position7', $answersc2['position7']) }}" >
 
                                             {{ Form::label('department7', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department7" id="department7" value="{{ old('department7', $answersc2['department7']) }}" required>
+                                            <input class="form-control" type="text" name="department7" id="department7" value="{{ old('department7', $answersc2['department7']) }}" >
 
                                             {{ Form::label('salary7', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary7" id="salary7" value="{{ old('salary7', $answersc2['salary7']) }}" required>
+                                            <input class="form-control" type="text" name="salary7" id="salary7" value="{{ old('salary7', $answersc2['salary7']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade7', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade7" id="paygrade7" value="{{ old('paygrade7', $answersc2['paygrade7']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade7" id="paygrade7" value="{{ old('paygrade7', $answersc2['paygrade7']) }}" >
 
                                             {{ Form::label('appointment7', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment7" id="appointment7" value="{{ old('appointment7', $answersc2['appointment7']) }}" required>
+                                            <input class="form-control" type="text" name="appointment7" id="appointment7" value="{{ old('appointment7', $answersc2['appointment7']) }}" >
 
                                             {{ Form::label('governmentserv7', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv7" id="governmentserv7" value="{{ old('governmentserv7', $answersc2['governmentserv7']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv7" id="governmentserv7" value="{{ old('governmentserv7', $answersc2['governmentserv7']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv7'>
                                                 <option value=''></option>
@@ -1786,30 +1786,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom8', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom8" id="datefrom8" value="{{ old('datefrom8', $answersc2['datefrom8']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom8" id="datefrom8" value="{{ old('datefrom8', $answersc2['datefrom8']) }}" >
 
                                             {{ Form::label('dateto8', 'To') }}
-                                            <input class="form-control" type="date" name="dateto8" id="dateto8" value="{{ old('dateto8', $answersc2['dateto8']) }}" required>
+                                            <input class="form-control" type="date" name="dateto8" id="dateto8" value="{{ old('dateto8', $answersc2['dateto8']) }}" >
 
                                             {{ Form::label('position8', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position8" id="position8" value="{{ old('position8', $answersc2['position8']) }}" required>
+                                            <input class="form-control" type="text" name="position8" id="position8" value="{{ old('position8', $answersc2['position8']) }}" >
 
                                             {{ Form::label('department8', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department8" id="department8" value="{{ old('department8', $answersc2['department8']) }}" required>
+                                            <input class="form-control" type="text" name="department8" id="department8" value="{{ old('department8', $answersc2['department8']) }}" >
 
                                             {{ Form::label('salary8', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary8" id="salary8" value="{{ old('salary8', $answersc2['salary8']) }}" required>
+                                            <input class="form-control" type="text" name="salary8" id="salary8" value="{{ old('salary8', $answersc2['salary8']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade8', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade8" id="paygrade8" value="{{ old('paygrade8', $answersc2['paygrade8']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade8" id="paygrade8" value="{{ old('paygrade8', $answersc2['paygrade8']) }}" >
 
                                             {{ Form::label('appointment8', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment8" id="appointment8" value="{{ old('appointment8', $answersc2['appointment8']) }}" required>
+                                            <input class="form-control" type="text" name="appointment8" id="appointment8" value="{{ old('appointment8', $answersc2['appointment8']) }}" >
 
                                             {{ Form::label('governmentserv8', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv8" id="governmentserv8" value="{{ old('governmentserv8', $answersc2['governmentserv8']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv8" id="governmentserv8" value="{{ old('governmentserv8', $answersc2['governmentserv8']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv8'>
                                                 <option value=''></option>
@@ -1829,30 +1829,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom9', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom9" id="datefrom9" value="{{ old('datefrom9', $answersc2['datefrom9']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom9" id="datefrom9" value="{{ old('datefrom9', $answersc2['datefrom9']) }}" >
 
                                             {{ Form::label('dateto9', 'To') }}
-                                            <input class="form-control" type="date" name="dateto9" id="dateto9" value="{{ old('dateto9', $answersc2['dateto9']) }}" required>
+                                            <input class="form-control" type="date" name="dateto9" id="dateto9" value="{{ old('dateto9', $answersc2['dateto9']) }}" >
 
                                             {{ Form::label('position9', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position9" id="position9" value="{{ old('position9', $answersc2['position9']) }}" required>
+                                            <input class="form-control" type="text" name="position9" id="position9" value="{{ old('position9', $answersc2['position9']) }}" >
 
                                             {{ Form::label('department9', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department9" id="department9" value="{{ old('department9', $answersc2['department9']) }}" required>
+                                            <input class="form-control" type="text" name="department9" id="department9" value="{{ old('department9', $answersc2['department9']) }}" >
 
                                             {{ Form::label('salary9', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary9" id="salary9" value="{{ old('salary9', $answersc2['salary9']) }}" required>
+                                            <input class="form-control" type="text" name="salary9" id="salary9" value="{{ old('salary9', $answersc2['salary9']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade9', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade9" id="paygrade9" value="{{ old('paygrade9', $answersc2['paygrade9']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade9" id="paygrade9" value="{{ old('paygrade9', $answersc2['paygrade9']) }}" >
 
                                             {{ Form::label('appointment9', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment9" id="appointment9" value="{{ old('appointment9', $answersc2['appointment9']) }}" required>
+                                            <input class="form-control" type="text" name="appointment9" id="appointment9" value="{{ old('appointment9', $answersc2['appointment9']) }}" >
 
                                             {{ Form::label('governmentserv9', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv9" id="governmentserv9" value="{{ old('governmentserv9', $answersc2['governmentserv9']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv9" id="governmentserv9" value="{{ old('governmentserv9', $answersc2['governmentserv9']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv9'>
                                                 <option value=''></option>
@@ -1872,30 +1872,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom10', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom10" id="datefrom10" value="{{ old('datefrom10', $answersc2['datefrom10']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom10" id="datefrom10" value="{{ old('datefrom10', $answersc2['datefrom10']) }}" >
 
                                             {{ Form::label('dateto10', 'To') }}
-                                            <input class="form-control" type="date" name="dateto10" id="dateto10" value="{{ old('dateto10', $answersc2['dateto10']) }}" required>
+                                            <input class="form-control" type="date" name="dateto10" id="dateto10" value="{{ old('dateto10', $answersc2['dateto10']) }}" >
 
                                             {{ Form::label('position10', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position10" id="position10" value="{{ old('position10', $answersc2['position10']) }}" required>
+                                            <input class="form-control" type="text" name="position10" id="position10" value="{{ old('position10', $answersc2['position10']) }}" >
 
                                             {{ Form::label('department10', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department10" id="department10" value="{{ old('department10', $answersc2['department10']) }}" required>
+                                            <input class="form-control" type="text" name="department10" id="department10" value="{{ old('department10', $answersc2['department10']) }}" >
 
                                             {{ Form::label('salary10', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary10" id="salary10" value="{{ old('salary10', $answersc2['salary10']) }}" required>
+                                            <input class="form-control" type="text" name="salary10" id="salary10" value="{{ old('salary10', $answersc2['salary10']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade10', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade10" id="paygrade10" value="{{ old('paygrade10', $answersc2['paygrade10']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade10" id="paygrade10" value="{{ old('paygrade10', $answersc2['paygrade10']) }}" >
 
                                             {{ Form::label('appointment10', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment10" id="appointment10" value="{{ old('appointment10', $answersc2['appointment10']) }}" required>
+                                            <input class="form-control" type="text" name="appointment10" id="appointment10" value="{{ old('appointment10', $answersc2['appointment10']) }}" >
 
                                             {{ Form::label('governmentserv10', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv10" id="governmentserv10" value="{{ old('governmentserv10', $answersc2['governmentserv10']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv10" id="governmentserv10" value="{{ old('governmentserv10', $answersc2['governmentserv10']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv10'>
                                                 <option value=''></option>
@@ -1915,30 +1915,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom11', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom11" id="datefrom11" value="{{ old('datefrom11', $answersc2['datefrom11']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom11" id="datefrom11" value="{{ old('datefrom11', $answersc2['datefrom11']) }}" >
 
                                             {{ Form::label('dateto11', 'To') }}
-                                            <input class="form-control" type="date" name="dateto11" id="dateto11" value="{{ old('dateto11', $answersc2['dateto11']) }}" required>
+                                            <input class="form-control" type="date" name="dateto11" id="dateto11" value="{{ old('dateto11', $answersc2['dateto11']) }}" >
 
                                             {{ Form::label('position11', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position11" id="position11" value="{{ old('position11', $answersc2['position11']) }}" required>
+                                            <input class="form-control" type="text" name="position11" id="position11" value="{{ old('position11', $answersc2['position11']) }}" >
 
                                             {{ Form::label('department11', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department11" id="department11" value="{{ old('department11', $answersc2['department11']) }}" required>
+                                            <input class="form-control" type="text" name="department11" id="department11" value="{{ old('department11', $answersc2['department11']) }}" >
 
                                             {{ Form::label('salary11', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary11" id="salary11" value="{{ old('salary11', $answersc2['salary11']) }}" required>
+                                            <input class="form-control" type="text" name="salary11" id="salary11" value="{{ old('salary11', $answersc2['salary11']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade11', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade11" id="paygrade11" value="{{ old('paygrade11', $answersc2['paygrade11']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade11" id="paygrade11" value="{{ old('paygrade11', $answersc2['paygrade11']) }}" >
 
                                             {{ Form::label('appointment11', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment11" id="appointment11" value="{{ old('appointment11', $answersc2['appointment11']) }}" required>
+                                            <input class="form-control" type="text" name="appointment11" id="appointment11" value="{{ old('appointment11', $answersc2['appointment11']) }}" >
 
                                             {{ Form::label('governmentserv11', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv11" id="governmentserv11" value="{{ old('governmentserv11', $answersc2['governmentserv11']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv11" id="governmentserv11" value="{{ old('governmentserv11', $answersc2['governmentserv11']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv11'>
                                                 <option value=''></option>
@@ -1958,30 +1958,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom12', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom12" id="datefrom12" value="{{ old('datefrom12', $answersc2['datefrom12']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom12" id="datefrom12" value="{{ old('datefrom12', $answersc2['datefrom12']) }}" >
 
                                             {{ Form::label('dateto12', 'To') }}
-                                            <input class="form-control" type="date" name="dateto12" id="dateto12" value="{{ old('dateto12', $answersc2['dateto12']) }}" required>
+                                            <input class="form-control" type="date" name="dateto12" id="dateto12" value="{{ old('dateto12', $answersc2['dateto12']) }}" >
 
                                             {{ Form::label('position12', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position12" id="position12" value="{{ old('position12', $answersc2['position12']) }}" required>
+                                            <input class="form-control" type="text" name="position12" id="position12" value="{{ old('position12', $answersc2['position12']) }}" >
 
                                             {{ Form::label('department12', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department12" id="department12" value="{{ old('department12', $answersc2['department12']) }}" required>
+                                            <input class="form-control" type="text" name="department12" id="department12" value="{{ old('department12', $answersc2['department12']) }}" >
 
                                             {{ Form::label('salary12', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary12" id="salary12" value="{{ old('salary12', $answersc2['salary12']) }}" required>
+                                            <input class="form-control" type="text" name="salary12" id="salary12" value="{{ old('salary12', $answersc2['salary12']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade12', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade12" id="paygrade12" value="{{ old('paygrade12', $answersc2['paygrade12']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade12" id="paygrade12" value="{{ old('paygrade12', $answersc2['paygrade12']) }}" >
 
                                             {{ Form::label('appointment12', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment12" id="appointment12" value="{{ old('appointment12', $answersc2['appointment12']) }}" required>
+                                            <input class="form-control" type="text" name="appointment12" id="appointment12" value="{{ old('appointment12', $answersc2['appointment12']) }}" >
 
                                             {{ Form::label('governmentserv12', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv12" id="governmentserv12" value="{{ old('governmentserv12', $answersc2['governmentserv12']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv12" id="governmentserv12" value="{{ old('governmentserv12', $answersc2['governmentserv12']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv12'>
                                                 <option value=''></option>
@@ -2001,30 +2001,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom13', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom13" id="datefrom13" value="{{ old('datefrom13', $answersc2['datefrom13']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom13" id="datefrom13" value="{{ old('datefrom13', $answersc2['datefrom13']) }}" >
 
                                             {{ Form::label('dateto13', 'To') }}
-                                            <input class="form-control" type="date" name="dateto13" id="dateto13" value="{{ old('dateto13', $answersc2['dateto13']) }}" required>
+                                            <input class="form-control" type="date" name="dateto13" id="dateto13" value="{{ old('dateto13', $answersc2['dateto13']) }}" >
 
                                             {{ Form::label('position13', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position13" id="position13" value="{{ old('position13', $answersc2['position13']) }}" required>
+                                            <input class="form-control" type="text" name="position13" id="position13" value="{{ old('position13', $answersc2['position13']) }}" >
 
                                             {{ Form::label('department13', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department13" id="department13" value="{{ old('department13', $answersc2['department13']) }}" required>
+                                            <input class="form-control" type="text" name="department13" id="department13" value="{{ old('department13', $answersc2['department13']) }}" >
 
                                             {{ Form::label('salary13', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary13" id="salary13" value="{{ old('salary13', $answersc2['salary13']) }}" required>
+                                            <input class="form-control" type="text" name="salary13" id="salary13" value="{{ old('salary13', $answersc2['salary13']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade13', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade13" id="paygrade13" value="{{ old('paygrade13', $answersc2['paygrade13']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade13" id="paygrade13" value="{{ old('paygrade13', $answersc2['paygrade13']) }}" >
 
                                             {{ Form::label('appointment13', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment13" id="appointment13" value="{{ old('appointment13', $answersc2['appointment13']) }}" required>
+                                            <input class="form-control" type="text" name="appointment13" id="appointment13" value="{{ old('appointment13', $answersc2['appointment13']) }}" >
 
                                             {{ Form::label('governmentserv13', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv13" id="governmentserv13" value="{{ old('governmentserv13', $answersc2['governmentserv13']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv13" id="governmentserv13" value="{{ old('governmentserv13', $answersc2['governmentserv13']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv13'>
                                                 <option value=''></option>
@@ -2044,30 +2044,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom14', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom14" id="datefrom14" value="{{ old('datefrom14', $answersc2['datefrom14']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom14" id="datefrom14" value="{{ old('datefrom14', $answersc2['datefrom14']) }}" >
 
                                             {{ Form::label('dateto14', 'To') }}
-                                            <input class="form-control" type="date" name="dateto14" id="dateto14" value="{{ old('dateto14', $answersc2['dateto14']) }}" required>
+                                            <input class="form-control" type="date" name="dateto14" id="dateto14" value="{{ old('dateto14', $answersc2['dateto14']) }}" >
 
                                             {{ Form::label('position14', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position14" id="position14" value="{{ old('position14', $answersc2['position14']) }}" required>
+                                            <input class="form-control" type="text" name="position14" id="position14" value="{{ old('position14', $answersc2['position14']) }}" >
 
                                             {{ Form::label('department14', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department14" id="department14" value="{{ old('department14', $answersc2['department14']) }}" required>
+                                            <input class="form-control" type="text" name="department14" id="department14" value="{{ old('department14', $answersc2['department14']) }}" >
 
                                             {{ Form::label('salary14', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary14" id="salary14" value="{{ old('salary14', $answersc2['salary14']) }}" required>
+                                            <input class="form-control" type="text" name="salary14" id="salary14" value="{{ old('salary14', $answersc2['salary14']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade14', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade14" id="paygrade14" value="{{ old('paygrade14', $answersc2['paygrade14']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade14" id="paygrade14" value="{{ old('paygrade14', $answersc2['paygrade14']) }}" >
 
                                             {{ Form::label('appointment14', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment14" id="appointment14" value="{{ old('appointment14', $answersc2['appointment14']) }}" required>
+                                            <input class="form-control" type="text" name="appointment14" id="appointment14" value="{{ old('appointment14', $answersc2['appointment14']) }}" >
 
                                             {{ Form::label('governmentserv14', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv14" id="governmentserv14" value="{{ old('governmentserv14', $answersc2['governmentserv14']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv14" id="governmentserv14" value="{{ old('governmentserv14', $answersc2['governmentserv14']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv14'>
                                                 <option value=''></option>
@@ -2087,30 +2087,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom15', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom15" id="datefrom15" value="{{ old('datefrom15', $answersc2['datefrom15']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom15" id="datefrom15" value="{{ old('datefrom15', $answersc2['datefrom15']) }}" >
 
                                             {{ Form::label('dateto15', 'To') }}
-                                            <input class="form-control" type="date" name="dateto15" id="dateto15" value="{{ old('dateto15', $answersc2['dateto15']) }}" required>
+                                            <input class="form-control" type="date" name="dateto15" id="dateto15" value="{{ old('dateto15', $answersc2['dateto15']) }}" >
 
                                             {{ Form::label('position15', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position15" id="position15" value="{{ old('position15', $answersc2['position15']) }}" required>
+                                            <input class="form-control" type="text" name="position15" id="position15" value="{{ old('position15', $answersc2['position15']) }}" >
 
                                             {{ Form::label('department15', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department15" id="department15" value="{{ old('department15', $answersc2['department15']) }}" required>
+                                            <input class="form-control" type="text" name="department15" id="department15" value="{{ old('department15', $answersc2['department15']) }}" >
 
                                             {{ Form::label('salary15', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary15" id="salary15" value="{{ old('salary15', $answersc2['salary15']) }}" required>
+                                            <input class="form-control" type="text" name="salary15" id="salary15" value="{{ old('salary15', $answersc2['salary15']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade15', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade15" id="paygrade15" value="{{ old('paygrade15', $answersc2['paygrade15']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade15" id="paygrade15" value="{{ old('paygrade15', $answersc2['paygrade15']) }}" >
 
                                             {{ Form::label('appointment15', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment15" id="appointment15" value="{{ old('appointment15', $answersc2['appointment15']) }}" required>
+                                            <input class="form-control" type="text" name="appointment15" id="appointment15" value="{{ old('appointment15', $answersc2['appointment15']) }}" >
 
                                             {{ Form::label('governmentserv15', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv15" id="governmentserv15" value="{{ old('governmentserv15', $answersc2['governmentserv15']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv15" id="governmentserv15" value="{{ old('governmentserv15', $answersc2['governmentserv15']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv15'>
                                                 <option value=''></option>
@@ -2130,30 +2130,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom16', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom16" id="datefrom16" value="{{ old('datefrom16', $answersc2['datefrom16']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom16" id="datefrom16" value="{{ old('datefrom16', $answersc2['datefrom16']) }}" >
 
                                             {{ Form::label('dateto16', 'To') }}
-                                            <input class="form-control" type="date" name="dateto16" id="dateto16" value="{{ old('dateto16', $answersc2['dateto16']) }}" required>
+                                            <input class="form-control" type="date" name="dateto16" id="dateto16" value="{{ old('dateto16', $answersc2['dateto16']) }}" >
 
                                             {{ Form::label('position16', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position16" id="position16" value="{{ old('position16', $answersc2['position16']) }}" required>
+                                            <input class="form-control" type="text" name="position16" id="position16" value="{{ old('position16', $answersc2['position16']) }}" >
 
                                             {{ Form::label('department16', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department16" id="department16" value="{{ old('department16', $answersc2['department16']) }}" required>
+                                            <input class="form-control" type="text" name="department16" id="department16" value="{{ old('department16', $answersc2['department16']) }}" >
 
                                             {{ Form::label('salary16', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary16" id="salary16" value="{{ old('salary16', $answersc2['salary16']) }}" required>
+                                            <input class="form-control" type="text" name="salary16" id="salary16" value="{{ old('salary16', $answersc2['salary16']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade16', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade16" id="paygrade16" value="{{ old('paygrade16', $answersc2['paygrade16']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade16" id="paygrade16" value="{{ old('paygrade16', $answersc2['paygrade16']) }}" >
 
                                             {{ Form::label('appointment16', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment16" id="appointment16" value="{{ old('appointment16', $answersc2['appointment16']) }}" required>
+                                            <input class="form-control" type="text" name="appointment16" id="appointment16" value="{{ old('appointment16', $answersc2['appointment16']) }}" >
 
                                             {{ Form::label('governmentserv16', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv16" id="governmentserv16" value="{{ old('governmentserv16', $answersc2['governmentserv16']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv16" id="governmentserv16" value="{{ old('governmentserv16', $answersc2['governmentserv16']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv16'>
                                                 <option value=''></option>
@@ -2172,30 +2172,30 @@ $group = [
                                     <div class='col'>
                                         <label>Inclusive Dates</label><br>
                                         {{ Form::label('datefrom17', 'From') }}
-                                        <input class="form-control" type="date" name="datefrom17" id="datefrom17" value="{{ old('datefrom17', $answersc2['datefrom17']) }}" required>
+                                        <input class="form-control" type="date" name="datefrom17" id="datefrom17" value="{{ old('datefrom17', $answersc2['datefrom17']) }}" >
 
                                         {{ Form::label('dateto17', 'To') }}
-                                        <input class="form-control" type="date" name="dateto17" id="dateto17" value="{{ old('dateto17', $answersc2['dateto6']) }}" required>
+                                        <input class="form-control" type="date" name="dateto17" id="dateto17" value="{{ old('dateto17', $answersc2['dateto6']) }}" >
 
                                         {{ Form::label('position17', 'Position/Title (Do Not Abbreviate)') }}
-                                        <input class="form-control" type="text" name="position17" id="position17" value="{{ old('position17', $answersc2['position17']) }}" required>
+                                        <input class="form-control" type="text" name="position17" id="position17" value="{{ old('position17', $answersc2['position17']) }}" >
 
                                         {{ Form::label('department17', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                        <input class="form-control" type="text" name="department17" id="department17" value="{{ old('department17', $answersc2['department17']) }}" required>
+                                        <input class="form-control" type="text" name="department17" id="department17" value="{{ old('department17', $answersc2['department17']) }}" >
 
                                         {{ Form::label('salary17', 'Monthly Salary') }}
-                                        <input class="form-control" type="text" name="salary17" id="salary17" value="{{ old('salary17', $answersc2['salary17']) }}" required>
+                                        <input class="form-control" type="text" name="salary17" id="salary17" value="{{ old('salary17', $answersc2['salary17']) }}" >
 
                                     </div>
                                     <div class='col'>
                                         {{ Form::label('paygrade17', 'Salary/Job/Pay Grade (if applicable)') }}
-                                        <input class="form-control" type="text" name="paygrade17" id="paygrade17" value="{{ old('paygrade17', $answersc2['paygrade17']) }}" required>
+                                        <input class="form-control" type="text" name="paygrade17" id="paygrade17" value="{{ old('paygrade17', $answersc2['paygrade17']) }}" >
 
                                         {{ Form::label('appointment17', 'Status of Appointment') }}
-                                        <input class="form-control" type="text" name="appointment17" id="appointment17" value="{{ old('appointment17', $answersc2['appointment17']) }}" required>
+                                        <input class="form-control" type="text" name="appointment17" id="appointment17" value="{{ old('appointment17', $answersc2['appointment17']) }}" >
 
                                         {{ Form::label('governmentserv17', 'Government service (Y/N)') }}
-                                        <input class="form-control" type="text" name="governmentserv17" id="governmentserv17" value="{{ old('governmentserv17', $answersc2['governmentserv17']) }}" required>
+                                        <input class="form-control" type="text" name="governmentserv17" id="governmentserv17" value="{{ old('governmentserv17', $answersc2['governmentserv17']) }}" >
                                         <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv17'>
                                                 <option value=''></option>
@@ -2215,30 +2215,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom18', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom18" id="datefrom18" value="{{ old('datefrom18', $answersc2['datefrom18']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom18" id="datefrom18" value="{{ old('datefrom18', $answersc2['datefrom18']) }}" >
 
                                             {{ Form::label('dateto18', 'To') }}
-                                            <input class="form-control" type="date" name="dateto18" id="dateto18" value="{{ old('dateto18', $answersc2['dateto18']) }}" required>
+                                            <input class="form-control" type="date" name="dateto18" id="dateto18" value="{{ old('dateto18', $answersc2['dateto18']) }}" >
 
                                             {{ Form::label('position18', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position18" id="position18" value="{{ old('position18', $answersc2['position18']) }}" required>
+                                            <input class="form-control" type="text" name="position18" id="position18" value="{{ old('position18', $answersc2['position18']) }}" >
 
                                             {{ Form::label('department18', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department18" id="department18" value="{{ old('department18', $answersc2['department18']) }}" required>
+                                            <input class="form-control" type="text" name="department18" id="department18" value="{{ old('department18', $answersc2['department18']) }}" >
 
                                             {{ Form::label('salary18', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary18" id="salary18" value="{{ old('salary18', $answersc2['salary18']) }}" required>
+                                            <input class="form-control" type="text" name="salary18" id="salary18" value="{{ old('salary18', $answersc2['salary18']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade18', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade18" id="paygrade18" value="{{ old('paygrade18', $answersc2['paygrade18']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade18" id="paygrade18" value="{{ old('paygrade18', $answersc2['paygrade18']) }}" >
 
                                             {{ Form::label('appointment18', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment18" id="appointment18" value="{{ old('appointment18', $answersc2['appointment18']) }}" required>
+                                            <input class="form-control" type="text" name="appointment18" id="appointment18" value="{{ old('appointment18', $answersc2['appointment18']) }}" >
 
                                             {{ Form::label('governmentserv18', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv18" id="governmentserv18" value="{{ old('governmentserv18', $answersc2['governmentserv18']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv18" id="governmentserv18" value="{{ old('governmentserv18', $answersc2['governmentserv18']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv18'>
                                                 <option value=''></option>
@@ -2258,30 +2258,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom19', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom19" id="datefrom19" value="{{ old('datefrom19', $answersc2['datefrom19']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom19" id="datefrom19" value="{{ old('datefrom19', $answersc2['datefrom19']) }}" >
 
                                             {{ Form::label('dateto19', 'To') }}
-                                            <input class="form-control" type="date" name="dateto19" id="dateto19" value="{{ old('dateto19', $answersc2['dateto19']) }}" required>
+                                            <input class="form-control" type="date" name="dateto19" id="dateto19" value="{{ old('dateto19', $answersc2['dateto19']) }}" >
 
                                             {{ Form::label('position19', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position19" id="position19" value="{{ old('position19', $answersc2['position19']) }}" required>
+                                            <input class="form-control" type="text" name="position19" id="position19" value="{{ old('position19', $answersc2['position19']) }}" >
 
                                             {{ Form::label('department19', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department19" id="department19" value="{{ old('department19', $answersc2['department19']) }}" required>
+                                            <input class="form-control" type="text" name="department19" id="department19" value="{{ old('department19', $answersc2['department19']) }}" >
 
                                             {{ Form::label('salary19', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary19" id="salary19" value="{{ old('salary19', $answersc2['salary19']) }}" required>
+                                            <input class="form-control" type="text" name="salary19" id="salary19" value="{{ old('salary19', $answersc2['salary19']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade19', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade19" id="paygrade19" value="{{ old('paygrade19', $answersc2['paygrade19']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade19" id="paygrade19" value="{{ old('paygrade19', $answersc2['paygrade19']) }}" >
 
                                             {{ Form::label('appointment19', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment19" id="appointment19" value="{{ old('appointment19', $answersc2['appointment19']) }}" required>
+                                            <input class="form-control" type="text" name="appointment19" id="appointment19" value="{{ old('appointment19', $answersc2['appointment19']) }}" >
 
                                             {{ Form::label('governmentserv19', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv19" id="governmentserv19" value="{{ old('governmentserv19', $answersc2['governmentserv19']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv19" id="governmentserv19" value="{{ old('governmentserv19', $answersc2['governmentserv19']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv19'>
                                                 <option value=''></option>
@@ -2301,30 +2301,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom20', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom20" id="datefrom20" value="{{ old('datefrom20', $answersc2['datefrom20']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom20" id="datefrom20" value="{{ old('datefrom20', $answersc2['datefrom20']) }}" >
 
                                             {{ Form::label('dateto20', 'To') }}
-                                            <input class="form-control" type="date" name="dateto20" id="dateto20" value="{{ old('dateto20', $answersc2['dateto20']) }}" required>
+                                            <input class="form-control" type="date" name="dateto20" id="dateto20" value="{{ old('dateto20', $answersc2['dateto20']) }}" >
 
                                             {{ Form::label('position20', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position20" id="position20" value="{{ old('position20', $answersc2['position20']) }}" required>
+                                            <input class="form-control" type="text" name="position20" id="position20" value="{{ old('position20', $answersc2['position20']) }}" >
 
                                             {{ Form::label('department20', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department20" id="department20" value="{{ old('department20', $answersc2['department20']) }}" required>
+                                            <input class="form-control" type="text" name="department20" id="department20" value="{{ old('department20', $answersc2['department20']) }}" >
 
                                             {{ Form::label('salary20', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary20" id="salary20" value="{{ old('salary20', $answersc2['salary20']) }}" required>
+                                            <input class="form-control" type="text" name="salary20" id="salary20" value="{{ old('salary20', $answersc2['salary20']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade20', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade20" id="paygrade20" value="{{ old('paygrade20', $answersc2['paygrade20']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade20" id="paygrade20" value="{{ old('paygrade20', $answersc2['paygrade20']) }}" >
 
                                             {{ Form::label('appointment20', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment20" id="appointment20" value="{{ old('appointment20', $answersc2['appointment20']) }}" required>
+                                            <input class="form-control" type="text" name="appointment20" id="appointment20" value="{{ old('appointment20', $answersc2['appointment20']) }}" >
 
                                             {{ Form::label('governmentserv20', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv20" id="governmentserv20" value="{{ old('governmentserv20', $answersc2['governmentserv20']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv20" id="governmentserv20" value="{{ old('governmentserv20', $answersc2['governmentserv20']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv20'>
                                                 <option value=''></option>
@@ -2344,30 +2344,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom21', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom21" id="datefrom21" value="{{ old('datefrom21', $answersc2['datefrom21']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom21" id="datefrom21" value="{{ old('datefrom21', $answersc2['datefrom21']) }}" >
 
                                             {{ Form::label('dateto21', 'To') }}
-                                            <input class="form-control" type="date" name="dateto21" id="dateto21" value="{{ old('dateto21', $answersc2['dateto21']) }}" required>
+                                            <input class="form-control" type="date" name="dateto21" id="dateto21" value="{{ old('dateto21', $answersc2['dateto21']) }}" >
 
                                             {{ Form::label('position21', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position21" id="position21" value="{{ old('position21', $answersc2['position21']) }}" required>
+                                            <input class="form-control" type="text" name="position21" id="position21" value="{{ old('position21', $answersc2['position21']) }}" >
 
                                             {{ Form::label('department21', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department21" id="department21" value="{{ old('department21', $answersc2['department21']) }}" required>
+                                            <input class="form-control" type="text" name="department21" id="department21" value="{{ old('department21', $answersc2['department21']) }}" >
 
                                             {{ Form::label('salary21', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary21" id="salary21" value="{{ old('salary21', $answersc2['salary21']) }}" required>
+                                            <input class="form-control" type="text" name="salary21" id="salary21" value="{{ old('salary21', $answersc2['salary21']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade21', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade21" id="paygrade21" value="{{ old('paygrade21', $answersc2['paygrade21']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade21" id="paygrade21" value="{{ old('paygrade21', $answersc2['paygrade21']) }}" >
 
                                             {{ Form::label('appointment21', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment21" id="appointment21" value="{{ old('appointment21', $answersc2['appointment21']) }}" required>
+                                            <input class="form-control" type="text" name="appointment21" id="appointment21" value="{{ old('appointment21', $answersc2['appointment21']) }}" >
 
                                             {{ Form::label('governmentserv21', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv21" id="governmentserv21" value="{{ old('governmentserv21', $answersc2['governmentserv21']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv21" id="governmentserv21" value="{{ old('governmentserv21', $answersc2['governmentserv21']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv21'>
                                                 <option value=''></option>
@@ -2387,30 +2387,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom22', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom22" id="datefrom22" value="{{ old('datefrom22', $answersc2['datefrom22']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom22" id="datefrom22" value="{{ old('datefrom22', $answersc2['datefrom22']) }}" >
 
                                             {{ Form::label('dateto22', 'To') }}
-                                            <input class="form-control" type="date" name="dateto22" id="dateto22" value="{{ old('dateto22', $answersc2['dateto22']) }}" required>
+                                            <input class="form-control" type="date" name="dateto22" id="dateto22" value="{{ old('dateto22', $answersc2['dateto22']) }}" >
 
                                             {{ Form::label('position22', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position22" id="position22" value="{{ old('position22', $answersc2['position22']) }}" required>
+                                            <input class="form-control" type="text" name="position22" id="position22" value="{{ old('position22', $answersc2['position22']) }}" >
 
                                             {{ Form::label('department22', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department22" id="department22" value="{{ old('department22', $answersc2['department22']) }}" required>
+                                            <input class="form-control" type="text" name="department22" id="department22" value="{{ old('department22', $answersc2['department22']) }}" >
 
                                             {{ Form::label('salary22', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary22" id="salary22" value="{{ old('salary22', $answersc2['salary22']) }}" required>
+                                            <input class="form-control" type="text" name="salary22" id="salary22" value="{{ old('salary22', $answersc2['salary22']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade22', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade22" id="paygrade22" value="{{ old('paygrade22', $answersc2['paygrade22']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade22" id="paygrade22" value="{{ old('paygrade22', $answersc2['paygrade22']) }}" >
 
                                             {{ Form::label('appointment22', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment22" id="appointment22" value="{{ old('appointment22', $answersc2['appointment22']) }}" required>
+                                            <input class="form-control" type="text" name="appointment22" id="appointment22" value="{{ old('appointment22', $answersc2['appointment22']) }}" >
 
                                             {{ Form::label('governmentserv22', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv22" id="governmentserv22" value="{{ old('governmentserv22', $answersc2['governmentserv22']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv22" id="governmentserv22" value="{{ old('governmentserv22', $answersc2['governmentserv22']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv22'>
                                                 <option value=''></option>
@@ -2430,30 +2430,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom23', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom23" id="datefrom23" value="{{ old('datefrom23', $answersc2['datefrom23']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom23" id="datefrom23" value="{{ old('datefrom23', $answersc2['datefrom23']) }}" >
 
                                             {{ Form::label('dateto23', 'To') }}
-                                            <input class="form-control" type="date" name="dateto23" id="dateto23" value="{{ old('dateto23', $answersc2['dateto23']) }}" required>
+                                            <input class="form-control" type="date" name="dateto23" id="dateto23" value="{{ old('dateto23', $answersc2['dateto23']) }}" >
 
                                             {{ Form::label('position23', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position23" id="position23" value="{{ old('position23', $answersc2['position23']) }}" required>
+                                            <input class="form-control" type="text" name="position23" id="position23" value="{{ old('position23', $answersc2['position23']) }}" >
 
                                             {{ Form::label('department23', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department23" id="department23" value="{{ old('department23', $answersc2['department23']) }}" required>
+                                            <input class="form-control" type="text" name="department23" id="department23" value="{{ old('department23', $answersc2['department23']) }}" >
 
                                             {{ Form::label('salary23', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary23" id="salary23" value="{{ old('salary23', $answersc2['salary23']) }}" required>
+                                            <input class="form-control" type="text" name="salary23" id="salary23" value="{{ old('salary23', $answersc2['salary23']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade23', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade23" id="paygrade23" value="{{ old('paygrade23', $answersc2['paygrade23']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade23" id="paygrade23" value="{{ old('paygrade23', $answersc2['paygrade23']) }}" >
 
                                             {{ Form::label('appointment23', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment23" id="appointment23" value="{{ old('appointment23', $answersc2['appointment23']) }}" required>
+                                            <input class="form-control" type="text" name="appointment23" id="appointment23" value="{{ old('appointment23', $answersc2['appointment23']) }}" >
 
                                             {{ Form::label('governmentserv23', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv23" id="governmentserv23" value="{{ old('governmentserv23', $answersc2['governmentserv23']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv23" id="governmentserv23" value="{{ old('governmentserv23', $answersc2['governmentserv23']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv23'>
                                                 <option value=''></option>
@@ -2473,30 +2473,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom24', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom24" id="datefrom24" value="{{ old('datefrom24', $answersc2['datefrom24']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom24" id="datefrom24" value="{{ old('datefrom24', $answersc2['datefrom24']) }}" >
 
                                             {{ Form::label('dateto24', 'To') }}
-                                            <input class="form-control" type="date" name="dateto24" id="dateto24" value="{{ old('dateto24', $answersc2['dateto24']) }}" required>
+                                            <input class="form-control" type="date" name="dateto24" id="dateto24" value="{{ old('dateto24', $answersc2['dateto24']) }}" >
 
                                             {{ Form::label('position24', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position24" id="position24" value="{{ old('position24', $answersc2['position24']) }}" required>
+                                            <input class="form-control" type="text" name="position24" id="position24" value="{{ old('position24', $answersc2['position24']) }}" >
 
                                             {{ Form::label('department24', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department24" id="department24" value="{{ old('department24', $answersc2['department24']) }}" required>
+                                            <input class="form-control" type="text" name="department24" id="department24" value="{{ old('department24', $answersc2['department24']) }}" >
 
                                             {{ Form::label('salary24', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary24" id="salary24" value="{{ old('salary24', $answersc2['salary24']) }}" required>
+                                            <input class="form-control" type="text" name="salary24" id="salary24" value="{{ old('salary24', $answersc2['salary24']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade24', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade24" id="paygrade24" value="{{ old('paygrade24', $answersc2['paygrade24']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade24" id="paygrade24" value="{{ old('paygrade24', $answersc2['paygrade24']) }}" >
 
                                             {{ Form::label('appointment24', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment24" id="appointment24" value="{{ old('appointment24', $answersc2['appointment24']) }}" required>
+                                            <input class="form-control" type="text" name="appointment24" id="appointment24" value="{{ old('appointment24', $answersc2['appointment24']) }}" >
 
                                             {{ Form::label('governmentserv24', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv24" id="governmentserv24" value="{{ old('governmentserv24', $answersc2['governmentserv24']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv24" id="governmentserv24" value="{{ old('governmentserv24', $answersc2['governmentserv24']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv24'>
                                                 <option value=''></option>
@@ -2516,30 +2516,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom25', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom25" id="datefrom25" value="{{ old('datefrom25', $answersc2['datefrom25']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom25" id="datefrom25" value="{{ old('datefrom25', $answersc2['datefrom25']) }}" >
 
                                             {{ Form::label('dateto25', 'To') }}
-                                            <input class="form-control" type="date" name="dateto25" id="dateto25" value="{{ old('dateto25', $answersc2['dateto25']) }}" required>
+                                            <input class="form-control" type="date" name="dateto25" id="dateto25" value="{{ old('dateto25', $answersc2['dateto25']) }}" >
 
                                             {{ Form::label('position25', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position25" id="position25" value="{{ old('position25', $answersc2['position25']) }}" required>
+                                            <input class="form-control" type="text" name="position25" id="position25" value="{{ old('position25', $answersc2['position25']) }}" >
 
                                             {{ Form::label('department25', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department25" id="department25" value="{{ old('department25', $answersc2['department25']) }}" required>
+                                            <input class="form-control" type="text" name="department25" id="department25" value="{{ old('department25', $answersc2['department25']) }}" >
 
                                             {{ Form::label('salary25', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary25" id="salary25" value="{{ old('salary25', $answersc2['salary25']) }}" required>
+                                            <input class="form-control" type="text" name="salary25" id="salary25" value="{{ old('salary25', $answersc2['salary25']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade25', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade25" id="paygrade25" value="{{ old('paygrade25', $answersc2['paygrade25']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade25" id="paygrade25" value="{{ old('paygrade25', $answersc2['paygrade25']) }}" >
 
                                             {{ Form::label('appointment25', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment25" id="appointment25" value="{{ old('appointment25', $answersc2['appointment25']) }}" required>
+                                            <input class="form-control" type="text" name="appointment25" id="appointment25" value="{{ old('appointment25', $answersc2['appointment25']) }}" >
 
                                             {{ Form::label('governmentserv25', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv25" id="governmentserv25" value="{{ old('governmentserv25', $answersc2['governmentserv25']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv25" id="governmentserv25" value="{{ old('governmentserv25', $answersc2['governmentserv25']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv25'>
                                                 <option value=''></option>
@@ -2559,30 +2559,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom26', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom26" id="datefrom26" value="{{ old('datefrom26', $answersc2['datefrom26']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom26" id="datefrom26" value="{{ old('datefrom26', $answersc2['datefrom26']) }}" >
 
                                             {{ Form::label('dateto26', 'To') }}
-                                            <input class="form-control" type="date" name="dateto26" id="dateto26" value="{{ old('dateto26', $answersc2['dateto26']) }}" required>
+                                            <input class="form-control" type="date" name="dateto26" id="dateto26" value="{{ old('dateto26', $answersc2['dateto26']) }}" >
 
                                             {{ Form::label('position26', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position26" id="position26" value="{{ old('position26', $answersc2['position26']) }}" required>
+                                            <input class="form-control" type="text" name="position26" id="position26" value="{{ old('position26', $answersc2['position26']) }}" >
 
                                             {{ Form::label('department26', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department26" id="department26" value="{{ old('department26', $answersc2['department26']) }}" required>
+                                            <input class="form-control" type="text" name="department26" id="department26" value="{{ old('department26', $answersc2['department26']) }}" >
 
                                             {{ Form::label('salary26', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary26" id="salary26" value="{{ old('salary26', $answersc2['salary26']) }}" required>
+                                            <input class="form-control" type="text" name="salary26" id="salary26" value="{{ old('salary26', $answersc2['salary26']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade26', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade26" id="paygrade26" value="{{ old('paygrade26', $answersc2['paygrade26']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade26" id="paygrade26" value="{{ old('paygrade26', $answersc2['paygrade26']) }}" >
 
                                             {{ Form::label('appointment26', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment26" id="appointment26" value="{{ old('appointment26', $answersc2['appointment26']) }}" required>
+                                            <input class="form-control" type="text" name="appointment26" id="appointment26" value="{{ old('appointment26', $answersc2['appointment26']) }}" >
 
                                             {{ Form::label('governmentserv26', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv26" id="governmentserv26" value="{{ old('governmentserv26', $answersc2['governmentserv26']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv26" id="governmentserv26" value="{{ old('governmentserv26', $answersc2['governmentserv26']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv26'>
                                                 <option value=''></option>
@@ -2602,30 +2602,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom27', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom27" id="datefrom27" value="{{ old('datefrom27', $answersc2['datefrom27']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom27" id="datefrom27" value="{{ old('datefrom27', $answersc2['datefrom27']) }}" >
 
                                             {{ Form::label('dateto27', 'To') }}
-                                            <input class="form-control" type="date" name="dateto27" id="dateto27" value="{{ old('dateto27', $answersc2['dateto27']) }}" required>
+                                            <input class="form-control" type="date" name="dateto27" id="dateto27" value="{{ old('dateto27', $answersc2['dateto27']) }}" >
 
                                             {{ Form::label('position27', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position27" id="position27" value="{{ old('position27', $answersc2['position27']) }}" required>
+                                            <input class="form-control" type="text" name="position27" id="position27" value="{{ old('position27', $answersc2['position27']) }}" >
 
                                             {{ Form::label('department27', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department27" id="department27" value="{{ old('department27', $answersc2['department27']) }}" required>
+                                            <input class="form-control" type="text" name="department27" id="department27" value="{{ old('department27', $answersc2['department27']) }}" >
 
                                             {{ Form::label('salary27', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary27" id="salary27" value="{{ old('salary27', $answersc2['salary27']) }}" required>
+                                            <input class="form-control" type="text" name="salary27" id="salary27" value="{{ old('salary27', $answersc2['salary27']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade27', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade27" id="paygrade27" value="{{ old('paygrade27', $answersc2['paygrade27']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade27" id="paygrade27" value="{{ old('paygrade27', $answersc2['paygrade27']) }}" >
 
                                             {{ Form::label('appointment27', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment27" id="appointment27" value="{{ old('appointment27', $answersc2['appointment27']) }}" required>
+                                            <input class="form-control" type="text" name="appointment27" id="appointment27" value="{{ old('appointment27', $answersc2['appointment27']) }}" >
 
                                             {{ Form::label('governmentserv27', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv27" id="governmentserv27" value="{{ old('governmentserv27', $answersc2['governmentserv27']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv27" id="governmentserv27" value="{{ old('governmentserv27', $answersc2['governmentserv27']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv27'>
                                                 <option value=''></option>
@@ -2645,30 +2645,30 @@ $group = [
                                         <div class='col'>
                                             <label>Inclusive Dates</label><br>
                                             {{ Form::label('datefrom28', 'From') }}
-                                            <input class="form-control" type="date" name="datefrom28" id="datefrom28" value="{{ old('datefrom28', $answersc2['datefrom28']) }}" required>
+                                            <input class="form-control" type="date" name="datefrom28" id="datefrom28" value="{{ old('datefrom28', $answersc2['datefrom28']) }}" >
 
                                             {{ Form::label('dateto28', 'To') }}
-                                            <input class="form-control" type="date" name="dateto28" id="dateto28" value="{{ old('dateto28', $answersc2['dateto28']) }}" required>
+                                            <input class="form-control" type="date" name="dateto28" id="dateto28" value="{{ old('dateto28', $answersc2['dateto28']) }}" >
 
                                             {{ Form::label('position28', 'Position/Title (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="position28" id="position28" value="{{ old('position28', $answersc2['position28']) }}" required>
+                                            <input class="form-control" type="text" name="position28" id="position28" value="{{ old('position28', $answersc2['position28']) }}" >
 
                                             {{ Form::label('department28', 'Department/Agency/Office/Company (Do Not Abbreviate)') }}
-                                            <input class="form-control" type="text" name="department28" id="department28" value="{{ old('department28', $answersc2['department28']) }}" required>
+                                            <input class="form-control" type="text" name="department28" id="department28" value="{{ old('department28', $answersc2['department28']) }}" >
 
                                             {{ Form::label('salary28', 'Monthly Salary') }}
-                                            <input class="form-control" type="text" name="salary28" id="salary28" value="{{ old('salary28', $answersc2['salary28']) }}" required>
+                                            <input class="form-control" type="text" name="salary28" id="salary28" value="{{ old('salary28', $answersc2['salary28']) }}" >
 
                                         </div>
                                         <div class='col'>
                                             {{ Form::label('paygrade28', 'Salary/Job/Pay Grade (if applicable)') }}
-                                            <input class="form-control" type="text" name="paygrade28" id="paygrade28" value="{{ old('paygrade28', $answersc2['paygrade28']) }}" required>
+                                            <input class="form-control" type="text" name="paygrade28" id="paygrade28" value="{{ old('paygrade28', $answersc2['paygrade28']) }}" >
 
                                             {{ Form::label('appointment28', 'Status of Appointment') }}
-                                            <input class="form-control" type="text" name="appointment28" id="appointment28" value="{{ old('appointment28', $answersc2['appointment28']) }}" required>
+                                            <input class="form-control" type="text" name="appointment28" id="appointment28" value="{{ old('appointment28', $answersc2['appointment28']) }}" >
 
                                             {{ Form::label('governmentserv28', 'Government service (Y/N)') }}
-                                            <input class="form-control" type="text" name="governmentserv28" id="governmentserv28" value="{{ old('governmentserv28', $answersc2['governmentserv28']) }}" required>
+                                            <input class="form-control" type="text" name="governmentserv28" id="governmentserv28" value="{{ old('governmentserv28', $answersc2['governmentserv28']) }}" >
                                             <select class='custom-select mr-sm-2' id='governmentserv'
                                                 name='governmentserv28'>
                                                 <option value=''></option>
@@ -2694,28 +2694,28 @@ $group = [
                                 <div class="row">
                                     <div class="col">
                                         <b>{{ Form::label('orgnameAddress1', 'Name & Address of Organization: ') }}</b>
-                                        <input class="form-control" type="text" name="orgnameAddress1" id="orgnameAddress1" value="{{ old('orgnameAddress1', $answersc3['orgnameAddress1']) }}" required>
+                                        <input class="form-control" type="text" name="orgnameAddress1" id="orgnameAddress1" value="{{ old('orgnameAddress1', $answersc3['orgnameAddress1']) }}" >
                                     </div>
                                     <div class="col">
                                         <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
                                         <div class="form-inline">
                                             <b>{{ Form::label('orgdateFrom1', 'From: ') }}</b><br>
-                                            <input class="form-control" type="date" name="orgdateFrom1" id="orgdateFrom1" value="{{ old('orgdateFrom1', $answersc3['orgdateFrom1']) }}" required>
+                                            <input class="form-control" type="date" name="orgdateFrom1" id="orgdateFrom1" value="{{ old('orgdateFrom1', $answersc3['orgdateFrom1']) }}" >
                                         </div>
                                         <div class="form-inline">
                                             <b>{{ Form::label('orgdateTo1', 'To: ') }}</b><br>
-                                            <input class="form-control" type="date" name="orgdateTo1" id="orgdateTo1" value="{{ old('orgdateTo1', $answersc3['orgdateTo1']) }}" required>
+                                            <input class="form-control" type="date" name="orgdateTo1" id="orgdateTo1" value="{{ old('orgdateTo1', $answersc3['orgdateTo1']) }}" >
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-4">
                                         <b>{{ Form::label('orgnumHours1', 'Number of Hours: ') }}</b><br>
-                                            <input class="form-control" type="text" name="orgnumHours1" id="orgnumHours1" value="{{ old('orgnumHours1', $answersc3['orgnumHours1']) }}" required>
+                                            <input class="form-control" type="text" name="orgnumHours1" id="orgnumHours1" value="{{ old('orgnumHours1', $answersc3['orgnumHours1']) }}" >
                                     </div>
                                     <div class="col">
                                         <b>{{ Form::label('orgPosition1', 'Position/Nature of Work: ') }}</b>
-                                            <input class="form-control" type="text" name="orgPosition1" id="orgPosition1" value="{{ old('orgPosition1', $answersc3['orgPosition1']) }}" required>
+                                            <input class="form-control" type="text" name="orgPosition1" id="orgPosition1" value="{{ old('orgPosition1', $answersc3['orgPosition1']) }}" >
                                     </div>
                                 </div>
                             </div>
@@ -2725,28 +2725,28 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress2', 'Name & Address of Organization: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress2" id="orgnameAddress2" value="{{ old('orgnameAddress2', $answersc3['orgnameAddress2']) }}" required>
+                                    <input class="form-control" type="text" name="orgnameAddress2" id="orgnameAddress2" value="{{ old('orgnameAddress2', $answersc3['orgnameAddress2']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom2', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom2" id="orgdateFrom2" value="{{ old('orgdateFrom2', $answersc3['orgdateFrom2']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom2" id="orgdateFrom2" value="{{ old('orgdateFrom2', $answersc3['orgdateFrom2']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo2', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo2" id="orgdateTo2" value="{{ old('orgdateTo2', $answersc3['orgdateTo2']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo2" id="orgdateTo2" value="{{ old('orgdateTo2', $answersc3['orgdateTo2']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <b>{{ Form::label('orgnumHours2', 'Number of Hours: ') }}</b><br>
-                                        <input class="form-control" type="text" name="orgnumHours2" id="orgnumHours2" value="{{ old('orgnumHours2', $answersc3['orgnumHours2']) }}" required>
+                                        <input class="form-control" type="text" name="orgnumHours2" id="orgnumHours2" value="{{ old('orgnumHours2', $answersc3['orgnumHours2']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgPosition2', 'Position/Nature of Work: ') }}</b>
-                                        <input class="form-control" type="text" name="orgPosition2" id="orgPosition2" value="{{ old('orgPosition2', $answersc3['orgPosition2']) }}" required>
+                                        <input class="form-control" type="text" name="orgPosition2" id="orgPosition2" value="{{ old('orgPosition2', $answersc3['orgPosition2']) }}" >
                                 </div>
                             </div>
                         </div>
@@ -2755,28 +2755,28 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress3', 'Name & Address of Organization: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress3" id="orgnameAddress3" value="{{ old('orgnameAddress3', $answersc3['orgnameAddress3']) }}" required>
+                                    <input class="form-control" type="text" name="orgnameAddress3" id="orgnameAddress3" value="{{ old('orgnameAddress3', $answersc3['orgnameAddress3']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom3', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom3" id="orgdateFrom3" value="{{ old('orgdateFrom3', $answersc3['orgdateFrom3']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom3" id="orgdateFrom3" value="{{ old('orgdateFrom3', $answersc3['orgdateFrom3']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo3', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo3" id="orgdateTo3" value="{{ old('orgdateTo3', $answersc3['orgdateTo3']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo3" id="orgdateTo3" value="{{ old('orgdateTo3', $answersc3['orgdateTo3']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <b>{{ Form::label('orgnumHours3', 'Number of Hours: ') }}</b><br>
-                                        <input class="form-control" type="text" name="orgnumHours3" id="orgnumHours3" value="{{ old('orgnumHours3', $answersc3['orgnumHours3']) }}" required>
+                                        <input class="form-control" type="text" name="orgnumHours3" id="orgnumHours3" value="{{ old('orgnumHours3', $answersc3['orgnumHours3']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgPosition3', 'Position/Nature of Work: ') }}</b>
-                                        <input class="form-control" type="text" name="orgPosition3" id="orgPosition3" value="{{ old('orgPosition3', $answersc3['orgPosition3']) }}" required>
+                                        <input class="form-control" type="text" name="orgPosition3" id="orgPosition3" value="{{ old('orgPosition3', $answersc3['orgPosition3']) }}" >
                                 </div>
                             </div>
                         </div>
@@ -2785,28 +2785,28 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress4', 'Name & Address of Organization: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress4" id="orgnameAddress4" value="{{ old('orgnameAddress4', $answersc3['orgnameAddress4']) }}" required>
+                                    <input class="form-control" type="text" name="orgnameAddress4" id="orgnameAddress4" value="{{ old('orgnameAddress4', $answersc3['orgnameAddress4']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom4', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom4" id="orgdateFrom4" value="{{ old('orgdateFrom4', $answersc3['orgdateFrom4']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom4" id="orgdateFrom4" value="{{ old('orgdateFrom4', $answersc3['orgdateFrom4']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo4', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo4" id="orgdateTo4" value="{{ old('orgdateTo4', $answersc3['orgdateTo4']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo4" id="orgdateTo4" value="{{ old('orgdateTo4', $answersc3['orgdateTo4']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <b>{{ Form::label('orgnumHours4', 'Number of Hours: ') }}</b><br>
-                                        <input class="form-control" type="text" name="orgnumHours4" id="orgnumHours4" value="{{ old('orgnumHours4', $answersc3['orgnumHours4']) }}" required>
+                                        <input class="form-control" type="text" name="orgnumHours4" id="orgnumHours4" value="{{ old('orgnumHours4', $answersc3['orgnumHours4']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgPosition4', 'Position/Nature of Work: ') }}</b>
-                                        <input class="form-control" type="text" name="orgPosition4" id="orgPosition4" value="{{ old('orgPosition4', $answersc3['orgPosition4']) }}" required>
+                                        <input class="form-control" type="text" name="orgPosition4" id="orgPosition4" value="{{ old('orgPosition4', $answersc3['orgPosition4']) }}" >
                                 </div>
                             </div>
                         </div>
@@ -2815,28 +2815,28 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress5', 'Name & Address of Organization: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress5" id="orgnameAddress5" value="{{ old('orgnameAddress5', $answersc3['orgnameAddress5']) }}" required>
+                                    <input class="form-control" type="text" name="orgnameAddress5" id="orgnameAddress5" value="{{ old('orgnameAddress5', $answersc3['orgnameAddress5']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom5', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom5" id="orgdateFrom5" value="{{ old('orgdateFrom5', $answersc3['orgdateFrom5']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom5" id="orgdateFrom5" value="{{ old('orgdateFrom5', $answersc3['orgdateFrom5']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo5', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo5" id="orgdateTo5" value="{{ old('orgdateTo5', $answersc3['orgdateTo5']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo5" id="orgdateTo5" value="{{ old('orgdateTo5', $answersc3['orgdateTo5']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <b>{{ Form::label('orgnumHours5', 'Number of Hours: ') }}</b><br>
-                                        <input class="form-control" type="text" name="orgnumHours5" id="orgnumHours5" value="{{ old('orgnumHours5', $answersc3['orgnumHours5']) }}" required>
+                                        <input class="form-control" type="text" name="orgnumHours5" id="orgnumHours5" value="{{ old('orgnumHours5', $answersc3['orgnumHours5']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgPosition5', 'Position/Nature of Work: ') }}</b>
-                                        <input class="form-control" type="text" name="orgPosition5" id="orgPosition5" value="{{ old('orgPosition5', $answersc3['orgPosition5']) }}" required>
+                                        <input class="form-control" type="text" name="orgPosition5" id="orgPosition5" value="{{ old('orgPosition5', $answersc3['orgPosition5']) }}" >
                                 </div>
                             </div>
                         </div>
@@ -2845,28 +2845,28 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress6', 'Name & Address of Organization: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress6" id="orgnameAddress6" value="{{ old('orgnameAddress6', $answersc3['orgnameAddress6']) }}" required>
+                                    <input class="form-control" type="text" name="orgnameAddress6" id="orgnameAddress6" value="{{ old('orgnameAddress6', $answersc3['orgnameAddress6']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom6', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom6" id="orgdateFrom6" value="{{ old('orgdateFrom6', $answersc3['orgdateFrom6']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom6" id="orgdateFrom6" value="{{ old('orgdateFrom6', $answersc3['orgdateFrom6']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo6', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo6" id="orgdateTo6" value="{{ old('orgdateTo6', $answersc3['orgdateTo6']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo6" id="orgdateTo6" value="{{ old('orgdateTo6', $answersc3['orgdateTo6']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <b>{{ Form::label('orgnumHours6', 'Number of Hours: ') }}</b><br>
-                                        <input class="form-control" type="text" name="orgnumHours6" id="orgnumHours6" value="{{ old('orgnumHours6', $answersc3['orgnumHours6']) }}" required>
+                                        <input class="form-control" type="text" name="orgnumHours6" id="orgnumHours6" value="{{ old('orgnumHours6', $answersc3['orgnumHours6']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgPosition6', 'Position/Nature of Work: ') }}</b>
-                                        <input class="form-control" type="text" name="orgPosition6" id="orgPosition6" value="{{ old('orgPosition6', $answersc3['orgPosition6']) }}" required>
+                                        <input class="form-control" type="text" name="orgPosition6" id="orgPosition6" value="{{ old('orgPosition6', $answersc3['orgPosition6']) }}" >
                                 </div>
                             </div>
                         </div>
@@ -2875,28 +2875,28 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress7', 'Name & Address of Organization: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress7" id="orgnameAddress7" value="{{ old('orgnameAddress7', $answersc3['orgnameAddress7']) }}" required>
+                                    <input class="form-control" type="text" name="orgnameAddress7" id="orgnameAddress7" value="{{ old('orgnameAddress7', $answersc3['orgnameAddress7']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom7', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom7" id="orgdateFrom7" value="{{ old('orgdateFrom7', $answersc3['orgdateFrom7']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom7" id="orgdateFrom7" value="{{ old('orgdateFrom7', $answersc3['orgdateFrom7']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo7', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo7" id="orgdateTo7" value="{{ old('orgdateTo7', $answersc3['orgdateTo7']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo7" id="orgdateTo7" value="{{ old('orgdateTo7', $answersc3['orgdateTo7']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <b>{{ Form::label('orgnumHours7', 'Number of Hours: ') }}</b><br>
-                                        <input class="form-control" type="text" name="orgnumHours7" id="orgnumHours7" value="{{ old('orgnumHours7', $answersc3['orgnumHours7']) }}" required>
+                                        <input class="form-control" type="text" name="orgnumHours7" id="orgnumHours7" value="{{ old('orgnumHours7', $answersc3['orgnumHours7']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgPosition7', 'Position/Nature of Work: ') }}</b>
-                                        <input class="form-control" type="text" name="orgPosition7" id="orgPosition7" value="{{ old('orgPosition7', $answersc3['orgPosition7']) }}" required>
+                                        <input class="form-control" type="text" name="orgPosition7" id="orgPosition7" value="{{ old('orgPosition7', $answersc3['orgPosition7']) }}" >
                                 </div>
                             </div>
                         </div>
@@ -2925,32 +2925,32 @@ $group = [
                                 <div class="row">
                                     <div class="col">
                                         <b>{{ Form::label('orgnameAddress8', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                        <input class="form-control" type="text" name="orgnameAddress8" id="orgnameAddress8" value="{{ old('orgnameAddress8', $answersc3['orgnameAddress8']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                        <input class="form-control" type="text" name="orgnameAddress8" id="orgnameAddress8" value="{{ old('orgnameAddress8', $answersc3['orgnameAddress8']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                     </div>
                                     <div class="col">
                                         <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                         <div class="form-inline">
                                             <b>{{ Form::label('orgdateFrom8', 'From: ') }}</b><br>
-                                            <input class="form-control" type="date" name="orgdateFrom8" id="orgdateFrom8" value="{{ old('orgdateFrom8', $answersc3['orgdateFrom8']) }}" required>
+                                            <input class="form-control" type="date" name="orgdateFrom8" id="orgdateFrom8" value="{{ old('orgdateFrom8', $answersc3['orgdateFrom8']) }}" >
                                         </div>
                                         <div class="form-inline">
                                             <b>{{ Form::label('orgdateTo8', 'To: ') }}</b><br>
-                                            <input class="form-control" type="date" name="orgdateTo8" id="orgdateTo8" value="{{ old('orgdateTo8', $answersc3['orgdateTo8']) }}" required>
+                                            <input class="form-control" type="date" name="orgdateTo8" id="orgdateTo8" value="{{ old('orgdateTo8', $answersc3['orgdateTo8']) }}" >
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-2">
                                         <b>{{ Form::label('orgnumHours8', 'Number of Hours: ') }}</b><br>
-                                        <input class="form-control" type="text" name="orgnumHours8" id="orgnumHours8" value="{{ old('orgnumHours8', $answersc3['orgnumHours8']) }}" required>
+                                        <input class="form-control" type="text" name="orgnumHours8" id="orgnumHours8" value="{{ old('orgnumHours8', $answersc3['orgnumHours8']) }}" >
                                     </div>
                                     <div class="col">
                                         <b>{{ Form::label('orgType8', 'Type of LD: ') }}</b>
-                                        <input class="form-control" type="text" name="orgType8" id="orgType8" value="{{ old('orgType8', $answersc3['orgType8']) }}" required placeholder="Type of LD...">
+                                        <input class="form-control" type="text" name="orgType8" id="orgType8" value="{{ old('orgType8', $answersc3['orgType8']) }}"  placeholder="Type of LD...">
                                     </div>
                                     <div class="col">
                                         <b>{{ Form::label('orgnameSponsor8', 'Conducted/Sponsored by: ') }}</b>
-                                        <input class="form-control" type="text" name="orgnameSponsor8" id="orgnameSponsor8" value="{{ old('orgnameSponsor8', $answersc3['orgnameSponsor8']) }}" required placeholder="Conducted/Sponsored by...">
+                                        <input class="form-control" type="text" name="orgnameSponsor8" id="orgnameSponsor8" value="{{ old('orgnameSponsor8', $answersc3['orgnameSponsor8']) }}"  placeholder="Conducted/Sponsored by...">
                                     </div>
                                 </div>
                             </div>
@@ -2960,32 +2960,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress9', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress9" id="orgnameAddress9" value="{{ old('orgnameAddress9', $answersc3['orgnameAddress9']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress9" id="orgnameAddress9" value="{{ old('orgnameAddress9', $answersc3['orgnameAddress9']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom9', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom9" id="orgdateFrom9" value="{{ old('orgdateFrom9', $answersc3['orgdateFrom9']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom9" id="orgdateFrom9" value="{{ old('orgdateFrom9', $answersc3['orgdateFrom9']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo9', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo9" id="orgdateTo9" value="{{ old('orgdateTo9', $answersc3['orgdateTo9']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo9" id="orgdateTo9" value="{{ old('orgdateTo9', $answersc3['orgdateTo9']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours9', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours9" id="orgnumHours9" value="{{ old('orgnumHours9', $answersc3['orgnumHours9']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours9" id="orgnumHours9" value="{{ old('orgnumHours9', $answersc3['orgnumHours9']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType9', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType9" id="orgType9" value="{{ old('orgType9', $answersc3['orgType9']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType9" id="orgType9" value="{{ old('orgType9', $answersc3['orgType9']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor9', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor9" id="orgnameSponsor9" value="{{ old('orgnameSponsor9', $answersc3['orgnameSponsor9']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor9" id="orgnameSponsor9" value="{{ old('orgnameSponsor9', $answersc3['orgnameSponsor9']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -2994,32 +2994,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress10', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress10" id="orgnameAddress10" value="{{ old('orgnameAddress10', $answersc3['orgnameAddress10']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress10" id="orgnameAddress10" value="{{ old('orgnameAddress10', $answersc3['orgnameAddress10']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom10', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom10" id="orgdateFrom10" value="{{ old('orgdateFrom10', $answersc3['orgdateFrom10']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom10" id="orgdateFrom10" value="{{ old('orgdateFrom10', $answersc3['orgdateFrom10']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo10', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo10" id="orgdateTo10" value="{{ old('orgdateTo10', $answersc3['orgdateTo10']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo10" id="orgdateTo10" value="{{ old('orgdateTo10', $answersc3['orgdateTo10']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours10', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours10" id="orgnumHours10" value="{{ old('orgnumHours10', $answersc3['orgnumHours10']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours10" id="orgnumHours10" value="{{ old('orgnumHours10', $answersc3['orgnumHours10']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType10', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType10" id="orgType10" value="{{ old('orgType10', $answersc3['orgType10']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType10" id="orgType10" value="{{ old('orgType10', $answersc3['orgType10']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor10', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor10" id="orgnameSponsor10" value="{{ old('orgnameSponsor10', $answersc3['orgnameSponsor10']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor10" id="orgnameSponsor10" value="{{ old('orgnameSponsor10', $answersc3['orgnameSponsor10']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3028,32 +3028,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress11', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress11" id="orgnameAddress11" value="{{ old('orgnameAddress11', $answersc3['orgnameAddress11']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress11" id="orgnameAddress11" value="{{ old('orgnameAddress11', $answersc3['orgnameAddress11']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom11', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom11" id="orgdateFrom11" value="{{ old('orgdateFrom11', $answersc3['orgdateFrom11']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom11" id="orgdateFrom11" value="{{ old('orgdateFrom11', $answersc3['orgdateFrom11']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo11', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo11" id="orgdateTo11" value="{{ old('orgdateTo11', $answersc3['orgdateTo11']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo11" id="orgdateTo11" value="{{ old('orgdateTo11', $answersc3['orgdateTo11']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours11', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours11" id="orgnumHours11" value="{{ old('orgnumHours11', $answersc3['orgnumHours11']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours11" id="orgnumHours11" value="{{ old('orgnumHours11', $answersc3['orgnumHours11']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType11', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType11" id="orgType11" value="{{ old('orgType11', $answersc3['orgType11']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType11" id="orgType11" value="{{ old('orgType11', $answersc3['orgType11']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor11', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor11" id="orgnameSponsor11" value="{{ old('orgnameSponsor11', $answersc3['orgnameSponsor11']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor11" id="orgnameSponsor11" value="{{ old('orgnameSponsor11', $answersc3['orgnameSponsor11']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3062,32 +3062,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress12', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress12" id="orgnameAddress12" value="{{ old('orgnameAddress12', $answersc3['orgnameAddress12']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress12" id="orgnameAddress12" value="{{ old('orgnameAddress12', $answersc3['orgnameAddress12']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom12', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom12" id="orgdateFrom12" value="{{ old('orgdateFrom12', $answersc3['orgdateFrom12']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom12" id="orgdateFrom12" value="{{ old('orgdateFrom12', $answersc3['orgdateFrom12']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo12', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo12" id="orgdateTo12" value="{{ old('orgdateTo12', $answersc3['orgdateTo12']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo12" id="orgdateTo12" value="{{ old('orgdateTo12', $answersc3['orgdateTo12']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours12', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours12" id="orgnumHours12" value="{{ old('orgnumHours12', $answersc3['orgnumHours12']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours12" id="orgnumHours12" value="{{ old('orgnumHours12', $answersc3['orgnumHours12']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType12', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType12" id="orgType12" value="{{ old('orgType12', $answersc3['orgType12']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType12" id="orgType12" value="{{ old('orgType12', $answersc3['orgType12']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor12', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor12" id="orgnameSponsor12" value="{{ old('orgnameSponsor12', $answersc3['orgnameSponsor12']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor12" id="orgnameSponsor12" value="{{ old('orgnameSponsor12', $answersc3['orgnameSponsor12']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3096,32 +3096,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress13', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress13" id="orgnameAddress13" value="{{ old('orgnameAddress13', $answersc3['orgnameAddress13']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress13" id="orgnameAddress13" value="{{ old('orgnameAddress13', $answersc3['orgnameAddress13']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom13', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom13" id="orgdateFrom13" value="{{ old('orgdateFrom13', $answersc3['orgdateFrom13']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom13" id="orgdateFrom13" value="{{ old('orgdateFrom13', $answersc3['orgdateFrom13']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo13', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo13" id="orgdateTo13" value="{{ old('orgdateTo13', $answersc3['orgdateTo13']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo13" id="orgdateTo13" value="{{ old('orgdateTo13', $answersc3['orgdateTo13']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours13', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours13" id="orgnumHours13" value="{{ old('orgnumHours13', $answersc3['orgnumHours13']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours13" id="orgnumHours13" value="{{ old('orgnumHours13', $answersc3['orgnumHours13']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType13', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType13" id="orgType13" value="{{ old('orgType13', $answersc3['orgType13']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType13" id="orgType13" value="{{ old('orgType13', $answersc3['orgType13']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor13', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor13" id="orgnameSponsor13" value="{{ old('orgnameSponsor13', $answersc3['orgnameSponsor13']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor13" id="orgnameSponsor13" value="{{ old('orgnameSponsor13', $answersc3['orgnameSponsor13']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3130,32 +3130,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress14', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress14" id="orgnameAddress14" value="{{ old('orgnameAddress14', $answersc3['orgnameAddress14']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress14" id="orgnameAddress14" value="{{ old('orgnameAddress14', $answersc3['orgnameAddress14']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom14', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom14" id="orgdateFrom14" value="{{ old('orgdateFrom14', $answersc3['orgdateFrom14']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom14" id="orgdateFrom14" value="{{ old('orgdateFrom14', $answersc3['orgdateFrom14']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo14', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo14" id="orgdateTo14" value="{{ old('orgdateTo14', $answersc3['orgdateTo14']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo14" id="orgdateTo14" value="{{ old('orgdateTo14', $answersc3['orgdateTo14']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours14', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours14" id="orgnumHours14" value="{{ old('orgnumHours14', $answersc3['orgnumHours14']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours14" id="orgnumHours14" value="{{ old('orgnumHours14', $answersc3['orgnumHours14']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType14', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType14" id="orgType14" value="{{ old('orgType14', $answersc3['orgType14']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType14" id="orgType14" value="{{ old('orgType14', $answersc3['orgType14']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor14', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor14" id="orgnameSponsor14" value="{{ old('orgnameSponsor14', $answersc3['orgnameSponsor14']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor14" id="orgnameSponsor14" value="{{ old('orgnameSponsor14', $answersc3['orgnameSponsor14']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3164,32 +3164,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress15', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress15" id="orgnameAddress15" value="{{ old('orgnameAddress15', $answersc3['orgnameAddress15']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress15" id="orgnameAddress15" value="{{ old('orgnameAddress15', $answersc3['orgnameAddress15']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom15', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom15" id="orgdateFrom15" value="{{ old('orgdateFrom15', $answersc3['orgdateFrom15']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom15" id="orgdateFrom15" value="{{ old('orgdateFrom15', $answersc3['orgdateFrom15']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo15', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo15" id="orgdateTo15" value="{{ old('orgdateTo15', $answersc3['orgdateTo15']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo15" id="orgdateTo15" value="{{ old('orgdateTo15', $answersc3['orgdateTo15']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours15', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours15" id="orgnumHours15" value="{{ old('orgnumHours15', $answersc3['orgnumHours15']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours15" id="orgnumHours15" value="{{ old('orgnumHours15', $answersc3['orgnumHours15']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType15', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType15" id="orgType15" value="{{ old('orgType15', $answersc3['orgType15']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType15" id="orgType15" value="{{ old('orgType15', $answersc3['orgType15']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor15', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor15" id="orgnameSponsor15" value="{{ old('orgnameSponsor15', $answersc3['orgnameSponsor15']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor15" id="orgnameSponsor15" value="{{ old('orgnameSponsor15', $answersc3['orgnameSponsor15']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3198,32 +3198,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress16', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress16" id="orgnameAddress16" value="{{ old('orgnameAddress16', $answersc3['orgnameAddress16']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress16" id="orgnameAddress16" value="{{ old('orgnameAddress16', $answersc3['orgnameAddress16']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom16', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom16" id="orgdateFrom16" value="{{ old('orgdateFrom16', $answersc3['orgdateFrom16']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom16" id="orgdateFrom16" value="{{ old('orgdateFrom16', $answersc3['orgdateFrom16']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo16', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo16" id="orgdateTo16" value="{{ old('orgdateTo16', $answersc3['orgdateTo16']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo16" id="orgdateTo16" value="{{ old('orgdateTo16', $answersc3['orgdateTo16']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours16', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours16" id="orgnumHours16" value="{{ old('orgnumHours16', $answersc3['orgnumHours16']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours16" id="orgnumHours16" value="{{ old('orgnumHours16', $answersc3['orgnumHours16']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType16', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType16" id="orgType16" value="{{ old('orgType16', $answersc3['orgType16']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType16" id="orgType16" value="{{ old('orgType16', $answersc3['orgType16']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor16', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor16" id="orgnameSponsor16" value="{{ old('orgnameSponsor16', $answersc3['orgnameSponsor16']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor16" id="orgnameSponsor16" value="{{ old('orgnameSponsor16', $answersc3['orgnameSponsor16']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3231,32 +3231,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress16', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress16" id="orgnameAddress16" value="{{ old('orgnameAddress16', $answersc3['orgnameAddress16']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress16" id="orgnameAddress16" value="{{ old('orgnameAddress16', $answersc3['orgnameAddress16']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom16', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom16" id="orgdateFrom16" value="{{ old('orgdateFrom16', $answersc3['orgdateFrom16']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom16" id="orgdateFrom16" value="{{ old('orgdateFrom16', $answersc3['orgdateFrom16']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo16', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo16" id="orgdateTo16" value="{{ old('orgdateTo16', $answersc3['orgdateTo16']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo16" id="orgdateTo16" value="{{ old('orgdateTo16', $answersc3['orgdateTo16']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours17', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours17" id="orgnumHours17" value="{{ old('orgnumHours17', $answersc3['orgnumHours17']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours17" id="orgnumHours17" value="{{ old('orgnumHours17', $answersc3['orgnumHours17']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType17', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType17" id="orgType17" value="{{ old('orgType17', $answersc3['orgType17']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType17" id="orgType17" value="{{ old('orgType17', $answersc3['orgType17']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor17', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor17" id="orgnameSponsor17" value="{{ old('orgnameSponsor17', $answersc3['orgnameSponsor17']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor17" id="orgnameSponsor17" value="{{ old('orgnameSponsor17', $answersc3['orgnameSponsor17']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3265,32 +3265,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress18', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress18" id="orgnameAddress18" value="{{ old('orgnameAddress18', $answersc3['orgnameAddress18']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress18" id="orgnameAddress18" value="{{ old('orgnameAddress18', $answersc3['orgnameAddress18']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom18', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom18" id="orgdateFrom18" value="{{ old('orgdateFrom18', $answersc3['orgdateFrom18']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom18" id="orgdateFrom18" value="{{ old('orgdateFrom18', $answersc3['orgdateFrom18']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo18', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo18" id="orgdateTo18" value="{{ old('orgdateTo18', $answersc3['orgdateTo18']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo18" id="orgdateTo18" value="{{ old('orgdateTo18', $answersc3['orgdateTo18']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours18', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours18" id="orgnumHours18" value="{{ old('orgnumHours18', $answersc3['orgnumHours18']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours18" id="orgnumHours18" value="{{ old('orgnumHours18', $answersc3['orgnumHours18']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType18', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType18" id="orgType18" value="{{ old('orgType18', $answersc3['orgType18']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType18" id="orgType18" value="{{ old('orgType18', $answersc3['orgType18']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor18', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor18" id="orgnameSponsor18" value="{{ old('orgnameSponsor18', $answersc3['orgnameSponsor18']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor18" id="orgnameSponsor18" value="{{ old('orgnameSponsor18', $answersc3['orgnameSponsor18']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3299,32 +3299,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress19', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress19" id="orgnameAddress19" value="{{ old('orgnameAddress19', $answersc3['orgnameAddress19']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress19" id="orgnameAddress19" value="{{ old('orgnameAddress19', $answersc3['orgnameAddress19']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom19', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom19" id="orgdateFrom19" value="{{ old('orgdateFrom19', $answersc3['orgdateFrom19']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom19" id="orgdateFrom19" value="{{ old('orgdateFrom19', $answersc3['orgdateFrom19']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo19', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo19" id="orgdateTo19" value="{{ old('orgdateTo19', $answersc3['orgdateTo19']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo19" id="orgdateTo19" value="{{ old('orgdateTo19', $answersc3['orgdateTo19']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours19', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours19" id="orgnumHours19" value="{{ old('orgnumHours19', $answersc3['orgnumHours19']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours19" id="orgnumHours19" value="{{ old('orgnumHours19', $answersc3['orgnumHours19']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType19', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType19" id="orgType19" value="{{ old('orgType19', $answersc3['orgType19']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType19" id="orgType19" value="{{ old('orgType19', $answersc3['orgType19']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor19', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor19" id="orgnameSponsor19" value="{{ old('orgnameSponsor19', $answersc3['orgnameSponsor19']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor19" id="orgnameSponsor19" value="{{ old('orgnameSponsor19', $answersc3['orgnameSponsor19']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3333,32 +3333,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress20', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress20" id="orgnameAddress20" value="{{ old('orgnameAddress20', $answersc3['orgnameAddress20']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress20" id="orgnameAddress20" value="{{ old('orgnameAddress20', $answersc3['orgnameAddress20']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom20', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom20" id="orgdateFrom20" value="{{ old('orgdateFrom20', $answersc3['orgdateFrom20']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom20" id="orgdateFrom20" value="{{ old('orgdateFrom20', $answersc3['orgdateFrom20']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo20', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo20" id="orgdateTo20" value="{{ old('orgdateTo20', $answersc3['orgdateTo20']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo20" id="orgdateTo20" value="{{ old('orgdateTo20', $answersc3['orgdateTo20']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours20', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours20" id="orgnumHours20" value="{{ old('orgnumHours20', $answersc3['orgnumHours20']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours20" id="orgnumHours20" value="{{ old('orgnumHours20', $answersc3['orgnumHours20']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType20', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType20" id="orgType20" value="{{ old('orgType20', $answersc3['orgType20']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType20" id="orgType20" value="{{ old('orgType20', $answersc3['orgType20']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor20', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor20" id="orgnameSponsor20" value="{{ old('orgnameSponsor20', $answersc3['orgnameSponsor20']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor20" id="orgnameSponsor20" value="{{ old('orgnameSponsor20', $answersc3['orgnameSponsor20']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3367,32 +3367,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress21', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress21" id="orgnameAddress21" value="{{ old('orgnameAddress21', $answersc3['orgnameAddress21']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress21" id="orgnameAddress21" value="{{ old('orgnameAddress21', $answersc3['orgnameAddress21']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom21', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom21" id="orgdateFrom21" value="{{ old('orgdateFrom21', $answersc3['orgdateFrom21']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom21" id="orgdateFrom21" value="{{ old('orgdateFrom21', $answersc3['orgdateFrom21']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo21', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo21" id="orgdateTo21" value="{{ old('orgdateTo21', $answersc3['orgdateTo21']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo21" id="orgdateTo21" value="{{ old('orgdateTo21', $answersc3['orgdateTo21']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours21', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours21" id="orgnumHours21" value="{{ old('orgnumHours21', $answersc3['orgnumHours21']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours21" id="orgnumHours21" value="{{ old('orgnumHours21', $answersc3['orgnumHours21']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType21', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType21" id="orgType21" value="{{ old('orgType21', $answersc3['orgType21']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType21" id="orgType21" value="{{ old('orgType21', $answersc3['orgType21']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor21', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor21" id="orgnameSponsor21" value="{{ old('orgnameSponsor21', $answersc3['orgnameSponsor21']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor21" id="orgnameSponsor21" value="{{ old('orgnameSponsor21', $answersc3['orgnameSponsor21']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3401,32 +3401,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress22', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress22" id="orgnameAddress22" value="{{ old('orgnameAddress22', $answersc3['orgnameAddress22']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress22" id="orgnameAddress22" value="{{ old('orgnameAddress22', $answersc3['orgnameAddress22']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom22', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom22" id="orgdateFrom22" value="{{ old('orgdateFrom22', $answersc3['orgdateFrom22']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom22" id="orgdateFrom22" value="{{ old('orgdateFrom22', $answersc3['orgdateFrom22']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo22', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo22" id="orgdateTo22" value="{{ old('orgdateTo22', $answersc3['orgdateTo22']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo22" id="orgdateTo22" value="{{ old('orgdateTo22', $answersc3['orgdateTo22']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours22', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours22" id="orgnumHours22" value="{{ old('orgnumHours22', $answersc3['orgnumHours22']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours22" id="orgnumHours22" value="{{ old('orgnumHours22', $answersc3['orgnumHours22']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType22', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType22" id="orgType22" value="{{ old('orgType22', $answersc3['orgType22']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType22" id="orgType22" value="{{ old('orgType22', $answersc3['orgType22']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor22', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor22" id="orgnameSponsor22" value="{{ old('orgnameSponsor22', $answersc3['orgnameSponsor22']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor22" id="orgnameSponsor22" value="{{ old('orgnameSponsor22', $answersc3['orgnameSponsor22']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3435,32 +3435,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress23', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress23" id="orgnameAddress23" value="{{ old('orgnameAddress23', $answersc3['orgnameAddress23']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress23" id="orgnameAddress23" value="{{ old('orgnameAddress23', $answersc3['orgnameAddress23']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom23', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom23" id="orgdateFrom23" value="{{ old('orgdateFrom23', $answersc3['orgdateFrom23']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom23" id="orgdateFrom23" value="{{ old('orgdateFrom23', $answersc3['orgdateFrom23']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo23', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo23" id="orgdateTo23" value="{{ old('orgdateTo23', $answersc3['orgdateTo23']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo23" id="orgdateTo23" value="{{ old('orgdateTo23', $answersc3['orgdateTo23']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours23', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours23" id="orgnumHours23" value="{{ old('orgnumHours23', $answersc3['orgnumHours23']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours23" id="orgnumHours23" value="{{ old('orgnumHours23', $answersc3['orgnumHours23']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType23', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType23" id="orgType23" value="{{ old('orgType23', $answersc3['orgType23']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType23" id="orgType23" value="{{ old('orgType23', $answersc3['orgType23']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor23', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor23" id="orgnameSponsor23" value="{{ old('orgnameSponsor23', $answersc3['orgnameSponsor23']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor23" id="orgnameSponsor23" value="{{ old('orgnameSponsor23', $answersc3['orgnameSponsor23']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3469,32 +3469,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress24', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress24" id="orgnameAddress24" value="{{ old('orgnameAddress24', $answersc3['orgnameAddress24']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress24" id="orgnameAddress24" value="{{ old('orgnameAddress24', $answersc3['orgnameAddress24']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom24', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom24" id="orgdateFrom24" value="{{ old('orgdateFrom24', $answersc3['orgdateFrom24']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom24" id="orgdateFrom24" value="{{ old('orgdateFrom24', $answersc3['orgdateFrom24']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo24', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo24" id="orgdateTo24" value="{{ old('orgdateTo24', $answersc3['orgdateTo24']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo24" id="orgdateTo24" value="{{ old('orgdateTo24', $answersc3['orgdateTo24']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours24', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours24" id="orgnumHours24" value="{{ old('orgnumHours24', $answersc3['orgnumHours24']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours24" id="orgnumHours24" value="{{ old('orgnumHours24', $answersc3['orgnumHours24']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType24', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType24" id="orgType24" value="{{ old('orgType24', $answersc3['orgType24']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType24" id="orgType24" value="{{ old('orgType24', $answersc3['orgType24']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor24', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor24" id="orgnameSponsor24" value="{{ old('orgnameSponsor24', $answersc3['orgnameSponsor24']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor24" id="orgnameSponsor24" value="{{ old('orgnameSponsor24', $answersc3['orgnameSponsor24']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3537,32 +3537,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress26', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress26" id="orgnameAddress26" value="{{ old('orgnameAddress26', $answersc3['orgnameAddress26']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress26" id="orgnameAddress26" value="{{ old('orgnameAddress26', $answersc3['orgnameAddress26']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom26', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom26" id="orgdateFrom26" value="{{ old('orgdateFrom26', $answersc3['orgdateFrom26']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom26" id="orgdateFrom26" value="{{ old('orgdateFrom26', $answersc3['orgdateFrom26']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo26', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo26" id="orgdateTo26" value="{{ old('orgdateTo26', $answersc3['orgdateTo26']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo26" id="orgdateTo26" value="{{ old('orgdateTo26', $answersc3['orgdateTo26']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours26', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours26" id="orgnumHours26" value="{{ old('orgnumHours26', $answersc3['orgnumHours26']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours26" id="orgnumHours26" value="{{ old('orgnumHours26', $answersc3['orgnumHours26']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType26', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType26" id="orgType26" value="{{ old('orgType26', $answersc3['orgType26']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType26" id="orgType26" value="{{ old('orgType26', $answersc3['orgType26']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor26', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor26" id="orgnameSponsor26" value="{{ old('orgnameSponsor26', $answersc3['orgnameSponsor26']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor26" id="orgnameSponsor26" value="{{ old('orgnameSponsor26', $answersc3['orgnameSponsor26']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3571,32 +3571,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress27', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress27" id="orgnameAddress27" value="{{ old('orgnameAddress27', $answersc3['orgnameAddress27']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress27" id="orgnameAddress27" value="{{ old('orgnameAddress27', $answersc3['orgnameAddress27']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom27', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom27" id="orgdateFrom27" value="{{ old('orgdateFrom27', $answersc3['orgdateFrom27']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom27" id="orgdateFrom27" value="{{ old('orgdateFrom27', $answersc3['orgdateFrom27']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo27', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo27" id="orgdateTo27" value="{{ old('orgdateTo27', $answersc3['orgdateTo27']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo27" id="orgdateTo27" value="{{ old('orgdateTo27', $answersc3['orgdateTo27']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours27', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours27" id="orgnumHours27" value="{{ old('orgnumHours27', $answersc3['orgnumHours27']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours27" id="orgnumHours27" value="{{ old('orgnumHours27', $answersc3['orgnumHours27']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType27', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType27" id="orgType27" value="{{ old('orgType27', $answersc3['orgType27']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType27" id="orgType27" value="{{ old('orgType27', $answersc3['orgType27']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor27', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor27" id="orgnameSponsor27" value="{{ old('orgnameSponsor27', $answersc3['orgnameSponsor27']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor27" id="orgnameSponsor27" value="{{ old('orgnameSponsor27', $answersc3['orgnameSponsor27']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3605,32 +3605,32 @@ $group = [
                             <div class="row">
                                 <div class="col">
                                     <b>{{ Form::label('orgnameAddress28', 'Title of Learning and Development Interventions/Training Programs: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameAddress28" id="orgnameAddress28" value="{{ old('orgnameAddress28', $answersc3['orgnameAddress28']) }}" required placeholder="Title of Learning and Development Interventions/Training Programs">
+                                    <input class="form-control" type="text" name="orgnameAddress28" id="orgnameAddress28" value="{{ old('orgnameAddress28', $answersc3['orgnameAddress28']) }}"  placeholder="Title of Learning and Development Interventions/Training Programs">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('Inclusive Dates of Attendance: ') }}</b><br>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateFrom28', 'From: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateFrom28" id="orgdateFrom28" value="{{ old('orgdateFrom28', $answersc3['orgdateFrom28']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateFrom28" id="orgdateFrom28" value="{{ old('orgdateFrom28', $answersc3['orgdateFrom28']) }}" >
                                     </div>
                                     <div class="form-inline">
                                         <b>{{ Form::label('orgdateTo28', 'To: ') }}</b><br>
-                                        <input class="form-control" type="date" name="orgdateTo28" id="orgdateTo28" value="{{ old('orgdateTo28', $answersc3['orgdateTo28']) }}" required>
+                                        <input class="form-control" type="date" name="orgdateTo28" id="orgdateTo28" value="{{ old('orgdateTo28', $answersc3['orgdateTo28']) }}" >
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2">
                                     <b>{{ Form::label('orgnumHours28', 'Number of Hours: ') }}</b><br>
-                                    <input class="form-control" type="text" name="orgnumHours28" id="orgnumHours28" value="{{ old('orgnumHours28', $answersc3['orgnumHours28']) }}" required>
+                                    <input class="form-control" type="text" name="orgnumHours28" id="orgnumHours28" value="{{ old('orgnumHours28', $answersc3['orgnumHours28']) }}" >
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgType28', 'Type of LD: ') }}</b>
-                                    <input class="form-control" type="text" name="orgType28" id="orgType28" value="{{ old('orgType28', $answersc3['orgType28']) }}" required placeholder="Type of LD...">
+                                    <input class="form-control" type="text" name="orgType28" id="orgType28" value="{{ old('orgType28', $answersc3['orgType28']) }}"  placeholder="Type of LD...">
                                 </div>
                                 <div class="col">
                                     <b>{{ Form::label('orgnameSponsor28', 'Conducted/Sponsored by: ') }}</b>
-                                    <input class="form-control" type="text" name="orgnameSponsor28" id="orgnameSponsor28" value="{{ old('orgnameSponsor28', $answersc3['orgnameSponsor28']) }}" required placeholder="Conducted/Sponsored by...">
+                                    <input class="form-control" type="text" name="orgnameSponsor28" id="orgnameSponsor28" value="{{ old('orgnameSponsor28', $answersc3['orgnameSponsor28']) }}"  placeholder="Conducted/Sponsored by...">
                                 </div>
                             </div>
                         </div>
@@ -3823,7 +3823,7 @@ $group = [
                             @endif
 
                             {{ Form::label('34bdetails', 'If YES, give details: ') }}
-                            <input class="form-control" type="text" name="b34details" id="b34details" value="{{ old('detailsb34', $answersc4['detailsb34']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="text" name="b34details" id="b34details" value="{{ old('detailsb34', $answersc4['detailsb34']) }}"  autocomplete="off" disabled>
 
                             <b>{{ Form::label('35a', '35. a. Have you ever been found guilty of any administrative offense?') }}<br></b>
                             @if ($answersc4['a35'] == '1')
@@ -3847,7 +3847,7 @@ $group = [
                             @endif
 
                             {{ Form::label('35adetails', 'If YES, give details: ') }}
-                            <input class="form-control" type="text" name="a35details" id="details35a" value="{{ old('details35a', $answersc4['details35a']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="text" name="a35details" id="details35a" value="{{ old('details35a', $answersc4['details35a']) }}"  autocomplete="off" disabled>
 
                             <b>{{ Form::label('35-b-answer', 'b. Have you been criminally change before any court?') }}<br></b>
                             @if ($answersc4['b35'] == '1')
@@ -3859,7 +3859,7 @@ $group = [
                             @elseif($answersc4['b35'] == '0')
                             {{ Form::radio('35b', '1') }}
                             {{ Form::label('35b', 'YES') }}
-                            <input class="form-control" type="text" name="a38details" id="details37a" value="{{ old('details38a', $answersc4['detailsb38a']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="text" name="a38details" id="details37a" value="{{ old('details38a', $answersc4['detailsb38a']) }}"  autocomplete="off" disabled>
 
                             {{ Form::radio('35b', '0' , 'selected') }}
                             {{ Form::label('35b', 'NO') }}<br>
@@ -3873,7 +3873,7 @@ $group = [
 
                             {{ Form::label('b35details', 'If YES, give details: ') }}<br>
                             {{ Form::label('b35date', 'Date Field: ') }}
-                            <input class="form-control" type="date" name="b35date" id="b35date" value="{{ old('b35date', $answersc4['b35date']) }}" required disabled>
+                            <input class="form-control" type="date" name="b35date" id="b35date" value="{{ old('b35date', $answersc4['b35date']) }}"  disabled>
                             {{ Form::label('b35cases', 'Status of Case/s: ') }}
                             {{ Form::select('b35case', $case, null, ['class' => 'form-control', 'id' => '35-b-answer-case', 'placeholder' => 'Status', 'disabled']) }}
 
@@ -3899,7 +3899,7 @@ $group = [
                             @endif
 
                             {{ Form::label('a36details', 'If YES, give details: ') }}
-                            <input class="form-control" type="text" name="a36details" id="details36a" value="{{ old('a36details', $answersc4['a36details']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="text" name="a36details" id="details36a" value="{{ old('a36details', $answersc4['a36details']) }}"  autocomplete="off" disabled>
 
                             <b>{{ Form::label(
                                 '37a',
@@ -3926,7 +3926,7 @@ $group = [
                             @endif
 
                             {{ Form::label('a37details', 'If YES, give details: ') }}
-                            <input class="form-control" type="text" name="a37details" id="details37a" value="{{ old('a37details', $answersc4['a37details']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="text" name="a37details" id="details37a" value="{{ old('a37details', $answersc4['a37details']) }}"  autocomplete="off" disabled>
 
                             <b>{{ Form::label(
                                 '38a',
@@ -3954,7 +3954,7 @@ $group = [
                             @endif
 
                             {{ Form::label('38a', 'If YES, give details: ') }}
-                            <input class="form-control" type="text" name="a38details" id="details38a" value="{{ old('a38details', $answersc4['a38details']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="text" name="a38details" id="details38a" value="{{ old('a38details', $answersc4['a38details']) }}"  autocomplete="off" disabled>
 
                             <b>{{ Form::label(
                                 '38b',
@@ -3982,7 +3982,7 @@ $group = [
                             @endif
 
                             {{ Form::label('b38details', 'If YES, give details: ') }}
-                            <input class="form-control" type="text" name="b38details" id="details38b" value="{{ old('b38details', $answersc4['b38details']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="text" name="b38details" id="details38b" value="{{ old('b38details', $answersc4['b38details']) }}"  autocomplete="off" disabled>
 
                             {{ Form::text('b38details', null, ['class' => 'form-control', 'id' => '38-b-answer-details', 'disabled', 'autocomplete' => 'off']) }}
 
@@ -4008,7 +4008,7 @@ $group = [
                             @endif
 
                             {{ Form::label('a39details', 'If YES, give details: ') }}
-                            <input class="form-control" type="text" name="a39details" id="details39a" value="{{ old('a39details', $answersc4['a39details']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="text" name="a39details" id="details39a" value="{{ old('a39details', $answersc4['a39details']) }}"  autocomplete="off" disabled>
 
                             <b>40. Pursuant to: (a) Indigenous People's Act (RA 8371); (b) Magna Carta for Disabled Persons
                                 (RA 7277); and (c) Solo Parents Welfare Act of 2000 (RA 8972), please answer the following
@@ -4060,7 +4060,7 @@ $group = [
                             @endif
 
                             {{ Form::label('b40details', 'If YES, please specify ID No: ') }}
-                            <input class="form-control" type="text" name="b40details" id="details40b" value="{{ old('b40details', $answersc4['b40details']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="text" name="b40details" id="details40b" value="{{ old('b40details', $answersc4['b40details']) }}"  autocomplete="off" disabled>
                             <b>{{ Form::label('40c', 'c.   Are you a solo parent?') }}<br></b>
                             @if ($answersc4['c40'] == '1')
                             {{ Form::radio('40c', '1' , 'selected') }}
@@ -4083,7 +4083,7 @@ $group = [
                             @endif
 
                             {{ Form::label('c40details', 'If YES, please specify ID No: ') }}
-                            <input class="form-control" type="number" name="c40details" id="details40c" value="{{ old('c40details', $answersc4['c40details']) }}" required autocomplete="off" disabled>
+                            <input class="form-control" type="number" name="c40details" id="details40c" value="{{ old('c40details', $answersc4['c40details']) }}"  autocomplete="off" disabled>
                             <hr class="line1">
 
                         </div>

@@ -43,7 +43,7 @@ class PostController
             'civilOthers' => 'required_if:civilStatus,others',
             'surname' => 'required|max:64',
             'firstname' => 'required|max:64',
-            'nameext' => 'max:5|nullable',
+            'nameext' => 'max:10|nullable',
             'midname' => 'max:64|nullable',
             'birthdate' => 'required|before:18 years ago',
             'sex' => 'required',

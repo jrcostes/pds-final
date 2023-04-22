@@ -17,6 +17,7 @@ class C1answers extends Migration
             $table->increments('id');
             $table->string('surname');
             $table->string('firstname');
+            $table->string('midname');
             $table->boolean('sex');
             $table->smallInteger('user_id');
             $table->json('c1answers');

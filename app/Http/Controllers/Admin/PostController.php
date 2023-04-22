@@ -692,7 +692,6 @@ class PostController
 
         $c1answers = [
             'firstnameext' => $data['nameext'] ?? null,
-            'midname' => $data['midname'] ?? null,
             'birthdate' => $data['birthdate'] ?? null,
             'placeBirth' => $data['placeofBirth'] ?? null,
             'civilothers' => $data['civilOthers'] ?? null,
@@ -1379,6 +1378,7 @@ class PostController
         $newForm->c2answers = json_encode($c2answers);
         $newForm->c3answers = json_encode($c3answers);
         $newForm->c4answers = json_encode($c4answers);
+        $newForm->midname = $request->midname;
         $newForm->surname = $request->surname;
         $newForm->firstname = $request->firstname;
         $newForm->user_id = Auth::id();
