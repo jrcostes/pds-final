@@ -17,22 +17,25 @@ use function PHPSTORM_META\map;
 
 class PostController
 {
-    //storing functions
-    // public function c1form(Request $request){
-    //     $request->all();
+    public function pdf_print(){
+        $id = $_GET['formid'];
 
-    //     Sheets::create($request->all());
+        $form = C1answers::where('surname', $id)->first();
 
-    //     return redirect('/')
-    //         ->with('success','Entry Saved');
-    // }
+        $answersc1 = json_decode($form->c1answers, true);
+        $answersc2 = json_decode($form->c2answers, true);
+        $answersc3 = json_decode($form->c3answers, true);
+        $answersc4 = json_decode($form->c4answers, true);
+        $surname = $form->surname;
+        $firstname = $form->surname;
+        $sex = $form->sex;
 
 
-    public function policy()
-    {
-        return view('dpa');
+        $pdf = App::make('snappy.pdf.wrapper');
+        $pdf = PDF::loadvIEW('pdf.pdftemplate', compact('answersc1', 'answersc2', 'answersc3', 'answersc4', 'firstname', 'surname', 'sex'));
+
+        return $pdf->inline('pdsform.pdf');
     }
-
     public function submittal(Request $request){
 
         $data = $request->validate([
@@ -691,7 +694,6 @@ class PostController
 
         $c1answers = [
             'firstnameext' => $data['nameext'] ?? null,
-            'midname' => $data['midname'] ?? null,
             'birthdate' => $data['birthdate'] ?? null,
             'placeBirth' => $data['placeofBirth'] ?? null,
             'civilStatus' => $data['civilStatus'] ?? null,
@@ -790,6 +792,7 @@ class PostController
             'colunitLevel' => $data['colunitLevel'] ?? null,
             'attendncefromcol' => $data['attendancefromcol'] ?? null,
             'attendancetocol' => $data['attendancetocol'] ?? null,
+            'yeargradcol' => $data['yeargradcol'] ?? null,
             'scholarshipcol' => $data['scholarshipcol'] ?? null,
             'gradname' => $data['gradname'] ?? null,
             'graddeg' => $data['graddeg'] ?? null,
@@ -1372,20 +1375,21 @@ class PostController
             'issuancedate44' => $data['issuancedate44'] ?? null
 
         ];
+
         $newForm->c1answers = json_encode($c1answers);
         $newForm->c2answers = json_encode($c2answers);
         $newForm->c3answers = json_encode($c3answers);
         $newForm->c4answers = json_encode($c4answers);
+        $newForm->midname = $request->midname;
         $newForm->surname = $request->surname;
         $newForm->firstname = $request->firstname;
         $newForm->sex = $request->sex;
         $newForm->user_id=Auth::id();
 
-
-
-
-
         $newForm->save();
+
+
+
 
 
 

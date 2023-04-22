@@ -43,6 +43,8 @@ class PostController
             'midname' => 'max:64|nullable',
             'birthdate' => 'required|before:18 years ago',
             'sex' => 'required',
+            'height' => 'required',
+            'weight' => 'required',
             'placeofBirth' => 'required|max:64',
             'civilStatus' => 'required',
             'gsisno' => 'max:15|nullable',
@@ -693,6 +695,7 @@ class PostController
             'midname' => $data['midname'] ?? null,
             'birthdate' => $data['birthdate'] ?? null,
             'placeBirth' => $data['placeofBirth'] ?? null,
+            'civilothers' => $data['civilOthers'] ?? null,
             'civilStatus' => $data['civilStatus'] ?? null,
             'height' => $data['height'] ?? null,
             'weight' => $data['weight'] ?? null,
@@ -787,6 +790,7 @@ class PostController
             'colname' => $data['colname'] ?? null,
             'coldeg' => $data['coldeg'] ?? null,
             'colunitLevel' => $data['colunitLevel'] ?? null,
+            'yeargradcol' => $data['yeargradcol'] ?? null,
             'attendncefromcol' => $data['attendancefromcol'] ?? null,
             'attendancetocol' => $data['attendancetocol'] ?? null,
             'scholarshipcol' => $data['scholarshipcol'] ?? null,
@@ -1377,6 +1381,7 @@ class PostController
         $newForm->c4answers = json_encode($c4answers);
         $newForm->surname = $request->surname;
         $newForm->firstname = $request->firstname;
+        $newForm->user_id = Auth::id();
         $newForm->sex = $request->sex;
 
 
