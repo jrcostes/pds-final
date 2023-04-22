@@ -59,7 +59,7 @@
                         <a class="nav-link {{ request()->is('profile/password') || request()->is('profile/password/*') ? 'active' : '' }}" href="{{ route('profile.password.edit') }}">
                             <i class="fa-fw fas fa-key nav-icon">
                             </i>
-                            {{ trans('global.change_password') }}
+                            {{ trans('Change Password') }}
                         </a>
                     </li>
 
@@ -69,7 +69,7 @@
                     <i class="nav-icon fas fa-fw fa-sign-out-alt">
 
                     </i>
-                    {{ trans('global.logout') }}
+                    {{ trans('Logout') }}
                 </a>
             </li>
         </ul>
