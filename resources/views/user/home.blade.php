@@ -3727,10 +3727,11 @@ $group = [
                     </div>
                 </div>
 
+                <br>
                 <div class="button" id="submitbtn">
                     <button type="submit" id="submitbutton" class="btn btn-primary btn-loading"
                         data-coreui-timeout="2000" value="submit">Submit</button>
-                </div>
+                </div><br>
 
             </form>
             <script>
