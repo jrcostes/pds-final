@@ -22,7 +22,7 @@ class EditController
         $answersc4 = json_decode($form->c4answers, true);
         $midname = $form->midname;
         $surname = $form->surname;
-        $firstname = $form->surname;
+        $firstname = $form->firstname;
         $sex = $form->sex;
 
         return view('user.forms.edit', compact('answersc1', 'answersc2', 'answersc3', 'answersc4', 'firstname', 'surname', 'sex', 'midname'));

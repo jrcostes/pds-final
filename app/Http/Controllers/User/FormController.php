@@ -35,7 +35,7 @@ class FormController
         $answersc3 = json_decode($form->c3answers, true);
         $answersc4 = json_decode($form->c4answers, true);
         $surname = $form->surname;
-        $firstname = $form->surname;
+        $firstname = $form->firstname;
         $sex = $form->sex;
 
 
@@ -54,7 +54,7 @@ class FormController
         $answersc3 = json_decode($form->c3answers, true);
         $answersc4 = json_decode($form->c4answers, true);
         $surname = $form->surname;
-        $firstname = $form->surname;
+        $firstname = $form->firstname;
         $sex = $form->sex;
 
 
