@@ -44,8 +44,8 @@ Route::get('admin/pdf1print', 'Admin\HomeController@pdf_print')->name('print_dat
 Route::get('user/pdf1print', 'User\FormController@pdf_print')->name('print_data');
 Route::get('user/show1form', 'User\FormController@formshow')->name('formshow');
 Route::get('user/edit1form', 'User\EditController@show')->name('formshow');
-
-
+Route::get('/downloadExcel{id}', [Controller::class, 'downloadExcel'])->name('downloadExcel');
+Route::get('/excel_form{id}', [Controller::class, 'ExcelController'])->name('excelform');
 
 
 Route::group([

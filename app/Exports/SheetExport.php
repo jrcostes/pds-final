@@ -7,9 +7,10 @@ use Maatwebsite\Excel\Concerns\FromView;
 
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 
 
-class SheetExport implements FromView
+class SheetExport implements FromView, WithMultipleSheets
 {
 
     public function view(): View
