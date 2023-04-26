@@ -41,6 +41,11 @@
     .references{
         padding-bottom: 20px;
     }
+
+    #myModal {
+        font-family: 'Nunito', 'Segoe UI';
+    }
+
 </style>
 </head>
 <body>
@@ -134,11 +139,11 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="myModal">
 
                     <img src="{{ asset('assets/img/compliant.jpg') }}" style="width:250px; height:250px;  display: block; margin-left: auto; margin-right: auto;">
 
-                        <p>
+                        <p id="myModal">
                            <br> By continuing to browse this website, you agree to DOST Region XI’ Data Privacy Policy. The full text of the Policy can be accessed through this
                          <i> <a href="https://www.sei.dost.gov.ph/index.php/about-dost-sei/data-privacy-notice#:~:text=The%20DOST-SEI%2C%20in%20compliance,access%20to%20the%20collected%20information" target="_blank" style="text-decoration: none; color: blue; text-align: center;">link.</a></i>
                         <br>
