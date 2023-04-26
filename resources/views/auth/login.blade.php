@@ -136,7 +136,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <img src="https://p.kindpng.com/picc/s/352-3521516_transparent-megaphone-png-someone-speaking-out-animated-png.png" style="width:250px; height:250px;  display: block; margin-left: auto; margin-right: auto;">
+                    <img src="{{ asset('assets/img/compliant.jpg') }}" style="width:250px; height:250px;  display: block; margin-left: auto; margin-right: auto;">
 
                         <p>
                            <br> By continuing to browse this website, you agree to DOST Region XI’ Data Privacy Policy. The full text of the Policy can be accessed through this
