@@ -609,14 +609,26 @@ $group = [
                             <div class="row">
                                 <div class="col-sm">
                                     {{-- <div class="form-row align-items-center"> --}}
-                                    <div class="col-auto my-1">
-                                        <label class="mr-sm-2" for="inlineFormCustomSelect">Sex</label>
-                                        <select class="form-select" aria-label="Default select example" id="sex"
-                                            name="sex">
-                                            <option value="0">Male</option>
-                                            <option value="1">Female</option>
-                                        </select>
-                                    </div>
+                                    @if ($sex == '0')
+                                        <div class="col-auto my-1">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Sex</label>
+                                            <select class="form-select" aria-label="Default select example" id="sex"
+                                                name="sex">
+                                                <option value="0" selected>Male</option>
+                                                <option value="1">Female</option>
+                                            </select>
+                                        </div>
+                                    @elseif($sex == '1')
+                                        <div class="col-auto my-1">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Sex</label>
+                                            <select class="form-select" aria-label="Default select example" id="sex"
+                                                name="sex">
+                                                <option value="0">Male</option>
+                                                <option value="1" selected>Female</option>
+                                            </select>
+                                        </div>
+                                    @endif
+
 
                                 </div>
                                 <div class="col-sm">
@@ -624,11 +636,11 @@ $group = [
                                         <label class="mr-sm-2" for="inlineFormCustomSelect">Civil Status</label>
                                         <select class="form-control" aria-label="Default select example" id="civilStatus"
                                             name='civilStatus'>
-                                            <option value='single'>Single</option>
-                                            <option value='married'>Married</option>
-                                            <option value='separated'>Separated</option>
-                                            <option value='widowed'>Widowed</option>
-                                            <option value='other'>Other/s</option>
+                                            <option value='single' {{($answersc1['civilStatus']=="single")? "selected" : ""}}>Single</option>
+                                            <option value='married' {{($answersc1['civilStatus']=="married")? "selected" : ""}}>Married</option>
+                                            <option value='separated' {{($answersc1['civilStatus']=="separated")? "selected" : ""}}>Separated</option>
+                                            <option value='widowed' {{($answersc1['civilStatus']=="widowed")? "selected" : ""}}>Widowed</option>
+                                            <option value='other' {{($answersc1['civilStatus']=="other")? "selected" : ""}}>Other/s</option>
                                         </select>
                                         <input class="form-control" type="text" name="civilothers" id="civilothers">
                                     </div>
@@ -639,16 +651,16 @@ $group = [
                                     <div class="col-auto my-1">
                                         <label class="mr-sm-2" for="inlineFormCustomSelect">Bloodtype</label>
                                         <select class="form-select" aria-label="Default select example" id="bloodType"
-                                            name="bloodType" placeholder="Select one..." value="{{old('bloodType', $answersc1['bloodType'])}}">
-                                            <option value="A+">A+</option>
-                                            <option value="A-">A-</option>
-                                            <option value="B+">B+</option>
-                                            <option value="B-">B-</option>
-                                            <option value="O+">O+</option>
-                                            <option value="O-">O-</option>
-                                            <option value="AB+">AB+</option>
-                                            <option value="AB-">AB-</option>
-                                            <option value="unknown">unknown</option>
+                                            name="bloodType" placeholder="Select one...">
+                                            <option value="A+" {{($answersc1['bloodType']=="A+")? "selected" : ""}}>A+</option>
+                                            <option value="A-" {{($answersc1['bloodType']=="A-")? "selected" : ""}}>A-</option>
+                                            <option value="B+" {{($answersc1['bloodType']=="B+")? "selected" : ""}}>B+</option>
+                                            <option value="B-" {{($answersc1['bloodType']=="B-")? "selected" : ""}}>B-</option>
+                                            <option value="O+" {{($answersc1['bloodType']=="O+")? "selected" : ""}}>O+</option>
+                                            <option value="O-" {{($answersc1['bloodType']=="O-")? "selected" : ""}}>O-</option>
+                                            <option value="AB+" {{($answersc1['bloodType']=="AB+")? "selected" : ""}}>AB+</option>
+                                            <option value="AB-" {{($answersc1['bloodType']=="AB-")? "selected" : ""}}>AB-</option>
+                                            <option value="unknown" {{($answersc1['bloodType']=="unknown")? "selected" : ""}}>unknown</option>
                                         </select>
                                     </div>
                                     {{-- {{ Form::label('bloodType', 'Bloodtype') }}<br>
@@ -723,14 +735,14 @@ $group = [
                         <b>{{ Form::label('citizenship', 'Citizenship') }}<br></b>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="citizens" id="flexRadioDefault1"
-                                value="Filipino">
+                                value="Filipino" {{($answersc1['citizens']=="Filipino")? "checked" : ""}}>
                             <label class="form-check-label" for="flexRadioDefault1">
                                 Filipino
                             </label>
                             <br>
 
                             <input class="form-check-input" type="radio" name="citizens" id="flexRadioDefault2"
-                                value="Dual Citizenship">
+                                value="Dual Citizenship" {{($answersc1['citizens']=="Dual Citizenship")? "checked" : ""}}>
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Dual Citizenship
                             </label>
@@ -742,8 +754,8 @@ $group = [
                                 </div>
                                 <select class="form-select" aria-label="Default select example" id="dualcitizenType"
                                     name="dualcitizenType" aria-placeholder="Select one...">
-                                    <option value="by birth">By Birth</option>
-                                    <option value="by naturalization">By Naturalization</option>
+                                    <option value="by birth" {{($answersc1['dualcitizensType']=="by birth")? "selected" : ""}}>By Birth</option>
+                                    <option value="by naturalization" {{($answersc1['dualcitizensType']=="by naturalization")? "selected" : ""}}>By Naturalization</option>
                                 </select>
                             </div>
                             {{ Form::label('Please indicate country') }}
@@ -3859,7 +3871,6 @@ $group = [
                             @elseif($answersc4['b35'] == '0')
                             {{ Form::radio('35b', '1') }}
                             {{ Form::label('35b', 'YES') }}
-                            <input class="form-control" type="text" name="a38details" id="details37a" value="{{ old('details38a', $answersc4['detailsb38a']) }}"  autocomplete="off" disabled>
 
                             {{ Form::radio('35b', '0' , 'selected') }}
                             {{ Form::label('35b', 'NO') }}<br>

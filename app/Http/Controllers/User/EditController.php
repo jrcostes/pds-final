@@ -41,6 +41,7 @@ class EditController
             'nameext' => 'max:5|nullable',
             'midname' => 'max:64|nullable',
             'birthdate' => 'required|before:18 years ago',
+            'bloodType' => 'required',
             'sex' => 'required',
             'placeofBirth' => 'required|max:64',
             'civilStatus' => 'required',

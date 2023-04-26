@@ -45,6 +45,7 @@ class PostController
             'firstname' => 'required|max:64',
             'nameext' => 'max:10|nullable',
             'midname' => 'max:64|nullable',
+            'bloodType' => 'required',
             'birthdate' => 'required|before:18 years ago',
             'sex' => 'required',
             'placeofBirth' => 'required|max:64',

@@ -1883,6 +1883,7 @@
                 "issues": "https://github.com/LaravelCollective/html/issues",
                 "source": "https://github.com/LaravelCollective/html"
             },
+            "abandoned": "spatie/laravel-html",
             "time": "2018-09-05T18:08:07+00:00"
         },
         {
