@@ -1,3 +1,14 @@
+<style>
+    .sidebar {
+        background-color: #1D578A;
+        opacity: 0.6;
+    }
+
+    .nav {
+        font-family: 'Nunito', 'Segoe UI';
+        font-weight: bold;
+    }
+</style>
 <div class="sidebar">
     <nav class="sidebar-nav">
 

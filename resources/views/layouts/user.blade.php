@@ -19,7 +19,15 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style>
+    #navtext {
+        font-family: 'Nunito', 'Segoe UI';
+    }
 
+    #bodyclass {
+        background-color: #E8B800;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -46,13 +54,13 @@
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show" id="bodyclass">
-    <header class="app-header navbar">
+    <header class="app-header navbar" id="bodyclass">
         <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">
-            <span class="navbar-brand-full">{{ trans('Personal Datasheet') }}</span>
-            <span class="navbar-brand-minimized">{{ trans('Personal Datasheet') }}</span>
+        <a class="navbar-brand" href="#" id="navtext">
+            <span class="navbar-brand-full" id="navtext">{{ trans('Personal Datasheet') }}</span>
+            <span class="navbar-brand-minimized" id="navtext">{{ trans('Personal Datasheet') }}</span>
         </a>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>

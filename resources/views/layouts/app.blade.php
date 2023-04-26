@@ -208,7 +208,7 @@
             }
 
             #navbartext {
-                color: #F5F7F8;
+                color: #E8BA00;
 
             }
 
