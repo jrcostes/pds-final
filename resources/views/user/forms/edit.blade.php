@@ -754,8 +754,8 @@ $group = [
                                 </div>
                                 <select class="form-select" aria-label="Default select example" id="dualcitizenType"
                                     name="dualcitizenType" aria-placeholder="Select one...">
-                                    <option value="by birth">By Birth</option>
-                                    <option value="by naturalization">By Naturalization</option>
+                                    <option value="by birth" {{($answersc1['dualcitizensType']=="by birth")? "selected" : ""}}>By Birth</option>
+                                    <option value="by naturalization" {{($answersc1['dualcitizensType']=="by naturalization")? "selected" : ""}}>By Naturalization</option>
                                 </select>
                             </div>
                             {{ Form::label('Please indicate country') }}
