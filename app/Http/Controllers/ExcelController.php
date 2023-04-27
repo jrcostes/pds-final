@@ -18,8 +18,8 @@ use Maatwebsite\Excel\Facades\Excel;
 class ExcelController extends Controller
 {
     public function excel_form() {
-        Excel::load('C:\xampp\htdocs\personaldatasheet2\resources\views\exportform\c3form-excel.xlsx', function($excel){
-            $excel->sheet('C3', function($sheet) {
+        Excel::load(env('EXCEL_PATH'), function($excel){
+            $excel->sheet('C3DATA', function($sheet) {
 
                 //VI. Voluntary Work or Involvement Section
                 $sheet->cell('A6', function($cell) {
@@ -328,7 +328,7 @@ class ExcelController extends Controller
 
 
             });
-        
+
         })->download('xlsx');
     }
     public function downloadExcel($id){
@@ -648,7 +648,7 @@ class ExcelController extends Controller
             });
             activity()->log('Excel Form Downloaded');
         })->download('xlsx');
-   
+
     }
 
 
