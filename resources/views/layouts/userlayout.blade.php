@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -46,8 +47,6 @@
         font-size: 100%;
         font-weight: bold;
         color: #E8BA00;
-        padding-left: 5%;
-        padding-right: 7%;
     }
 
     #bodyclass {
@@ -61,16 +60,13 @@
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show" id="bodyclass">
     <header class="app-header navbar" id="pdsheader">
-        <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
             <span class="navbar-brand-full" id="navtext">{{ trans('Personal Datasheet') }}</span>
             <span class="navbar-brand-minimized" id="navtext">{{ trans('Personal Datasheet') }}</span>
         </a>
-        <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
         <ul class="nav navbar-nav ml-auto">
             @if (count(config('panel.available_languages', [])) > 1)
