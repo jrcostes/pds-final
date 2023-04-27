@@ -758,6 +758,11 @@ $group = [
                                     <option value="by naturalization" {{($answersc1['dualcitizensType']=="by naturalization")? "selected" : ""}}>By Naturalization</option>
                                 </select>
                             </div>
+                            @if($answersc1['country'] !== null)
+                            <label for="country"> Previously Selected Country: {{$answersc1['country']}} </label><br>
+                            @else
+                            <label for="country"> Previously Selected Country: No Country Selected </label><br>
+                            @endif
                             {{ Form::label('Please indicate country') }}
                             {{ Form::select('country', $countries, null, ['class' => 'form-control', 'placeholder' => 'Select Country...']) }}
                         </div>
@@ -1193,7 +1198,7 @@ $group = [
                                     <input class="form-control" type="number" name="colunitLevel" id="colunitLevel" value="{{ old('colunitLevel', $answersc1['colunitLevel']) }}"  placeholder="Highest Unit / Level earned">
                                 </div>
                                 <div class="col">
-                                    {{-- <input class="form-control" type="text" name="yeargradcol" id="yearcol" value="{{ old('yeargradcol', $answersc1['yeargradcol']) }}"  placeholder="Year Graduated">--}}
+                                 <input class="form-control" type="text" name="yeargradcol" id="yearcol" value="{{ old('yeargradcol', $answersc1['yeargradcol']) }}"  placeholder="Year Graduated">
                                 </div>
                                 <div class="col-5">
                                     <input class="form-control" type="text" name="scholarshipcol" id="scholarcol" value="{{ old('scholarshipcol', $answersc1['scholarshipcol']) }}"  placeholder="Scholarship/Academic Honors Recieved">
@@ -1236,6 +1241,7 @@ $group = [
 
                 <div id="C2FORM" class="tabcontent">
                     <div class="box-form">
+                    <h2>IV. CIVIL SERVICE ELIGIBILITY</h2><br>
                         <div class="col-1 row px-0">
                             <div class="col-5 offset-1 px-0">
                                 <button class="btn btn-secondary btn-sm w-100" type="button" id="minus-refc2"
@@ -4169,6 +4175,11 @@ $group = [
                             <br><b>Government Issued ID </b><i>(i.e.Passport, GSIS, SSS, PRC, Driver's License,
                                 etc.)</i><br>
                             <b>PLEASE INDICATE ID Number</b><br>
+                            @if($answersc4['govid44'] !== null)
+                            <label for="govid44">Previously Selected Government ID: {{$answersc4['govidd44']}} </label><br>
+                            @else
+                            <label for="govid44">No previously selected Government Issued ID</label><br>
+                            @endif
                             <b>{{ Form::label('govid44', 'Government Issued ID: ') }}</b>
                             {{ Form::select('govid44', $validID, null, ['class' => 'form-control', 'placeholder' => 'Select ID...']) }}
                             <b>{{ Form::label('valid44', 'ID/License/Passport No.: ') }}</b>
