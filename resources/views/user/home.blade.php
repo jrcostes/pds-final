@@ -1,4 +1,4 @@
-@extends('layouts.userlayout')
+@extends('layouts.user')
 <?php
 $countries = [
     '' => '',
@@ -498,6 +498,10 @@ $group = [
                 background-color: #383c54;
                 border-block-color: #383c54;
             }
+
+            #form {
+                background-color: #e4d468;
+            }
         </style>
     </head>
 
@@ -508,7 +512,7 @@ $group = [
                 <h2>Personal Datasheet</h2>
                 <p>Click on the buttons inside the tabbed menu.</p>
             </div>
-
+            {{-- <form method="get" action="/c1formsubmit" autocomplete="off" class="form-horizontal" id="form"> --}}
             <div class="w3-bar w3-black">
                 <button class="w3-bar-item w3-button tablink" onclick="openForm(event,'C1FORM')">Personal
                     Information</button>
@@ -543,7 +547,6 @@ $group = [
                 </div>
             @endif
 
-            <form method="get" action="/c1formsubmit" autocomplete="off" class="form-horizontal">
                 @csrf
                 <div id="C1FORM" class="tabcontent">
                     <div class="box-form">
@@ -628,7 +631,7 @@ $group = [
                                             <option value='widowed'>Widowed</option>
                                             <option value='other'>Other/s</option>
                                         </select>
-                                        {{ Form::text('civilothers', null, [ 'class' => 'form-control', 'id' => 'civilothers', 'placeholder' => 'If others, specify.']) }}
+                                        {{ Form::text('civilothers', null, ['class' => 'form-control', 'id' => 'civilothers', 'placeholder' => 'If others, specify.']) }}
                                     </div>
                                 </div>
 
@@ -764,7 +767,7 @@ $group = [
                                     <div class="col">
                                         {{ Form::text('residentialbrgy', null, ['class' => 'form-control', 'id' => 'barangay-R', 'placeholder' => 'Barangay']) }}
                                         {{ Form::text('residentialcity', null, ['class' => 'form-control', 'id' => 'City/Municipality-R', 'placeholder' => 'City/Municipality']) }}
-                                        {{ Form::text('residentialprv', null, ['class' => 'form-control', 'id' => 'province-R', 'placeholder' => 'Province', ]) }}
+                                        {{ Form::text('residentialprv', null, ['class' => 'form-control', 'id' => 'province-R', 'placeholder' => 'Province']) }}
                                         {{-- {{ Form::number('residentialzip', null, ['class' => 'form-control', 'id' => 'zipcode-R', 'placeholder' => 'Zip Code', 'reqiured' => 'required']) }} --}}
                                     </div>
                                 </div>
@@ -1448,8 +1451,7 @@ $group = [
                                         {{ Form::text('appointment', '', ['class' => 'form-control']) }}
 
                                         {{ Form::label('governmentserv', 'Government service (Y/N)') }}
-                                        <select class="custom-select mr-sm-2" id="governmentserv" name="governmentserv"
-                                            >
+                                        <select class="custom-select mr-sm-2" id="governmentserv" name="governmentserv">
                                             <option value=''></option>
                                             <option value="Yes">YES</option>
                                             <option value="No">NO</option>
@@ -3366,7 +3368,8 @@ $group = [
                                     disabled>-</button>
                             </div>
                             <div class="col-5 offset-1 px-0">
-                                <button class="btn btn-secondary btn-sm w-100" type="button" id="add-refc31">+</button>
+                                <button class="btn btn-secondary btn-sm w-100" type="button"
+                                    id="add-refc31">+</button>
                             </div>
                         </div><br>
 
@@ -3482,7 +3485,8 @@ $group = [
                                     disabled>-</button>
                             </div>
                             <div class="col-5 offset-1 px-0">
-                                <button class="btn btn-secondary btn-sm w-100" type="button" id="add-refc32">+</button>
+                                <button class="btn btn-secondary btn-sm w-100" type="button"
+                                    id="add-refc32">+</button>
                             </div>
                         </div>
                         <br>
@@ -3556,8 +3560,8 @@ $group = [
                             <b>{{ Form::label(
                                 '37a',
                                 '37. Have you ever been separated from the service in any of the following modes:
-                                                                                                                                                                                                                                                                            resignation, retirement, dropped from the rolls, dismissal, termination, end of term, finished contract or
-                                                                                                                                                                                                                                                                            phased out (abolition) in the public or private sector?',
+                                                                                                                                                                                                                                                                                                        resignation, retirement, dropped from the rolls, dismissal, termination, end of term, finished contract or
+                                                                                                                                                                                                                                                                                                        phased out (abolition) in the public or private sector?',
                             ) }}<br></b>
                             {{ Form::radio('37a', '1') }}
                             {{ Form::label('37a', 'YES') }}
@@ -3571,7 +3575,7 @@ $group = [
                             <b>{{ Form::label(
                                 '38a',
                                 '38. a. Have you ever been a candidate in a national or local election held within the last year<br>
-                                                                                                                                                                                                                                                                            (except Barangay election)?',
+                                                                                                                                                                                                                                                                                                        (except Barangay election)?',
                             ) }}<br></b>
                             {{ Form::radio('38a', '1') }}
                             {{ Form::label('38a', 'YES') }}
@@ -3585,7 +3589,7 @@ $group = [
                             <b>{{ Form::label(
                                 '38b',
                                 'b. Have you resigned from the government service during the three (3)-month period before<br>
-                                                                                                                                                                                                                                                                            the last election to promote/actively campaign for a national or local candidate?',
+                                                                                                                                                                                                                                                                                                        the last election to promote/actively campaign for a national or local candidate?',
                             ) }}<br></b>
                             {{ Form::radio('38b', '1') }}
                             {{ Form::label('38b', 'YES') }}
@@ -3727,14 +3731,12 @@ $group = [
 
                     </div>
                 </div>
-
-                <br>
-                <div class="button" id="submitbtn">
-                    <button type="submit" id="submitbutton" class="btn btn-primary btn-loading"
-                        data-coreui-timeout="2000" value="submit">Submit</button>
-                </div><br>
-
-            </form>
+            {{-- </form> --}}
+            <br>
+            <div class="button" id="submitbtn">
+                <button type="submit" id="submitbutton" class="btn btn-primary btn-loading"
+                    data-coreui-timeout="2000" value="submit">Submit</button>
+            </div><br>
             <script>
                 function openForm(evt, formName) {
                     var i, tabcontent, tablinks;
@@ -3751,33 +3753,33 @@ $group = [
                 }
             </script>
 
-            {{-- c4 increment button--}}
+            {{-- c4 increment button --}}
             <script>
-                $(function(){
+                $(function() {
                     var refCount = 1;
-                    $('#addc4-ref').on('click', function (e) {
-                    e.preventDefault();
+                    $('#addc4-ref').on('click', function(e) {
+                        e.preventDefault();
 
-                    if (refCount === 1) {
-                        $('.41-b-container').removeClass('d-none');
-                        $('#minusc4-ref').attr('disabled', false);
-                        refCount++;
-                    } else if (refCount === 2) {
-                        $('.41-c-container').removeClass('d-none');
-                        $('#addc4-ref').attr('disabled', true, required);
-                        refCount++;
-                    }
+                        if (refCount === 1) {
+                            $('.41-b-container').removeClass('d-none');
+                            $('#minusc4-ref').attr('disabled', false);
+                            refCount++;
+                        } else if (refCount === 2) {
+                            $('.41-c-container').removeClass('d-none');
+                            $('#addc4-ref').attr('disabled', true, required);
+                            refCount++;
+                        }
                     });
-                    $('#minusc4-ref').on('click', function (e) {
-                    e.preventDefault();
+                    $('#minusc4-ref').on('click', function(e) {
+                        e.preventDefault();
 
-                    if (refCount === 2) {
-                        $('.41-c-container').addClass('d-none');
-                        $('#addc4-ref').attr('disabled', false);
-                        refCount--;
-                    } else if (refCount === 1) {
-                        $('.41-b-container').addClass('d-none');
-                        $('#minusc4-ref').attr('disabled', true, required);
+                        if (refCount === 2) {
+                            $('.41-c-container').addClass('d-none');
+                            $('#addc4-ref').attr('disabled', false);
+                            refCount--;
+                        } else if (refCount === 1) {
+                            $('.41-b-container').addClass('d-none');
+                            $('#minusc4-ref').attr('disabled', true, required);
                         }
                     });
                 });
@@ -3785,8 +3787,8 @@ $group = [
 
             {{-- c4 hidden form scripts --}}
             <script>
-                $(function(){
-                    $('input[name="34b"]').change(function(){
+                $(function() {
+                    $('input[name="34b"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="b34details"]').attr({
                                 'disabled': false,
@@ -3800,8 +3802,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="35a"]').change(function(){
+                $(function() {
+                    $('input[name="35a"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="a35details"]').attr({
                                 'disabled': false,
@@ -3815,8 +3817,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="35b"]').change(function(){
+                $(function() {
+                    $('input[name="35b"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="b35date"]').attr({
                                 'disabled': false,
@@ -3838,8 +3840,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="36a"]').change(function(){
+                $(function() {
+                    $('input[name="36a"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="a36details"]').attr({
                                 'disabled': false,
@@ -3853,8 +3855,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="37a"]').change(function(){
+                $(function() {
+                    $('input[name="37a"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="a37details"]').attr({
                                 'disabled': false,
@@ -3868,8 +3870,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="38a"]').change(function(){
+                $(function() {
+                    $('input[name="38a"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="a38details"]').attr({
                                 'disabled': false,
@@ -3883,8 +3885,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="38b"]').change(function(){
+                $(function() {
+                    $('input[name="38b"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="b38details"]').attr({
                                 'disabled': false,
@@ -3898,8 +3900,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="39a"]').change(function(){
+                $(function() {
+                    $('input[name="39a"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="a39details"]').attr({
                                 'disabled': false,
@@ -3913,8 +3915,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="40a"]').change(function(){
+                $(function() {
+                    $('input[name="40a"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('select[name="a40details"]').attr({
                                 'disabled': false,
@@ -3928,8 +3930,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="40b"]').change(function(){
+                $(function() {
+                    $('input[name="40b"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="b40details"]').attr({
                                 'disabled': false,
@@ -3943,8 +3945,8 @@ $group = [
                         }
                     });
                 });
-                $(function(){
-                    $('input[name="40c"]').change(function(){
+                $(function() {
+                    $('input[name="40c"]').change(function() {
                         if ($(this).is(':checked') && $(this).val() == '1') {
                             $('input[name="c40details"]').attr({
                                 'disabled': false,
@@ -3958,7 +3960,6 @@ $group = [
                         }
                     });
                 });
-
             </script>
 
             {{-- c3 first incrementing button --}}
@@ -4195,7 +4196,7 @@ $group = [
                             $('.orgLD3-container').addClass('d-none');
                             $('#minus-refc31').attr('disabled', false);
                             counter--;
-                        } else if (refCount <= 19 && counter == 1 ) {
+                        } else if (refCount <= 19 && counter == 1) {
                             $('.orgLD2-container').addClass('d-none');
                             $('#minus-refc31').attr('disabled', false);
                             counter--;
@@ -4875,4 +4876,3 @@ $group = [
 
     </html>
 @endsection
-

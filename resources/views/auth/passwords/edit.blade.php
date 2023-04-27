@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('Change Password') }}
+        {{ trans('My Profile') }}
     </div>
 
     <div class="card-body">
