@@ -19,7 +19,15 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style>
+    #navtext {
+        font-family: 'Nunito', 'Segoe UI';
+    }
 
+    #bodyclass {
+        background-color: #E8B800;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -28,6 +36,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ trans('Personal Datasheet') }}</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
     {{-- <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" /> --}}
@@ -44,14 +53,14 @@
     @yield('styles')
 </head>
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show">
-    <header class="app-header navbar">
+<body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show" id="bodyclass">
+    <header class="app-header navbar" id="bodyclass">
         <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">
-            <span class="navbar-brand-full">{{ trans('Personal Datasheet') }}</span>
-            <span class="navbar-brand-minimized">{{ trans('Personal Datasheet') }}</span>
+        <a class="navbar-brand" href="#" id="navtext">
+            <span class="navbar-brand-full" id="navtext">{{ trans('Personal Datasheet') }}</span>
+            <span class="navbar-brand-minimized" id="navtext">{{ trans('Personal Datasheet') }}</span>
         </a>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>
@@ -75,7 +84,7 @@
         </ul>
     </header>
 
-    <div class="app-body">
+    <div class="app-body" id="appbody">
         @include('partials.usermenu')
         <main class="main">
 
