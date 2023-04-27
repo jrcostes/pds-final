@@ -137,7 +137,7 @@ class FormController
             //yeargradvoc
             'scholarshipvoc' => 'max:64',
             'colname' => 'max:64',
-            'coldeg' => 'max:32',
+            'coldeg' => 'max:64',
             //colunitlevel
             'colunitLevel' => 'max:32',
             'attendancefromcol' => 'before:attendancetocol|nullable',
