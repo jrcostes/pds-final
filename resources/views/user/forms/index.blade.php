@@ -45,60 +45,19 @@
                                         <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
                                         <button type="submit" class="btn btn-outline-primary">Edit</button>
                                     </form>
+                                    <form id="excelform" method="get" action="excelform" autocomplete="off">
+                                        <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
+                                        <input type="hidden" id="user.birthdate" name="birthdate" value="{{ $answersc1['birthdate']}}">
+                                        <button type="submit" class="btn btn-outline-primary">Download Excel</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endif
-
-
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-
-        {{-- <body>
-            <div class="box-form">
-
-                <div class="container mt-5">
-                    <table id="myTable" class="table table-striped" style="width: 100%">
-                        <thead>
-                            <tr>
-                                <th scope="col">User ID</th>
-                                <th scope="col">Surname</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if ($surname != null)
-                            <tr>
-                                <td>{{ $user_id}}</td>
-                                <td>{{ $surname }}</td>
-                                <td>{{ $firstname }}</td>
-                                <td>
-                                    <form id="form1Pdf" method="get" action="pdf1print" autocomplete="off"
-                                        onsubmit="return submitForm2(this);">
-                                        <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
-                                        <button type="submit" class="btn btn-outline-primary"> Download PDF</button>
-                                    </form>
-                                    <form id="show1Form" method="get" action="show1form" autocomplete="off">
-                                        <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
-                                        <button type="submit" class="btn btn-outline-primary">View PDF</button>
-                                    </form>
-                                    <form id="edit1Form" method="get" action="edit1form" autocomplete="off">
-                                        <input type="hidden" id="user.formid" name="formid" value="{{ $surname }}">
-                                        <button type="submit" class="btn btn-outline-primary">Edit</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endif
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </body> --}}
 
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -141,13 +100,4 @@
                 return false;
             }
         </script>
-
-
-
-
-        {{-- <div class="d-flex justify-content-center">
-                <div class="pagination">
-                    {!! $products->links() !!}
-                </div>
-            </div> --}}
     @endsection

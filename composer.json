@@ -5,7 +5,8 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.2.5",
+        "ext-zip": "^1.15",
         "barryvdh/laravel-snappy": "*",
         "coreui/coreui": "*",
         "fideloper/proxy": "^4.0",

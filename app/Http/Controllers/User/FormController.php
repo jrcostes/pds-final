@@ -18,12 +18,16 @@ class FormController
         $authid = Auth::id();
 
         $form = C1answers::where('user_id', $authid)->first();
+        $answersc1 = json_decode($form->c1answers, true);
+        $answersc2 = json_decode($form->c2answers, true);
+        $answersc3 = json_decode($form->c3answers, true);
+        $answersc4 = json_decode($form->c4answers, true);
         $user_id = $form->user_id ?? null;
         $surname = $form->surname ?? null;
         $firstname = $form->firstname ?? null;
         $sex = $form->sex ?? null;
 
-        return view('user.forms.index', compact('surname','firstname','sex', 'user_id'));
+        return view('user.forms.index', compact('surname','firstname','sex', 'user_id', 'answersc1', 'answersc2', 'answersc3', 'answersc4'));
     }
     public function pdf_print(){
         $id = $_GET['formid'];
