@@ -1212,6 +1212,7 @@ $group = [
 
                 <div id="C2FORM" class="tabcontent">
                     <div class="box-form">
+                    <h2>IV. CIVIL SERVICE ELIGIBILITY</h2><br>
                         <div class="col-1 row px-0">
                             <div class="col-5 offset-1 px-0">
                                 <button class="btn btn-secondary btn-sm w-100" type="button" id="minus-refc2"

@@ -708,7 +708,7 @@ class PostController
             'tinno' => $data['tinno'] ?? null,
             'agencyemp' => $data['agencyemp'] ?? null,
             'citizens' => $data['citizens'] ?? null,
-            'dualcitizensType' => $data['citizens2'] ?? null,
+            'dualcitizensType' => $data['dualcitizensType'] ?? null,
             'country' => $data['country'] ?? null,
             'residentialhouse' => $data['residentialhouse'] ?? null,
             'residentialst' => $data['residentialst'] ?? null,
