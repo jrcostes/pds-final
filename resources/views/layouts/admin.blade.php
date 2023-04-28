@@ -20,7 +20,8 @@
     <link href="https://unpkg.com/@coreui/coreui@2.1.16/dist/css/coreui.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -35,6 +36,23 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="sweetalert/sweetalert.all.js"></script>
 </head>
+
+<style>
+    #navtext {
+        font-family: 'Nunito', 'Segoe UI';
+        font-size: 100%;
+        font-weight: bold;
+        color: #E8BA00;
+    }
+
+    #bodyclass {
+        background-color: #F5F7F8;
+    }
+
+    #pdsheader {
+        background-color: #0D4E86;
+    }
+</style>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show">
     <header class="app-header navbar">
@@ -67,10 +85,10 @@
         </ul>
     </header>
 
+    <!-- Side-Bar -->
     <div class="app-body">
         @include('partials.menu')
         <main class="main">
-
 
             <div style="padding-top: 20px" class="container-fluid">
                 @if(session('message'))
@@ -93,11 +111,11 @@
 
             </div>
 
-
         </main>
         <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
         </form>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -121,114 +139,108 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script>
-        $(function() {
-  //let copyButtonTrans = '{{ trans('Copy All') }}'
-  //let csvButtonTrans = '{{ trans('Download in .csv') }}'
-  //let excelButtonTrans = '{{ trans('Download in Excel') }}'
-  //let pdfButtonTrans = '{{ trans('Download in PDF') }}'
-  //let printButtonTrans = '{{ trans('Print') }}'
-  //let colvisButtonTrans = '{{ trans('global.datatables.colvis') }}'
-  //let selectAllButtonTrans = '{{ trans('Select All') }}'
-  //let selectNoneButtonTrans = '{{ trans('Deselect All') }}'
-  let languages = {
-    'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
-  };
-  $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, { className: 'btn' })
-  $.extend(true, $.fn.dataTable.defaults, {
-    language: {
-      url: languages['{{ app()->getLocale() }}']
-    },
-    columnDefs: [{
-        orderable: false,
-        className: 'select-checkbox',
-        targets: 0
-    }, {
-        orderable: false,
-        searchable: false,
-        targets: -1
-    }],
-    select: {
-      style:    'multi+shift',
-      selector: 'td:first-child'
-    },
-    order: [],
-    scrollX: true,
-    pageLength: 100,
-    dom: 'lBfrtip<"actions">',
-    buttons: [
-      {
-        extend: 'selectAll',
-        className: 'btn-primary',
-        text: selectAllButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        },
-        action: function(e, dt) {
-          e.preventDefault()
-          dt.rows().deselect();
-          dt.rows({ search: 'applied' }).select();
-        }
-      },
-      {
-        extend: 'selectNone',
-        className: 'btn-primary',
-        text: selectNoneButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        }
-      },
-      {
-        extend: 'copy',
-        className: 'btn-default',
-        text: copyButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        }
-      },
-      {
-        extend: 'csv',
-        className: 'btn-default',
-        text: csvButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        }
-      },
-      {
-        extend: 'excel',
-        className: 'btn-default',
-        text: excelButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        }
-      },
-      {
-        extend: 'pdf',
-        className: 'btn-default',
-        text: pdfButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        }
-      },
-      {
-        extend: 'print',
-        className: 'btn-default',
-        text: printButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        }
-      },
-      {
-        extend: 'colvis',
-        className: 'btn-default',
-        text: colvisButtonTrans,
-        exportOptions: {
-          columns: ':visible'
-        }
-      }
-    ]
-  });
-  $.fn.dataTable.ext.classes.sPageButton = '';
-});
+//         $(function() {
+  
+  
+//   let languages = {
+//     'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
+//   };
+//   $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, { className: 'btn' })
+//   $.extend(true, $.fn.dataTable.defaults, {
+//     language: {
+//       url: languages['{{ app()->getLocale() }}']
+//     },
+//     columnDefs: [{
+//         orderable: false,
+//         className: 'select-checkbox',
+//         targets: 0
+//     }, {
+//         orderable: false,
+//         searchable: false,
+//         targets: -1
+//     }],
+//     select: {
+//       style:    'multi+shift',
+//       selector: 'td:first-child'
+//     },
+//     order: [],
+//     scrollX: true,
+//     pageLength: 100,
+//     dom: 'lBfrtip<"actions">',
+//     buttons: [
+//       {
+//         extend: 'selectAll',
+//         className: 'btn-primary',
+//         text: selectAllButtonTrans,
+//         exportOptions: {
+//           columns: ':visible'
+//         },
+//         action: function(e, dt) {
+//           e.preventDefault()
+//           dt.rows().deselect();
+//           dt.rows({ search: 'applied' }).select();
+//         }
+//       },
+//       {
+//         extend: 'selectNone',
+//         className: 'btn-primary',
+//         text: selectNoneButtonTrans,
+//         exportOptions: {
+//           columns: ':visible'
+//         }
+//       },
+//       {
+//         extend: 'copy',
+//         className: 'btn-default',
+//         text: copyButtonTrans,
+//         exportOptions: {
+//           columns: ':visible'
+//         }
+//       },
+//       {
+//         extend: 'csv',
+//         className: 'btn-default',
+//         text: csvButtonTrans,
+//         exportOptions: {
+//           columns: ':visible'
+//         }
+//       },
+//       {
+//         extend: 'excel',
+//         className: 'btn-default',
+//         text: excelButtonTrans,
+//         exportOptions: {
+//           columns: ':visible'
+//         }
+//       },
+//       {
+//         extend: 'pdf',
+//         className: 'btn-default',
+//         text: pdfButtonTrans,
+//         exportOptions: {
+//           columns: ':visible'
+//         }
+//       },
+//       {
+//         extend: 'print',
+//         className: 'btn-default',
+//         text: printButtonTrans,
+//         exportOptions: {
+//           columns: ':visible'
+//         }
+//       },
+//       {
+//         extend: 'colvis',
+//         className: 'btn-default',
+//         text: colvisButtonTrans,
+//         exportOptions: {
+//           columns: ':visible'
+//         }
+//       }
+//     ]
+//   });
+//   $.fn.dataTable.ext.classes.sPageButton = '';
+// });
     </script>
 
 </body>

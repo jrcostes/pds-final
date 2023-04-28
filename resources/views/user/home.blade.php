@@ -443,11 +443,11 @@ $group = [
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
             body {
-                font-family: "Times New Roman", Times, serif;
+                font-family: 'Nunito', 'Segoe UI';
             }
 
             .h2 {
-                font-family: "Times New Roman", Times, serif;
+                font-family: 'Nunito', 'Segoe UI';
             }
 
             /* Style the tab */
@@ -499,9 +499,9 @@ $group = [
                 border-block-color: #383c54;
             }
 
-            #form {
+            /* #form {
                 background-color: #e4d468;
-            }
+            } */
         </style>
     </head>
 
@@ -512,7 +512,7 @@ $group = [
                 <h2>Personal Datasheet</h2>
                 <p>Click on the buttons inside the tabbed menu.</p>
             </div>
-            {{-- <form method="get" action="/c1formsubmit" autocomplete="off" class="form-horizontal" id="form"> --}}
+            <form method="get" action="/c1formsubmit" autocomplete="off" class="form-horizontal" id="form">
             <div class="w3-bar w3-black">
                 <button class="w3-bar-item w3-button tablink" onclick="openForm(event,'C1FORM')">Personal
                     Information</button>
@@ -4872,6 +4872,7 @@ $group = [
                     });
                 });
             </script>
+        </div>
     </body>
 
     </html>

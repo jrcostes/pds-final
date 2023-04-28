@@ -443,11 +443,11 @@ $group = [
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
             body {
-                font-family: "Times New Roman", Times, serif;
+                font-family: 'Nunito', 'Segoe UI';
             }
 
             .h2 {
-                font-family: "Times New Roman", Times, serif;
+                font-family: 'Nunito', 'Segoe UI';
             }
 
             /* Style the tab */
@@ -498,6 +498,9 @@ $group = [
                 background-color: #383c54;
                 border-block-color: #383c54;
             }
+            /* #form {
+                background-color: #e4d468;
+            } */
         </style>
     </head>
 
@@ -508,7 +511,7 @@ $group = [
                 <h2>Personal Datasheet</h2>
                 <p>Click on the buttons inside the tabbed menu.</p>
             </div>
-
+            <form method="get" action="/c1formsubmit" autocomplete="off" class="form-horizontal">
             <div class="w3-bar w3-black">
                 <button class="w3-bar-item w3-button tablink" onclick="openForm(event,'C1FORM')">Personal
                     Information</button>
@@ -533,7 +536,7 @@ $group = [
                 }
             </script>
 
-            @if ($errors->any())
+            <!-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -541,9 +544,9 @@ $group = [
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif -->
 
-            <form method="get" action="/c1formsubmit" autocomplete="off" class="form-horizontal">
+            
 
                 <div id="C1FORM" class="tabcontent">
                     <div class="box-form">
@@ -3730,7 +3733,7 @@ $group = [
                 <div class="button" id="submitbtn">
                     <button type="submit" id="submitbutton" class="btn btn-primary btn-loading"
                         data-coreui-timeout="2000" value="submit">Submit</button>
-                </div>
+                </div><br>
 
             </form>
             <script>
