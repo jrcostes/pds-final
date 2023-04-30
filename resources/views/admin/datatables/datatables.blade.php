@@ -2,17 +2,20 @@
 
 @section('content')
 
-    <head>
+    {{-- <head>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.css" />
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
-    </head>
+    </head> --}}
 
 
-    <body>
-        <div class="box-form">
 
-            <div class="container mt-5">
-                <table id="myTable" class="table table-striped" style="width: 100%">
+        <div class="card">
+            <div class="card-header">
+                {{ trans('List of Forms Created by Users') }}
+            </div>
+
+            <div class="card-body">
+                <table class=" table table-bordered table-striped table-hover datatable datatable-Admin">
                     <thead>
                         <tr>
                             <th scope="col">Form ID</th>
@@ -41,7 +44,7 @@
                 </table>
             </div>
         </div>
-    </body>
+
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>

@@ -66,8 +66,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
-            <span class="navbar-brand-full" id="navtext">{{ trans('Personal Datasheet') }}</span>
-            <span class="navbar-brand-minimized" id="navtext">{{ trans('Personal Datasheet') }}</span>
+            <span class="navbar-brand-full" id="navtext">{{ trans('User Panel') }}</span>
+            <span class="navbar-brand-minimized" id="navtext">{{ trans('User Panel') }}</span>
         </a>
 
         <ul class="nav navbar-nav ml-auto">
@@ -122,7 +122,7 @@
         <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
         </form>
-        
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
