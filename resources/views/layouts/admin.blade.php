@@ -1,5 +1,41 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ trans('Personal Datasheet') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+
+<style>
+    #navtext {
+        font-family: 'Nunito', 'Segoe UI';
+        font-size: 100%;
+        font-weight: bold;
+        color: #E8BA00;
+    }
+
+    #bodyclass {
+        background-color: #F5F7F8;
+    }
+
+    #pdsheader {
+        background-color: #0D4E86;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -20,11 +56,11 @@
     <link href="https://unpkg.com/@coreui/coreui@2.1.16/dist/css/coreui.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     @yield('styles')
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
@@ -34,38 +70,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="sweetalert/sweetalert.all.js"></script>
+    <script src="sweetalert/sweetalert.all.js"></script> -->
 </head>
 
-<style>
-    #navtext {
-        font-family: 'Nunito', 'Segoe UI';
-        font-size: 100%;
-        font-weight: bold;
-        color: #E8BA00;
-    }
-
-    #bodyclass {
-        background-color: #F5F7F8;
-    }
-
-    #pdsheader {
-        background-color: #0D4E86;
-    }
-</style>
-
-<body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show">
-    <header class="app-header navbar">
-        <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-            <span class="navbar-brand-full">{{ trans('Personal Datasheet') }}</span>
-            <span class="navbar-brand-minimized">{{ trans('Personal Datasheet') }}</span>
-        </a>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done sidebar-lg-show" id="bodyclass">
+    <header class="app-header navbar" id="pdsheader">
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand" href="#">
+            <span class="navbar-brand-full" id="navtext">{{ trans('Admin Panel') }}</span>
+            <span class="navbar-brand-minimized" id="navtext">{{ trans('Admin Panel') }}</span>
+        </a>
 
         <ul class="nav navbar-nav ml-auto">
             @if(count(config('panel.available_languages', [])) > 1)
@@ -75,7 +91,9 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         @foreach(config('panel.available_languages') as $langLocale => $langName)
-                            <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                            <a class="dropdown-item" 
+                            href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} 
+                            ({{ $langName }})</a>
                         @endforeach
                     </div>
                 </li>
